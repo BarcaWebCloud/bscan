@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-#include "hware/scan_gpu.h"
+#include "hwares/scan_gpu.h"
 #include "utils/subprocess.h"
 
 namespace bscan {
