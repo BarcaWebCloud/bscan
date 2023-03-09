@@ -24,3 +24,4 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     target_link_libraries(BScan PUBLIC "stdc++fs")
 endif()
 
+target_link_libraries(bscan PUBLIC bscan::BScan)
