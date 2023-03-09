@@ -7,7 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "hwares/scan_os.h"
+#include "swares/scan_os.h"
 #include "utils/stringutils.h"
 
 namespace bscan {
