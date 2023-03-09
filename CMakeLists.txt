@@ -15,6 +15,8 @@ include_directories(${PROJECT_SOURCE_DIR}/include/)
 
 add_subdirectory(src/libs/info)
 
+add_executable(bscan index.cpp)
+
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
 ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
