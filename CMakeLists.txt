@@ -13,7 +13,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 
 include_directories(${PROJECT_SOURCE_DIR}/include/)
 
-add_subdirectory(src)
+add_subdirectory(src/libs/info)
 
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
