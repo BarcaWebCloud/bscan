@@ -38,6 +38,8 @@
         "./src/libs/info/windows/scan_mainboard.cpp",
         "./src/libs/info/windows/scan_os.cpp",
         "./src/libs/info/windows/scan_ram.cpp",
+        # index bscan
+        "./src/libs/info/bscan.cpp",
       ],
       #  localizando node-api
       "include_dirs": [
