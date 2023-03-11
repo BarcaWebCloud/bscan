@@ -1,4 +1,4 @@
-#include "../../../include/platform.h"
+#include "include/platform.h"
 #ifdef BSCAN_APPLE
 #include <mach/mach.h>
 #include <mach/mach_time.h>
@@ -8,9 +8,9 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "../../../include/hwares/scan_cpu.h"
-#include "../../../include/hwares/scan_cpuid.h"
-#include "../../../include/utils/stringutils.h"
+#include "hwares/scan_cpu.h"
+#include "hwares/scan_cpuid.h"
+#include "utils/stringutils.h"
 
 namespace bscan {
 

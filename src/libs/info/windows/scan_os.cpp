@@ -1,4 +1,4 @@
-#include "../../../include/platform.h"
+#include "platform.h"
 
 #ifdef BSCAN_WINDOWS
 
@@ -9,7 +9,7 @@
 #include <string>
 #define STATUS_SUCCESS 0x00000000
 
-#include "../../../include/swares/scan_os.h"
+#include "swares/scan_os.h"
 
 namespace bscan {
 

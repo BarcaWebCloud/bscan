@@ -1,7 +1,7 @@
-#include "../../../include/hwares/scan_mainboard.h"
+#include "hwares/scan_mainboard.h"
 #include <fstream>
 #include <utility>
-#include "../../../include/WMIwrapper.h"
+#include "WMIwrapper.h"
 
 namespace bscan {
 

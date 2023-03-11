@@ -1,10 +1,10 @@
-#include "../../../include/platform.h"
+#include "platform.h"
 #ifdef BSCAN_APPLE
 #include <regex>
 #include <string>
 #include <vector>
 
-#include "../../../include/hwares/scan_gpu.h"
+#include "hwares/scan_gpu.h"
 
 namespace bscan {
 

@@ -1,4 +1,4 @@
-#include "../../../include/swares/scan_os.h"
+#include "swares/scan_os.h"
 #include <string>
 
 namespace bscan {

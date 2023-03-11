@@ -1,9 +1,9 @@
-#include "../../../include/platform.h"
+#include "platform.h"
 #ifdef BSCAN_UNIX
 #include <unistd.h>
 #include <string>
 #include <vector>
-#include "../../../include/hwares/scan_ram.h"
+#include "hwares/scan_ram.h"
 
 namespace bscan {
 

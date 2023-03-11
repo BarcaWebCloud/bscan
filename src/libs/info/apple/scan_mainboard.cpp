@@ -1,6 +1,6 @@
-#include "../../../include/platform.h"
+#include "platform.h"
 #ifdef BSCAN_APPLE
-#include "../../../include/hwares/scan_mainboard.h"
+#include "hwares/scan_mainboard.h"
 
 namespace bscan {
 

@@ -1,4 +1,4 @@
-#include "../../../include/hwares/scan_battery.h"
+#include "hwares/scan_battery.h"
 
 namespace bscan {
 

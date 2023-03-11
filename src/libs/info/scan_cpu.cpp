@@ -2,7 +2,7 @@
 #include "../../../include/hwares/scan_cpuid.h"
 #include <string>
 #include <vector>
-#include "../../../include/platform.h"
+#include "platform.h"
 
 namespace bscan {
 
