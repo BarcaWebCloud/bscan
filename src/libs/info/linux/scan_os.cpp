@@ -1,4 +1,4 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 
 #ifdef BSCAN_UNIX
 
@@ -7,8 +7,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "swares/scan_os.h"
-#include "utils/stringutils.h"
+#include "../../../include/swares/scan_os.h"
+#include "../../../include/utils/stringutils.h"
 
 namespace bscan {
 

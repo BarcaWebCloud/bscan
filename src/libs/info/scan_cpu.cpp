@@ -1,8 +1,8 @@
-#include "hwares/scan_cpu.h"
-#include "hwares/scan_cpuid.h"
+#include "../../../include/hwares/scan_cpu.h"
+#include "../../../include/hwares/scan_cpuid.h"
 #include <string>
 #include <vector>
-#include "platform.h"
+#include "../../../include/platform.h"
 
 namespace bscan {
 

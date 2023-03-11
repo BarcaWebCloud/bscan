@@ -3,14 +3,14 @@
 #include <vector>
 
 #if defined(unix) || defined(__unix) || defined(__unix__)
-#include "utils/subprocess.h"
+#include "../../../include/utils/subprocess.h"
 #elif defined(__APPLE__)
 #elif defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)
 #include "WMIwrapper.h"
 #pragma comment(lib, "wbemuuid.lib")
 #endif
 
-#include "hwares/scan_gpu.h"
+#include "../../../include/hwares/scan_gpu.h"
 
 namespace bscan {
 

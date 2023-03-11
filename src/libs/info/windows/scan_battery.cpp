@@ -1,10 +1,10 @@
 #include <iostream>
-#include "platform.h"
+#include "../../../include/platform.h"
 
 #ifdef BSCAN_WINDOWS
 
-#include "WMIwrapper.h"
-#include "hwares/scan_battery.h"
+#include "../../../include/WMIwrapper.h"
+#include "../../../include/hwares/scan_battery.h"
 
 namespace bscan {
 

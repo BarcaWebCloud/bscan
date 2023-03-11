@@ -1,6 +1,7 @@
 #include <napi.h>
 #include <string>
-#include "bscan.h"
+#include "../../../include/hwares/hwares.h"
+#include "../../../include/swares/swares.h"
 
 Napi::String cpu(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();

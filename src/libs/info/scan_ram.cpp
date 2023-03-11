@@ -8,9 +8,9 @@
 #elif defined(_WIN32) || defined(_WIN64)
 #include <Windows.h>
 
-#include "WMIwrapper.h"
+#include "../../../include/WMIwrapper.h"
 #endif
-#include "hwares/scan_ram.h"
+#include "../../../include/hwares/scan_ram.h"
 
 namespace bscan {
 

@@ -1,11 +1,11 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_WINDOWS
 #include <Windows.h>
 #include <string>
 #include <vector>
-#include "WMIwrapper.h"
-#include "hwares/scan_ram.h"
-#include "utils/stringutils.h"
+#include "../../../include/WMIwrapper.h"
+#include "../../../include/hwares/scan_ram.h"
+#include "../../../include/utils/stringutils.h"
 
 namespace bscan {
 

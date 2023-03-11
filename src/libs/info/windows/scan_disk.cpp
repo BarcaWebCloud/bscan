@@ -1,9 +1,9 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_WINDOWS
 #include <filesystem>
-#include "WMIwrapper.h"
-#include "hwares/disk.h"
-#include "utils/stringutils.h"
+#include "../../../include/WMIwrapper.h"
+#include "../../../include/hwares/disk.h"
+#include "../../../include/utils/stringutils.h"
 
 namespace bscan {
 

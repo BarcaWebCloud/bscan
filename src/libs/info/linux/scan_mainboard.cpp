@@ -1,7 +1,7 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_UNIX
 #include <fstream>
-#include "hwares/scan_mainboard.h"
+#include "../../../include/hwares/scan_mainboard.h"
 
 namespace bscan {
 

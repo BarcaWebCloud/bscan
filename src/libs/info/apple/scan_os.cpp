@@ -1,9 +1,9 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_APPLE
 #include <sys/sysctl.h>
 #include <sstream>
 #include <string>
-#include "hwares/scan_os.h"
+#include "../../../include/hwares/scan_os.h"
 
 namespace bscan {
 

@@ -1,4 +1,4 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_UNIX
 #include <algorithm>
 #include <fstream>
@@ -7,8 +7,8 @@
 #include <string>
 #include <vector>
 
-#include "hwares/scan_cpu.h"
-#include "utils/stringutils.h"
+#include "../../../include/hwares/scan_cpu.h"
+#include "../../../include/utils/stringutils.h"
 
 #if defined(BSCAN_X86)
 #include "hwares/scan_cpuid.h"

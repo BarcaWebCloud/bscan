@@ -1,10 +1,10 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_WINDOWS
 #include <string>
 #include <vector>
-#include "WMIwrapper.h"
+#include "../../../include/WMIwrapper.h"
 #pragma comment(lib, "wbemuuid.lib")
-#include "hwares/scan_gpu.h"
+#include "../../../include/hwares/scan_gpu.h"
 
 namespace bscan {
 

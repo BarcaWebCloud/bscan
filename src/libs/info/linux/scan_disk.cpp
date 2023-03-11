@@ -1,9 +1,9 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_UNIX
 #include <filesystem>
 #include <fstream>
-#include "hwares/scan_disk.h"
-#include "utils/stringutils.h"
+#include "../../../include/hwares/scan_disk.h"
+#include "../../../include/utils/stringutils.h"
 
 namespace bscan {
 

@@ -1,8 +1,8 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_UNIX
 #include <filesystem>
 #include <fstream>
-#include "hwares/scan_battery.h"
+#include "../../../include/hwares/scan_battery.h"
 
 namespace bscan {
 

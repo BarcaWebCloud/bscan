@@ -1,8 +1,8 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 #ifdef BSCAN_WINDOWS
 #include <string>
-#include "WMIwrapper.h"
-#include "hwares/scan_mainboard.h"
+#include "../../../include/WMIwrapper.h"
+#include "../../../include/hwares/scan_mainboard.h"
 
 namespace bscan {
 

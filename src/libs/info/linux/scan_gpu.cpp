@@ -1,4 +1,4 @@
-#include "platform.h"
+#include "../../../include/platform.h"
 
 #ifdef BSCAN_UNIX
 
@@ -6,8 +6,8 @@
 #include <string>
 #include <vector>
 
-#include "hwares/scan_gpu.h"
-#include "utils/subprocess.h"
+#include "../../../include/hwares/scan_gpu.h"
+#include "../../../include/utils/subprocess.h"
 
 namespace bscan {
 
