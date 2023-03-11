@@ -5,5 +5,4 @@
 #include "hwares/scan_disk.h"
 #include "hwares/scan_gpu.h"
 #include "hwares/scan_mainboard.h"
-#include "swares/scan_os.h"
 #include "hwares/scan_ram.h"
