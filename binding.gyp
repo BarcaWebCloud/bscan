@@ -4,6 +4,7 @@
       "target_name": "bscan",
       "cflags!": [ "-fno-exceptions" ],
       "cflags_cc!": [ "-fno-exceptions",  "-std=c++17" ],
+      "cflags_cc": [ "-std=c++17" ],
       # sources:  arquivoc C/C++  a ser compilados
       "sources": [
         "./src/libs/info/scan_battery.cpp",
