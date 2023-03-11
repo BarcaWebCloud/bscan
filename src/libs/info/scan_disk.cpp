@@ -1,5 +1,5 @@
-#include "../../../include/hwares/scan_disk.h"
-#include "../../../include/utils/stringutils.h"
+#include "hwares/scan_disk.h"
+#include "utils/stringutils.h"
 
 namespace bscan {
 

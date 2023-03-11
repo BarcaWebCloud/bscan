@@ -1,4 +1,4 @@
-#include "include/platform.h"
+#include "platform.h"
 #ifdef BSCAN_APPLE
 #include <filesystem>
 #include <fstream>
