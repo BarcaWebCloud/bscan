@@ -16,7 +16,7 @@ Napi::String ram(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::RAM ram;
 
-	std::string result = ram.totalSize_Bytes();
+	std::string result = ram.getModel();
 
 	return Napi::String::New(env, result);
 }
@@ -44,7 +44,7 @@ Napi::String os(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::OS os;
 
-	std::string result = "SO: " + os.getFullName()+"\nDistribuição: "+ os.getName() + "\nVersão: " + so.getVersion() + "\nKernel: " + so.getKernel();
+	std::string result = "SO: " + os.getFullName()+"\nDistribuição: "+ os.getName() + "\nVersão: " + os.getVersion() + "\nKernel: " + os.getKernel();
 
 	return Napi::String::New(env, result);
 }
