@@ -46,11 +46,6 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       ```
   2. Now run `make all` or `make bscan` to compile the main program
 
-      ```shell
-      cd bscan
-      cmake CMakeLists.txt
-      ```
-
 
 #### Build module bscan in your environment
   
