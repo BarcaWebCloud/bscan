@@ -54,27 +54,27 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 	// set a key on `exports`object
 	exports.Set(
 		Napi::String::New(env, "cpu"),
-		Napi::Function::New(env, cpu),
+		Napi::Function::New(env, cpu)
 	);
 
   exports.Set(
 		Napi::String::New(env, "mainboard"),
-		Napi::Function::New(env, mainboard),
+		Napi::Function::New(env, mainboard)
 	);
 
   exports.Set(
 		Napi::String::New(env, "ram"),
-		Napi::Function::New(env, ram),
+		Napi::Function::New(env, ram)
 	);
   
   exports.Set(
 		Napi::String::New(env, "os"),
-		Napi::Function::New(env, os),
+		Napi::Function::New(env, os)
 	);
   
   exports.Set(
 		Napi::String::New(env, "gpu"),
-		Napi::Function::New(env, gpu),
+		Napi::Function::New(env, gpu)
 	);
 
 	return exports;
