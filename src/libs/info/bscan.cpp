@@ -7,7 +7,7 @@ Napi::String cpu(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::CPU cpu;
 
-	std::string result = "Modelo: \n"+cpu.getModelName();
+	std::string result = "Fabricante: " + cpu.vendor() +"\nModelo: \n"+cpu.getModelName();
 
 	return Napi::String::New(env, result);
 }
@@ -21,11 +21,30 @@ Napi::String ram(const Napi::CallbackInfo& info) {
 	return Napi::String::New(env, result);
 }
 
+Napi::String gpu(const Napi::CallbackInfo& info) {
+	Napi::Env env = info.Env();
+  bscan::GPU gpu;
+
+	std::string result = "Fabricante: " + gpu.vendor()+"\nModelo: "+gpu.name();
+
+	return Napi::String::New(env, result);
+}
+
 Napi::String mainboard(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::MainBoard mo;
 
-	std::string result = mo.name();
+	std::string result = "Fabricante: " + mo.vendor() +"\nModelo: " + mo.name() + "\nVersão: " + mo.version();
+
+	return Napi::String::New(env, result);
+}
+
+
+Napi::String os(const Napi::CallbackInfo& info) {
+	Napi::Env env = info.Env();
+  bscan::OS os;
+
+	std::string result = "SO: " + os.getFullName()+"\nDistribuição: "+ os.getName() + "\nVersão: " + so.getVersion() + "\nKernel: " + so.getKernel();
 
 	return Napi::String::New(env, result);
 }
@@ -36,10 +55,26 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 	exports.Set(
 		Napi::String::New(env, "cpu"),
 		Napi::Function::New(env, cpu),
-    Napi::String::New(env, "mainboard"),
+	);
+
+  exports.Set(
+		Napi::String::New(env, "mainboard"),
 		Napi::Function::New(env, mainboard),
-    Napi::String::New(env, "ram"),
-		Napi::Function::New(env, ram)
+	);
+
+  exports.Set(
+		Napi::String::New(env, "ram"),
+		Napi::Function::New(env, ram),
+	);
+  
+  exports.Set(
+		Napi::String::New(env, "os"),
+		Napi::Function::New(env, os),
+	);
+  
+  exports.Set(
+		Napi::String::New(env, "gpu"),
+		Napi::Function::New(env, gpu),
 	);
 
 	return exports;

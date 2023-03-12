@@ -10,8 +10,8 @@
 ## Minimum Requirements
 
 - [Python](https://www.python.org/) **v3.1** or greater
-- [C++](https://cplusplus.com/) **v17** or later
-- [Node.js](https://nodejs.org/) **v8** or later
+- [C++](https://cplusplus.com/) **v17** or greater
+- [Node.js](https://nodejs.org/) **v8** or greater
 
 
 ## Obtaining BScan
@@ -31,10 +31,10 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
   1. [Install Node.js](https://nodejs.org/) >=8.0.0 (16.11 recommended)
   2. [Install Python](https://www.python.org/downloads/) >=2.6.0 (3.9.0 recommended)
   3. Clone the BScan repository:
-
-    ```shell
-    git clone https://github.com/BarcaWebCloud/bscan.git
-    ```
+    
+      ```sh
+      git clone https://github.com/BarcaWebCloud/bscan.git
+      ```
 
 #### Build executable bscan in your environment
 
