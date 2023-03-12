@@ -7,7 +7,7 @@ Napi::String cpu(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::CPU cpu;
 
-	std::string result = "Fabricante: " + cpu.vendor() +"\nModelo: \n"+cpu.getModelName();
+	std::string result = "Fabricante: " + cpu.vendor() +"\nModelo: "+cpu.getModelName();
 
 	return Napi::String::New(env, result);
 }
@@ -25,7 +25,7 @@ Napi::String gpu(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::GPU gpu;
 
-	std::string result = "Fabricante: " + gpu.vendor()+"\nModelo: "+gpu.name();
+	std::string result = "Fabricante: " + gpu.getVendor()+"\nModelo: "+gpu.getName();
 
 	return Napi::String::New(env, result);
 }
@@ -34,7 +34,7 @@ Napi::String mainboard(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::MainBoard mo;
 
-	std::string result = "Fabricante: " + mo.vendor() +"\nModelo: " + mo.name() + "\nVersão: " + mo.version();
+	std::string result = "Fabricante: " + mo.getVendor() +"\nModelo: " + mo.getName() + "\nVersão: " + mo.getVersion();
 
 	return Napi::String::New(env, result);
 }
