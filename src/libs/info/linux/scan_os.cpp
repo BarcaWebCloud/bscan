@@ -83,7 +83,7 @@ namespace bscan {
   }
   
   std::string OS::getUptime() {
-    std::string command("uptime -p");
+    std::string command("uptime | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/' ");
     std::string output = exec(command);
     if (!output) {
       return "Linux <unknown uptime>";
