@@ -9,6 +9,10 @@
     "hardware",
     "software",
     "scan-dev",
+    "bscan",
+    "bwc",
+    "bwc-modules",
+    "bwc-tools",
     "scan-tool"
   ],
   "author": "BWC @BarcaWebCloud <opensource@barca.com>",
