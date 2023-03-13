@@ -79,7 +79,15 @@ namespace bscan {
     if (!output) {
       return "Linux <unknown users with home directory>";
     }
-    // output.close();
+    return std::string(output);
+  }
+  
+  std::string OS::getUptime() {
+    std::string command("uptime -p");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown uptime>";
+    }
     return std::string(output);
   }
 
