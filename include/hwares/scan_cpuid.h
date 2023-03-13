@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../platform.h"
+#include "platform.h"
 
 #if defined(BSCAN_X86)
 

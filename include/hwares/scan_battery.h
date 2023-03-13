@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "../platform.h"
+#include "platform.h"
 
 namespace bscan {
 
