@@ -65,32 +65,22 @@ namespace bscan {
     if (!stream) {
       return "Linux <unknown hostname>";
     }
-    while (getline(stream, line)) {
-      if (starts_with(line, "DISTRIB_DESCRIPTION")) {
-        line = line.substr(line.find('=') + 1, line.length());
-        // remove \" at begin and end of the substring result
-        return {line.begin() + 1, line.end() - 1};
-      }
-    }
+    getline(stream, line);
     stream.close();
-    return "Linux <unknown hostname>";
+
+    return std::string(line);
   }
 
   std::string OS::getDomainName() {
     std::string line;
     std::ifstream stream("/proc/sys/kernel/domainname");
     if (!stream) {
-      return "Linux <unknown domainname>";
+      return "Linux <unknown domain name>";
     }
-    while (getline(stream, line)) {
-      if (starts_with(line, "DISTRIB_DESCRIPTION")) {
-        line = line.substr(line.find('=') + 1, line.length());
-        // remove \" at begin and end of the substring result
-        return {line.begin() + 1, line.end() - 1};
-      }
-    }
+    getline(stream, line);
     stream.close();
-    return "Linux <unknown domainname>";
+
+    return std::string(line);
   }
 
   std::string OS::getKernel() {
