@@ -9,6 +9,7 @@
 #include <string>
 #include "swares/scan_os.h"
 #include "utils/stringutils.h"
+#include "utils/subprocess.h"
 
 namespace bscan {
 
@@ -69,6 +70,17 @@ namespace bscan {
     stream.close();
 
     return std::string(line);
+  }
+
+
+  std::string OS::getUsersWithHome() {
+    std::string command("getent passwd | grep '/home' | cut -d: -f1 | awk 'FNR>=2'");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown users with home directory>";
+    }
+    // output.close();
+    return std::string(output);
   }
 
   std::string OS::getDomainName() {
