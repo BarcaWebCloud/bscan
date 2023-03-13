@@ -44,7 +44,7 @@ Napi::String os(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
   bscan::OS os;
 
-	std::string result = "SO: " + os.getFullName()+"\nDistribuição: "+ os.getName() + "\nVersão: " + os.getVersion() + "\nKernel: " + os.getKernel();
+	std::string result = "SO: " + os.getFullName()+"\nDistribuição: "+ os.getName() + "\nVersão: " + os.getVersion() + "\nKernel: " + os.getKernel() + "\nHostname: " + os.getHostname() + "\nDomain Name: " + os.getDomainName();
 
 	return Napi::String::New(env, result);
 }
