@@ -100,6 +100,15 @@ namespace bscan {
     return std::string(output);
   }
 
+  std::string OS::getUser() {
+    std::string command("whoami");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown user>";
+    }
+    return std::string(output);
+  }
+
   std::string OS::getDomainName() {
     std::string line;
     std::ifstream stream("/proc/sys/kernel/domainname");
