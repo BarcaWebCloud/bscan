@@ -91,6 +91,15 @@ namespace bscan {
     return std::string(output);
   }
 
+  std::string OS::getPkgs() {
+    std::string command("apt-cache --all-names pkgnames");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown pkgs installed>";
+    }
+    return std::string(output);
+  }
+
   std::string OS::getDomainName() {
     std::string line;
     std::ifstream stream("/proc/sys/kernel/domainname");

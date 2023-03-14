@@ -15,6 +15,7 @@ namespace bscan {
     std::string hostname();
     std::string domainname();
     std::string uptime();
+    std::string pkgs();
     std::string kernel();
     [[nodiscard]] bool is32bit() const;
     [[nodiscard]] bool is64bit() const;
@@ -27,6 +28,7 @@ namespace bscan {
     static std::string getHostname();
     static std::string getDomainName();
     static std::string getUptime();
+    static std::string getPkgs();
     static std::string getKernel();
     static bool getIs32bit();
     static bool getIs64bit();
@@ -40,6 +42,7 @@ namespace bscan {
     std::string _hostname;
     std::string _domainname;
     std::string _uptime;
+    std::string _pkgs;
     std::string _kernel;
     bool _32bit = false;
     bool _64bit = false;
