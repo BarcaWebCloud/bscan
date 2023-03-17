@@ -1,7 +1,9 @@
 /************************************************************************************
       
- *      Copyright (C) 2021 - 2023, Barca Web Cloud, Inc. 
+ *                 Copyright (C) 2021 - 2023, Barca, Inc. 
+ 
  *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
+ *    Project: BSCAN to scanner MotherBoards. CPU, Memory Ram, SO and more
  
  * This software is licensed as described in the file COPYING, which                    
  * you should have received as part of this distribution. The terms                     
@@ -77,7 +79,7 @@ namespace bscan {
       return "Windows <unknown version>";
     }
 
-    std::stringstream os;
+    std::string stream os;
     os << "Microsoft ";
     if (osvi.dwMajorVersion >= 6) {
       if (osvi.dwMajorVersion == 10) {
