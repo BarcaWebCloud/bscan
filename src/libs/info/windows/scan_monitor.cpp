@@ -17,40 +17,47 @@
  * KIND, either express or implied.                                                      
  *
  **************************************************************************************/
-#pragma once
-
-#include <string>
-#include <vector>
-
 #include "platform.h"
+#ifdef BSCAN_WINDOWS
+#include "hwares/scan_monitor.h"
+#include <iostream>   
+#include <string>  
+#include <windows.h>    
+#include <stdio.h>  
+#include <vector>
+#include <cstdio>
+#include <stdlib.h>  
 
 namespace bscan {
 
-  class MainBoard {
-   public:
-    MainBoard() = default;
-    MainBoard(std::string vendor, std::string product, std::string version, std::string serialNumber);
-    ~MainBoard() = default;
+  std::vector<Monitor> getAllMonitors() {
+    MONITORINFO target = { sizeof(target) };
+    target.cbSize = sizeof(MONITORINFO);
+    HMONITOR hMon = MonitorFromWindow(GetDesktopWindow(), MONITOR_DEFAULTTOPRIMARY);
+    GetMonitorInfo(hMon, &target);
+    DISPLAY_DEVICE dd;
+    ZeroMemory(&dd, sizeof(dd));
+    dd.cb = sizeof(dd);
 
-    std::string& vendor();
-    std::string& name();
-    std::string& version();
-    std::string& serialNumber();
+    std::vector<Monitor> monitors;
 
-    static std::string getVendor();
-    static std::string getName();
-    static std::string getVersion();
-    static std::string getSerialNumber();
+    for (int i = 0; EnumDisplayDevices(NULL, i, &dd, 0); i++) {
+      monitors.push_back(Monitor());
 
-   private:
-    std::string _vendor;
-    std::string _name;
-    std::string _version;
-    std::string _serialNumber;
+      DISPLAY_DEVICE dd2;
+      ZeroMemory(&dd2, sizeof(dd2));
+      dd2.cb = sizeof(dd2);
+      EnumDisplayDevices(dd.DeviceName, 0, &dd2, 0);
+      
+      monitors.back()._model = dd2.DeviceID;
+      monitors.back()._key = dd2.DeviceKey;
+      monitors.back()._name = dd2.DeviceName;
+    }
 
-  #ifdef BSCAN_UNIX
-    static std::vector<std::string> _candidates;
-  #endif
-  };
+
+    return monitors;
+  }
 
 };
+
+#endif  // END BSCAN_WINDOWS

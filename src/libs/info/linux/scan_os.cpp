@@ -1,3 +1,22 @@
+/************************************************************************************
+      
+ *                 Copyright (C) 2021 - 2023, Barca, Inc. 
+ 
+ *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
+ *    Project: BSCAN to scanner MotherBoards. CPU, Memory Ram, SO and more
+ 
+ * This software is licensed as described in the file COPYING, which                    
+ * you should have received as part of this distribution. The terms                     
+ * are also available at https://project-barca.github.io/docs/copyright.html.           
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute and/or sell             
+ * copies of the Software, and permit persons to whom the Software is                   
+ * furnished to do so, under the terms of the COPYING file.                             
+ *
+ * This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY            
+ * KIND, either express or implied.                                                      
+ *
+ **************************************************************************************/
 #include "platform.h"
 
 #ifdef BSCAN_UNIX
@@ -72,14 +91,39 @@ namespace bscan {
     return std::string(line);
   }
 
-
   std::string OS::getUsersWithHome() {
     std::string command("getent passwd | grep '/home' | cut -d: -f1 | awk 'FNR>=2'");
     std::string output = exec(command);
     if (!output) {
       return "Linux <unknown users with home directory>";
     }
-    // output.close();
+    return std::string(output);
+  }
+  
+  std::string OS::getUptime() {
+    std::string command("uptime | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/' ");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown uptime>";
+    }
+    return std::string(output);
+  }
+
+  std::string OS::getPkgs() {
+    std::string command("apt-cache --all-names pkgnames");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown pkgs installed>";
+    }
+    return std::string(output);
+  }
+
+  std::string OS::getUser() {
+    std::string command("whoami");
+    std::string output = exec(command);
+    if (!output) {
+      return "Linux <unknown user>";
+    }
     return std::string(output);
   }
 
@@ -88,6 +132,18 @@ namespace bscan {
     std::ifstream stream("/proc/sys/kernel/domainname");
     if (!stream) {
       return "Linux <unknown domain name>";
+    }
+    getline(stream, line);
+    stream.close();
+
+    return std::string(line);
+  }
+
+  std::string OS::getLog() {
+    std::string line;
+    std::ifstream stream("/var/log/boot.log");
+    if (!stream) {
+      return "Linux <unknown hostname>";
     }
     getline(stream, line);
     stream.close();

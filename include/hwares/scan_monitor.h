@@ -22,35 +22,26 @@
 #include <string>
 #include <vector>
 
-#include "platform.h"
-
 namespace bscan {
 
-  class MainBoard {
-   public:
-    MainBoard() = default;
-    MainBoard(std::string vendor, std::string product, std::string version, std::string serialNumber);
-    ~MainBoard() = default;
+class Monitor {
+  friend std::vector<Monitor> getAllMonitors();
 
-    std::string& vendor();
-    std::string& name();
-    std::string& version();
-    std::string& serialNumber();
+  public:
+    Monitor(std::string& model, std::string& key, std::string& name);
+    ~Monitor() = default;
 
-    static std::string getVendor();
-    static std::string getName();
-    static std::string getVersion();
-    static std::string getSerialNumber();
+    [[nodiscard]] const std::string& model() const;
+    [[nodiscard]] const std::string& key() const;
+    [[nodiscard]] const std::string& name() const;
 
-   private:
-    std::string _vendor;
+  private:
+    Monitor() = default;
+    std::string _model;
+    std::string _key;
     std::string _name;
-    std::string _version;
-    std::string _serialNumber;
-
-  #ifdef BSCAN_UNIX
-    static std::vector<std::string> _candidates;
-  #endif
   };
+
+  std::vector<Monitor> getAllMonitors();
 
 };
