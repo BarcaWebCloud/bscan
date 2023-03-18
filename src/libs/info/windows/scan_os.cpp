@@ -23,6 +23,8 @@
 
 #include <Windows.h>
 #include <winternl.h>
+#include <iostream>
+#include <winsock.h>
 
 #include <sstream>
 #include <string>
@@ -258,6 +260,21 @@ namespace bscan {
 
   std::string OS::getName() { return "Windows"; }
   std::string OS::getVersion() { return "<unknown>"; }
+
+  std::string OS::getHostname() {
+    WSADATA wsa_data;
+    if (WSAStartup(MAKEWORD(2, 0), &wsa_data) != 0){
+      return std::string("WSAStartup() failed");
+    }
+    
+    char hostname[256] ;
+    int rc  = gethostname(hostname, sizeof hostname);
+    
+    WSACleanup();
+
+    return std::string(hostname);
+  }
+
   std::string OS::getKernel() { return "<unknown>"; }
 
   bool OS::getIs64bit() {
