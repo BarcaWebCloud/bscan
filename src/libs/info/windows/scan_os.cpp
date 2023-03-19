@@ -34,11 +34,7 @@
 #include <sstream>
 #include <string>
 #define STATUS_SUCCESS 0x00000000
-static const int kMaxInfoBuffer = 256;
-#define  GBYTES  1073741824
-#define  MBYTES  1048576
-#define  KBYTES  1024  
-#define  DKBYTES 1024.0
+
 #include "swares/scan_os.h"
 
 namespace bscan {
@@ -286,7 +282,6 @@ namespace bscan {
 
     return std::string(os_name);
   }
-
 
   std::string OS::getVersion() { 
     OSVERSIONINFO version = {sizeof(OSVERSIONINFO)};  
