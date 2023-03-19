@@ -23,6 +23,7 @@
 #include <cstring>
 #include <locale>
 #include <string>
+#include <numeric>
 #include <vector>
 
 /**
@@ -189,3 +190,19 @@ inline bool starts_with(const string_type& str, const prefix_type& prefix) {
   return str.rfind(prefix, 0) == 0;
 #endif
 }
+
+/**
+ * Insert in the string
+ * @return
+ */
+struct between_string {
+  std::string sep;
+  infix(const std::string& sep) : sep(sep) {}
+  std::string operator()(const std::string& lhs, const std::string& rhs) {
+    std::string rz(lhs);
+    if(!lhs.empty() && !rhs.empty())
+      rz += sep;
+    rz += rhs;
+    return rz;
+  }
+};
