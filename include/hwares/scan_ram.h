@@ -33,6 +33,8 @@ namespace bscan {
     std::string& name();
     std::string& model();
     std::string& serialNumber();
+    std::string& total();
+    std::string& free();
     int64_t totalSize_Bytes();
     int64_t availableMemory();
 
@@ -40,6 +42,8 @@ namespace bscan {
     static std::string getName();
     static std::string getModel();
     static std::string getSerialNumber();
+    static std::string getTotal();
+    static std::string getFree();
     static int64_t getTotalSize_Bytes();
     static int64_t getAvailableMemory();
 
@@ -47,6 +51,8 @@ namespace bscan {
     std::string _vendor;
     std::string _name;
     std::string _model;
+    std::string _total;
+    std::string _free;
     std::string _serialNumber;
     int64_t _totalSize_Bytes = -1;
     int64_t _totalFreeSize_Bytes = -1;
