@@ -304,6 +304,16 @@ namespace bscan {
     return std::string(hostname);
   }
 
+  std::string OS::getUser() {
+    char buffer[256] = "";
+    DWORD size = sizeof(buffer);
+    if (GetCurrentHwProfile(buffer, &size)) {
+      return std::string(buffer);
+    }
+
+    return "<unknown>";
+  }
+
   std::string OS::getKernel() { return "<unknown>"; }
 
   bool OS::getIs64bit() {
