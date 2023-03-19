@@ -23,6 +23,13 @@
 
 #include <Windows.h>
 #include <winternl.h>
+#include <iostream>
+#include <winsock.h>
+
+#include <stdio.h>  
+#include <vector>
+#include <cstdio>
+#include <stdlib.h>  
 
 #include <sstream>
 #include <string>
@@ -256,8 +263,47 @@ namespace bscan {
     return os.str();
   }
 
-  std::string OS::getName() { return "Windows"; }
-  std::string OS::getVersion() { return "<unknown>"; }
+  std::string OS::getName() { 
+    OSVERSIONINFO osver = {sizeof(OSVERSIONINFO)};  
+    GetVersionEx(&osver);  
+    std::string os_name;  
+    if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 0)  
+        os_name = "Windows 2000";  
+    else if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 1)  
+        os_name = "Windows XP";  
+    else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 0)  
+        os_name = "Windows 2003";  
+    else if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 2)  
+        os_name = "windows vista";  
+    else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 1)  
+        os_name = "windows 7";  
+    else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 2)  
+        os_name = "windows 10";
+
+    return std::string(os_name);
+  }
+
+  std::string OS::getVersion() { 
+    OSVERSIONINFO version = {sizeof(OSVERSIONINFO)};  
+    GetVersionEx(&version);
+    
+    return std::string(version.dwMajorVersion + '.' + version.dwMinorVersion);
+  }
+
+  std::string OS::getHostname() {
+    WSADATA wsa_data;
+    if (WSAStartup(MAKEWORD(2, 0), &wsa_data) != 0){
+      return std::string("WSAStartup() failed");
+    }
+    
+    char hostname[256];
+    int rc  = gethostname(hostname, sizeof hostname);
+    
+    WSACleanup();
+
+    return std::string(hostname);
+  }
+
   std::string OS::getKernel() { return "<unknown>"; }
 
   bool OS::getIs64bit() {

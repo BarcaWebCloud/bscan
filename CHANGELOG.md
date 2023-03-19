@@ -2,12 +2,29 @@
 
 # Changelog
 
-## v0.1.1
+## v0.1.2
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
 
+## v0.1.2 [2023-03-18]
+
+### Features
+
+- [#8](https://github.com/BarcaWebCloud/bscan/pull/8): New features for Windows OS. Gratitude @ahsouza!
+- [#7](https://github.com/BarcaWebCloud/bscan/pull/7): New features for Windows & Linux OS. Gratitude @ahsouza!
+
+
+### Release Notes
+
+
+Add features for  **Windows** and **Linux** platforms:
+
+- **Collect Information About Monitors** [only Windows on moment]
+- **Get Total Memory and Free** [only Windows on moment]
+- **Get Packages Installed into the System** [ Linux ]
+- **Get Hostname, Name & Version into the System** [Windows | Linux]
 
 
 ## v0.1.1 [2023-03-13]
