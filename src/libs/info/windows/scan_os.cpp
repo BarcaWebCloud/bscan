@@ -313,6 +313,40 @@ namespace bscan {
     return "<unknown>";
   }
 
+  std::string OS::getEnvVariables() {
+    // list of possible environment variables
+    const char* env_vars[14] = {
+      "HOMEDRIVE",
+      "HOMEPATH",
+      "APPDATA",
+      "COMPUTERNAME",
+      "TMP",
+      "SystemRoot",
+      "SystemDrive",
+      "windir",
+      "USERNAME",
+      "USERPROFILE",
+      "LOCALAPPDATA",
+      "LOGONSERVER",
+      "OneDrive",
+      "PATH"
+    };
+
+    std::string env_res = "";
+    for (int i = 0; i < 14; i++) {
+      //Get the current path form the env variable $PATH
+      const char* content = getenv(env_vars[i]); 
+      //If variable exists acumulate on 'env_res'
+      if (content != NULL){ 
+        env_res+= std::string(env_vars[i]) + std::string("=") + std::string(content) + std::string("\n");
+      }
+      else{
+        std::cout << env_vars[i] << " not found!";
+      }
+    }
+    return std::string(env_res);
+  }
+
   std::string OS::getKernel() { return "<unknown>"; }
 
   bool OS::getIs64bit() {
