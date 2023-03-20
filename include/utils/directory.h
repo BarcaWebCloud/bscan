@@ -28,6 +28,7 @@
 #define getDir getcwd
 #endif
 #include<iostream>
+#include<dirent.h>
 
 std::string getCurrentDir(void) {
   char buff[FILENAME_MAX];
@@ -35,4 +36,20 @@ std::string getCurrentDir(void) {
   std::string currentDir(buff);
 
   return currentDir;
+}
+
+std::string getFoldersAndFilesInCurrentDir(void) {
+  struct dirent *d;
+  DIR *dr;
+  dr = opendir(".");
+  std::string res;
+  if(dr!=NULL) {
+    for(d=readdir(dr); d!=NULL; d=readdir(dr)) {
+      res+= std::string(d->d_name) + std::string("\n");
+    }
+    closedir(dr);
+  }
+  else
+    return "<null>";
+  return res;
 }
