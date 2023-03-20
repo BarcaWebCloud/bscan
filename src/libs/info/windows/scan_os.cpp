@@ -25,8 +25,7 @@
 #include <winternl.h>
 #include <iostream>
 #include <winsock.h>
-
-#include <stdio.h>  
+#include <stdio.h>
 #include <vector>
 #include <cstdio>
 #include <stdlib.h>  

@@ -197,7 +197,7 @@ inline bool starts_with(const string_type& str, const prefix_type& prefix) {
  */
 struct between_string {
   std::string sep;
-  infix(const std::string& sep) : sep(sep) {}
+  between_string(const std::string& sep) : sep(sep) {}
   std::string operator()(const std::string& lhs, const std::string& rhs) {
     std::string rz(lhs);
     if(!lhs.empty() && !rhs.empty())
