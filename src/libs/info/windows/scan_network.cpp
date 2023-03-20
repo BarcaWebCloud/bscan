@@ -26,7 +26,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "swares/scan_os.h"
+#include "swares/scan_network.h"
 #include "utils/stringutils.h"
 #include <iostream>
 #include <winsock.h>
@@ -39,8 +39,12 @@ namespace bscan {
   std::string NET::enabledIPForward() {
     return "<unkenow>";
   }
+  std::vector<NET> getAllAdapters() {
+    return "<unkenow>";
+  }
 
-  std::string NET::getAllAdapters() {
+  // Private IP Receiver List
+  std::string NET::getPrivateIP() {
     int count = 0;
 	  string ips;
     char hostname[80];
@@ -65,10 +69,6 @@ namespace bscan {
     } else {
       return "<unknow>"
     }
-  }
-
-  std::string NET::getPrivateIP() {
-    return "<unkenow>";
   }
 
   std::string NET::getPublicIP() {

@@ -28,22 +28,27 @@ class NET {
   friend std::vector<NET> getAllAdapters();
 
  public:
-  NET(std::string& name, std::string& model, std::string& mask, std::string& ipAddress, std::string& gateway);
+  NET(std::string& name, std::string& model, std::string& mask, std::string& ipAddressPrivate, std::string& ipAddressPublic, std::string& gateway);
   ~NET() = default;
 
   [[nodiscard]] const std::string& name() const;
   [[nodiscard]] const std::string& model() const;
   [[nodiscard]] const std::string& mask() const;
-  [[nodiscard]] const std::string& ipAddress() const;
+  [[nodiscard]] const std::string& ipAddressPrivate() const;
+  [[nodiscard]] const std::string& ipAddressPublic() const;
   [[nodiscard]] const std::string& gateway() const;
+  std::string& privateIP();
+
+  static std::string getPrivateIP();
 
  private:
-  NET() = default;
   std::string _name;
   std::string _model;
   std::string _mask;
-  std::string _ipAddress;
+  std::string _ipAddressPrivate;
+  std::string _ipAddressPublic;
   std::string _gateway;
+  std::string _privateIP;
 };
 
 std::vector<NET> getAllAdapters();
