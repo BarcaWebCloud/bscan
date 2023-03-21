@@ -6,19 +6,23 @@
 1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, GPU,  Disk, Motheboard...
 2. [Softwares](/docs/swares/intro.md) get information about operating system and installed applications
 
+<br>
+<br>
 
 ## Requirements
 
 It is necessary that you have installed the programs below to use **BSCAN** in developer mode.
 
 ### To Linux
+
 - [Python](https://www.python.org/) **v3.1** or greater
 - [C++](https://cplusplus.com/) **v17** or greater
 - [Node.js](https://nodejs.org/) **v8** or greater
 
 ### To Windows
+
 - [Python](https://www.python.org/) **v3.1** or greater
-- [MinGW](https://nuwen.net/mingw.html) **v17.1** or greater
+- [MinGW](https://nuwen.net/mingw.html) **v11.2** or greater
 - [Node.js](https://nodejs.org/) **v8** or greater
 
 <br>
