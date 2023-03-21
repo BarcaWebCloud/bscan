@@ -36,7 +36,9 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       git clone https://github.com/BarcaWebCloud/bscan.git
       ```
 
-#### Build executable bscan in your environment
+### Build executable bscan in your environment
+
+#### To Linux
 
   1. Run `cmake CMakeLists.txt` from the source directory
 
@@ -46,8 +48,20 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       ```
   2. Now run `make all` or `make bscan` to compile the main program
 
+#### To Windows
 
-#### Build module bscan in your environment
+We can view a list of *Makefile* generators with the command: `cmake -G`.
+Here shows an example to use the **MinGW** *Makefile* generator:
+
+  1. Run `cmake -G "MinGW Makefiles" <file-cmake>` from the source directory
+
+      ```shell
+      cd bscan
+      cmake -G "MinGW Makefiles" CMakeLists.txt
+      ```
+  2. Now run `make all` or `make bscan` to compile the main program
+
+### Build module bscan in your environment
   
   1. Install required `npm` packages 
       ```shell
@@ -98,3 +112,4 @@ There are many ways to contribute:
 - [Review code and feature proposals](https://github.com/BarcaWebCloud/bscan/pulls)
 - Answer questions and discuss here on github and on the [Community Site](https://opensource.barca.com/)
 - [Contribute plugins](CONTRIBUTING.md)
+
