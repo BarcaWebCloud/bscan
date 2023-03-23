@@ -24,14 +24,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(bscan VERSION 0.1.3 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
 
-message(STATUS "cmake version ${CMAKE_VERSION}")
-message(STATUS "${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
+message(STATUS "cmake version ${CMAKE_VERSION}\n\nproject: ${PROJECT_NAME}\nversion: ${PROJECT_VERSION}\ndescription: ${PROJECT_DESCRIPTION}\n${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
 
 # UNIX, LINUX, WIN32, WINDOWS_PHONE, APPLE, ANDROID, IOS and more...
 if(UNIX)
   # minimum version cmake on linux
   cmake_minimum_required (VERSION 3.18)
-  message("BSCAN To Linux")
+  message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(WIN32)
   # minimum version cmake on windows
   cmake_minimum_required (VERSION 3.16)
@@ -62,59 +61,59 @@ elseif(WIN32)
 elseif(WINDOWS_PHONE)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To Windows Phone")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(WINCE)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To WINCE")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(WINRT)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To WINRT")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(APPLE)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To Apple OS")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(IOS)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To IOS")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(GHSMULTI)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To GHSMULTI")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(CYGWIN)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To CYGWIN")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(MINGW)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To MINGW")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(MSVC)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To MSVC")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(MSYS)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To MSYS")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(ANDROID)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To ANDROID")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(LINUX)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To LINUX")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(BSD)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
-    message("BSCAN To BSD")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 elseif(XCODE)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.14)
-    message("BSCAN To XCODE")
+    message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 endif()
 
 
