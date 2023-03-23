@@ -26,7 +26,7 @@ project(bscan VERSION 0.1.3 LANGUAGES CXX C)
 
 message(STATUS "cmake version ${CMAKE_VERSION}")
 
-# UNIX, WIN32, APPLE and more...
+# UNIX, LINUX, WIN32, WINDOWS_PHONE, APPLE, ANDROID, IOS and more...
 if(UNIX)
   # minimum version cmake on linux
   cmake_minimum_required (VERSION 3.18)
@@ -58,14 +58,62 @@ elseif(WIN32)
   add_definitions(-DNOMINMAX)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 
+elseif(WINDOWS_PHONE)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To Windows Phone")
+elseif(WINCE)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To WINCE")
+elseif(WINRT)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To WINRT")
 elseif(APPLE)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.18)
     message("BSCAN To Apple OS")
-elseif(WINRT)
+elseif(IOS)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To IOS")
+elseif(GHSMULTI)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To GHSMULTI")
+elseif(CYGWIN)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To CYGWIN")
+elseif(MINGW)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To MINGW")
+elseif(MSVC)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To MSVC")
+elseif(MSYS)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To MSYS")
+elseif(ANDROID)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To ANDROID")
+elseif(LINUX)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To LINUX")
+elseif(BSD)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To BSD")
+elseif(XCODE)
     # minimum version cmake on apple
     cmake_minimum_required (VERSION 3.14)
-    message("BSCAN To Windows Runtime")
+    message("BSCAN To XCODE")
 endif()
 
 
