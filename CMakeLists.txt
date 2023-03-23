@@ -1,5 +1,73 @@
+#           Copyright (C) 2021 - 2023, Barca, Inc.
+# 
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of BSCAN hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License, version 2.0, for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# 
+# Barca, Inc., Serra/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaWebCloud
+
 cmake_minimum_required(VERSION 3.16)
-project(bscan VERSION 0.1.2 LANGUAGES CXX)
+project(bscan VERSION 0.1.3 LANGUAGES CXX C)
+
+message(STATUS "cmake version ${CMAKE_VERSION}")
+
+# UNIX, WIN32, APPLE and more...
+if(UNIX)
+  # minimum version cmake on linux
+  cmake_minimum_required (VERSION 3.18)
+  message("BSCAN To Linux")
+elseif(WIN32)
+  # minimum version cmake on windows
+  cmake_minimum_required (VERSION 3.16)
+
+  EXECUTE_PROCESS(COMMAND wmic os get version
+    OUTPUT_VARIABLE OS_VERSION
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    RESULT_VARIABLE WMIC_RESULT
+  )
+  if(WMIC_RESULT EQUAL 0)
+    string(REPLACE "\r" "" OS_VERSION "${OS_VERSION}")
+    string(REPLACE "\n" "" OS_VERSION "${OS_VERSION}")
+    string(REGEX MATCH "Version[ ]+([0-9\.]+)" V_NUM "${OS_VERSION}")
+    message("BSCAN To Windows ${CMAKE_MATCH_1}")
+  endif()
+
+  # generator makefile with MinGW
+  #set(CMAKE_C_COMPILER C:/MinGW/bin/gcc.exe)
+  #set(CMAKE_CXX_COMPILER C:/MinGW/bin/g++.exe)
+
+  set(CMAKE_GENERATOR_CC gcc)
+  set(CMAKE_CXX_FLAGS "-utf-8 -Wall -std=c++17 -lwsock32")
+  add_definitions(-D_HAS_EXCEPTIONS=0)
+  add_definitions(-DWIN32_LEAN_AND_MEAN)
+  add_definitions(-DNOMINMAX)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+
+elseif(APPLE)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.18)
+    message("BSCAN To Apple OS")
+elseif(WINRT)
+    # minimum version cmake on apple
+    cmake_minimum_required (VERSION 3.14)
+    message("BSCAN To Windows Runtime")
+endif()
+
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
