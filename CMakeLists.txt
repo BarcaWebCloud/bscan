@@ -53,10 +53,24 @@ elseif(WIN32)
 
   set(CMAKE_GENERATOR_CC gcc)
   set(CMAKE_CXX_FLAGS "-utf-8 -Wall -std=c++17 -lwsock32")
-  add_definitions(-D_HAS_EXCEPTIONS=0)
-  add_definitions(-DWIN32_LEAN_AND_MEAN)
-  add_definitions(-DNOMINMAX)
-  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+  foreach(def IN ITEMS
+    -D_HAS_EXCEPTIONS=0
+    -DWIN32_LEAN_AND_MEAN
+    -DNOMINMAX
+    -D_CRT_SECURE_NO_WARNINGS)
+      add_definitions(${def})
+  endforeach()
+  
+  foreach(dir IN ITEMS
+    "$ENV{USERPROFILE}\\bscan" 
+    "$ENV{USERPROFILE}\\bscan\\win32"
+    "$ENV{USERPROFILE}\\bscan\\win32\\v${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\bscan\\win32\\v${PROJECT_VERSION}\\bin"
+    "$ENV{USERPROFILE}\\bscan\\win32\\v${PROJECT_VERSION}\\lib"
+    "$ENV{USERPROFILE}\\bscan\\win32\\v${PROJECT_VERSION}\\www"
+    "$ENV{USERPROFILE}\\bscan\\win32\\v${PROJECT_VERSION}\\log")
+      make_directory(${dir})
+  endforeach()
 
 elseif(WINDOWS_PHONE)
     # minimum version cmake on apple
