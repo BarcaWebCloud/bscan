@@ -45,7 +45,7 @@ namespace bscan {
     static std::string getTotal();
     static std::string getFree();
     static int64_t getTotalSize_Bytes();
-    static int64_t getAvailableMemory();
+    static int64_t getAvailableMemory_Bytes();
 
    private:
     std::string _vendor;

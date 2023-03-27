@@ -76,57 +76,57 @@ std::string RAM::getSerialNumber() {
 }
 
 std::string RAM::getTotal() {
- std::string memory_info_total;
-    MEMORYSTATUSEX statusex;
-    statusex.dwLength = sizeof(statusex);
-    if (GlobalMemoryStatusEx(&statusex)) {
-      unsigned long long total = 0, remain_total = 0, avl = 0, remain_avl = 0;
-      double decimal_total = 0, decimal_avl = 0;
-      remain_total = statusex.ullTotalPhys % GBYTES;
-      total = statusex.ullTotalPhys / GBYTES;
-      avl = statusex.ullAvailPhys / GBYTES;
-      remain_avl = statusex.ullAvailPhys % GBYTES;
-      if (remain_total > 0)
-          decimal_total = (remain_total / MBYTES) / DKBYTES;
-      if (remain_avl > 0)
-          decimal_avl = (remain_avl / MBYTES) / DKBYTES;
+  std::string memory_info_total;
+  MEMORYSTATUSEX statusex;
+  statusex.dwLength = sizeof(statusex);
+  if (GlobalMemoryStatusEx(&statusex)) {
+    unsigned long long total = 0, remain_total = 0, avl = 0, remain_avl = 0;
+    double decimal_total = 0, decimal_avl = 0;
+    remain_total = statusex.ullTotalPhys % GBYTES;
+    total = statusex.ullTotalPhys / GBYTES;
+    avl = statusex.ullAvailPhys / GBYTES;
+    remain_avl = statusex.ullAvailPhys % GBYTES;
+    if (remain_total > 0)
+      decimal_total = (remain_total / MBYTES) / DKBYTES;
+    if (remain_avl > 0)
+      decimal_avl = (remain_avl / MBYTES) / DKBYTES;
 
-      decimal_total += (double)total;
-      decimal_avl += (double)avl;
-      
-      char  buffer[kMaxInfoBuffer];
-      sprintf_s(buffer, kMaxInfoBuffer, "Memory Total: %.2f GB (%.2f GB available)", decimal_total, decimal_avl);
-      memory_info_total.append(buffer);
+    decimal_total += (double)total;
+    decimal_avl += (double)avl;
+    
+    char  buffer[kMaxInfoBuffer];
+    sprintf_s(buffer, kMaxInfoBuffer, "%.2f GB (%.2f GB available)", decimal_total, decimal_avl);
+    memory_info_total.append(buffer);
   }
-  return std::string(memory_info_total);
+   return std::string(memory_info_total);
 }
 
 std::string RAM::getFree() {
- std::string memory_info_available;
-    MEMORYSTATUSEX statusex;
-    statusex.dwLength = sizeof(statusex);
-    if (GlobalMemoryStatusEx(&statusex)) {
-      unsigned long long avl = 0, remain_avl = 0;
-      double decimal_total = 0, decimal_avl = 0;
+  std::string memory_info_available;
+  MEMORYSTATUSEX statusex;
+  statusex.dwLength = sizeof(statusex);
+  if (GlobalMemoryStatusEx(&statusex)) {
+    unsigned long long avl = 0, remain_avl = 0;
+    double decimal_total = 0, decimal_avl = 0;
     
-      avl = statusex.ullAvailPhys / GBYTES;
-      remain_avl = statusex.ullAvailPhys % GBYTES;
-      if (remain_avl > 0)
-          decimal_avl = (remain_avl / MBYTES) / DKBYTES;
+    avl = statusex.ullAvailPhys / GBYTES;
+    remain_avl = statusex.ullAvailPhys % GBYTES;
+    if (remain_avl > 0)
+      decimal_avl = (remain_avl / MBYTES) / DKBYTES;
       decimal_avl += (double)avl;
-      
+        
       char  buffer[kMaxInfoBuffer];
-      sprintf_s(buffer, kMaxInfoBuffer, "Memory Free: %.2f GB", decimal_avl);
+      sprintf_s(buffer, kMaxInfoBuffer, "%.2f GB", decimal_avl);
       memory_info_available.append(buffer);
   }
   return std::string(memory_info_available);
 }
 
 int64_t RAM::getTotalSize_Bytes() {
-  MEMORYSTATUSEX status;
-  status.dwLength = sizeof(status);
-  GlobalMemoryStatusEx(&status);
-  return static_cast<int64_t>(status.ullTotalPhys);
+ MEMORYSTATUSEX status;
+ status.dwLength = sizeof(status);
+ GlobalMemoryStatusEx(&status);
+ return static_cast<int64_t>(status.ullTotalPhys);
 }
 
 int64_t RAM::getAvailableMemory_Bytes() {
