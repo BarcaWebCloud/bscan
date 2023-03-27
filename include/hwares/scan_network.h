@@ -18,38 +18,39 @@
  *
  **************************************************************************************/
 #pragma once
-#include "platform.h"
-#include <stdio.h>
-#ifdef BSCAN_WINDOWS
-#include <direct.h>
-#define getDir _getcwd
-#else
-#include <unistd.h>
-#define getDir getcwd
-#endif
-#include<iostream>
-#include<dirent.h>
 
-std::string getCurrentDir(void) {
-  char buff[FILENAME_MAX];
-  getDir( buff, FILENAME_MAX );
-  std::string currentDir(buff);
+#include <string>
+#include <vector>
 
-  return currentDir;
-}
+namespace bscan {
 
-std::string getFoldersAndFilesInCurrentDir(void) {
-  struct dirent *d;
-  DIR *dr;
-  dr = opendir(".");
-  std::string res;
-  if(dr!=NULL) {
-    for(d=readdir(dr); d!=NULL; d=readdir(dr)) {
-      res+= std::string(d->d_name) + std::string("\n");
-    }
-    closedir(dr);
-  }
-  else
-    return "<null>";
-  return res;
-}
+class NET {
+  friend std::vector<NET> getAllAdapters();
+
+ public:
+  NET(std::string& name, std::string& model, std::string& mask, std::string& ipAddressPrivate, std::string& ipAddressPublic, std::string& gateway);
+  ~NET() = default;
+
+  [[nodiscard]] const std::string& name() const;
+  [[nodiscard]] const std::string& model() const;
+  [[nodiscard]] const std::string& mask() const;
+  [[nodiscard]] const std::string& ipAddressPrivate() const;
+  [[nodiscard]] const std::string& ipAddressPublic() const;
+  [[nodiscard]] const std::string& gateway() const;
+  std::string& privateIP();
+
+  static std::string getPrivateIP();
+
+ private:
+  std::string _name;
+  std::string _model;
+  std::string _mask;
+  std::string _ipAddressPrivate;
+  std::string _ipAddressPublic;
+  std::string _gateway;
+  std::string _privateIP;
+};
+
+std::vector<NET> getAllAdapters();
+
+};

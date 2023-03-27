@@ -20,22 +20,21 @@
 #include "platform.h"
 
 #ifdef BSCAN_WINDOWS
-
 #include <Windows.h>
 #include <winternl.h>
 #include <iostream>
 #include <winsock.h>
-
-#include <stdio.h>  
+#include <stdio.h>
 #include <vector>
 #include <cstdio>
 #include <stdlib.h>  
-
 #include <sstream>
 #include <string>
 #define STATUS_SUCCESS 0x00000000
 
 #include "swares/scan_os.h"
+#include "utils/string.h"
+#include <utils/subprocess.h>
 
 namespace bscan {
 
@@ -86,7 +85,7 @@ namespace bscan {
       return "Windows <unknown version>";
     }
 
-    std::string stream os;
+    std::stringstream os;
     os << "Microsoft ";
     if (osvi.dwMajorVersion >= 6) {
       if (osvi.dwMajorVersion == 10) {
@@ -264,52 +263,99 @@ namespace bscan {
   }
 
   std::string OS::getName() { 
-    OSVERSIONINFO osver = {sizeof(OSVERSIONINFO)};  
-    GetVersionEx(&osver);  
-    std::string os_name;  
-    if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 0)  
-        os_name = "Windows 2000";  
-    else if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 1)  
-        os_name = "Windows XP";  
-    else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 0)  
-        os_name = "Windows 2003";  
-    else if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 2)  
-        os_name = "windows vista";  
-    else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 1)  
-        os_name = "windows 7";  
-    else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 2)  
-        os_name = "windows 10";
+   OSVERSIONINFO osver = {sizeof(OSVERSIONINFO)};  
+   GetVersionEx(&osver);  
+   std::string os_name;  
+   if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 0)  
+       os_name = "Windows 2000";  
+   else if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 1)  
+      os_name = "Windows XP";  
+   else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 0)  
+       os_name = "Windows 2003";  
+   else if (osver.dwMajorVersion == 5 && osver.dwMinorVersion == 2)  
+       os_name = "Windows vista";  
+   else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 1)  
+       os_name = "Windows 7";  
+   else if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 2)  
+       os_name = "Windows 10";
 
-    return std::string(os_name);
+   return std::string(os_name);
   }
 
   std::string OS::getVersion() { 
     OSVERSIONINFO version = {sizeof(OSVERSIONINFO)};  
     GetVersionEx(&version);
     
-    return std::string(version.dwMajorVersion + '.' + version.dwMinorVersion);
+    return std::string(to_string(version.dwMajorVersion) + "." + to_string(version.dwMinorVersion)).c_str();
   }
 
   std::string OS::getHostname() {
-    WSADATA wsa_data;
-    if (WSAStartup(MAKEWORD(2, 0), &wsa_data) != 0){
-      return std::string("WSAStartup() failed");
-    }
-    
-    char hostname[256];
-    int rc  = gethostname(hostname, sizeof hostname);
-    
-    WSACleanup();
+    char *content = 0;
+    std::string hostname;
 
-    return std::string(hostname);
+    content = getenv("COMPUTERNAME");
+    if (content != 0) {
+      hostname = content;
+      content = 0;
+    }
+
+   return std::string(lower(hostname));
   }
 
+  std::string OS::getUser() {
+    char* content = 0;
+    std::string username;
+ 
+    content = getenv("USERNAME");
+    if (content != 0) {
+      username = content;
+      content = 0;
+    }
+
+    return std::string(lower(username));
+  }
+
+  std::string OS::getEnvVariables() {
+  
+   const char* env_vars[14] = {
+     "HOMEDRIVE",
+     "HOMEPATH",
+     "APPDATA",
+     "COMPUTERNAME",
+     "TMP",
+     "SystemRoot",
+     "SystemDrive",
+     "windir",
+     "USERNAME",
+     "USERPROFILE",
+     "LOCALAPPDATA",
+     "LOGONSERVER",
+     "OneDrive",
+     "PATH"
+   };
+
+   std::string env_res = "";
+   for (int i = 0; i < 14; i++) {
+    
+     const char* content = getenv(env_vars[i]); 
+    
+     if (content != NULL){ 
+       env_res+= std::string(env_vars[i]) + std::string("=") + std::string(content) + std::string("\n");
+     }
+     else{
+       std::cout << env_vars[i] << " not found!";
+     }
+   }
+   return std::string(env_res);
+  }
+  
   std::string OS::getKernel() { return "<unknown>"; }
+  
 
   bool OS::getIs64bit() {
     BOOL bWow64Process = FALSE;
     return IsWow64Process(GetCurrentProcess(), &bWow64Process) && bWow64Process;
-  }
+  };
 
 };
 

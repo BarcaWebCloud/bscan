@@ -1,18 +1,32 @@
 # BSCAN
 
 
-**Bscan** is a library for Node.js that provides information about the hardware and software of a computing device. Allowing Developers to utilize scanning capabilities in their web applications
+**BSCAN** is a library for Node.js that provides information about the hardware and software of a computing device. Allowing Developers to utilize scanning capabilities in their web applications
 
-1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, Disk...
+1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, GPU,  Disk, Motheboard...
 2. [Softwares](/docs/swares/intro.md) get information about operating system and installed applications
 
+<br>
+<br>
 
-## Minimum Requirements
+## Requirements
+
+It is necessary that you have installed the programs below to use **BSCAN** in developer mode.
+
+### To Linux
 
 - [Python](https://www.python.org/) **v3.1** or greater
 - [C++](https://cplusplus.com/) **v17** or greater
 - [Node.js](https://nodejs.org/) **v8** or greater
 
+### To Windows
+
+- [Python](https://www.python.org/) **v3.1** or greater
+- [MinGW](https://nuwen.net/mingw.html) **v11.2** or greater
+- [Node.js](https://nodejs.org/) **v8** or greater
+
+<br>
+<br>
 
 ## Obtaining BScan
 
@@ -24,9 +38,11 @@ Binary downloads are available from the [BWC downloads](https://cloud.barca.com/
 page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/releases) page.
 
 
+<br>
+
 ### Build From Source
 
-**BScan** requires C++ version 17 or newer, the CMakelists requires GNU cmake.
+**BSCAN** requires C++ version 17 or newer, the CMakelists requires GNU cmake.
 
   1. [Install Node.js](https://nodejs.org/) >=8.0.0 (16.11 recommended)
   2. [Install Python](https://www.python.org/downloads/) >=2.6.0 (3.9.0 recommended)
@@ -36,7 +52,11 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       git clone https://github.com/BarcaWebCloud/bscan.git
       ```
 
-#### Build executable bscan in your environment
+<br>
+
+### Build Executable BSCAN in Your Environment
+
+#### To Linux
 
   1. Run `cmake CMakeLists.txt` from the source directory
 
@@ -46,8 +66,22 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       ```
   2. Now run `make all` or `make bscan` to compile the main program
 
+#### To Windows
+Check the **gcc** version of your System. BSCAN requires version greater than **17**.
+We can view a list of *Makefile* generators with the command: `cmake -G`.
+Here shows an example to use the **MinGW** *Makefile* generator:
 
-#### Build module bscan in your environment
+  1. Run `cmake -G "MinGW Makefiles" <file-cmake>` from the source directory
+
+      ```shell
+      cd bscan
+      cmake -G "MinGW Makefiles" CMakeLists.txt
+      ```
+  2. Now run `make all` or `make bscan` to compile the main program
+
+<br>
+
+### Build Module BSCAN Node.js in Your Environment
   
   1. Install required `npm` packages 
       ```shell
@@ -63,6 +97,8 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       ```shell
       node-gyp build
       ```
+
+<br>
 
 ## Getting Started
 

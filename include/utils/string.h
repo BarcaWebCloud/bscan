@@ -19,37 +19,22 @@
  **************************************************************************************/
 #pragma once
 #include "platform.h"
-#include <stdio.h>
+
 #ifdef BSCAN_WINDOWS
-#include <direct.h>
-#define getDir _getcwd
-#else
-#include <unistd.h>
-#define getDir getcwd
+  #include<iostream>
+
+	using namespace std;
+
+	std::string upper(std::string str) {
+	  for(int j=0;j<str.length();j++)
+	    str[j]=toupper(str[j]);
+
+	  return std::string(str);
+	};
+
+	std::string lower(std::string str) {
+	  for(int j=0;j<str.length();j++)
+	    str[j]=tolower(str[j]);
+	  return std::string(str);
+	};
 #endif
-#include<iostream>
-#include<dirent.h>
-
-std::string getCurrentDir(void) {
-  char buff[FILENAME_MAX];
-  getDir( buff, FILENAME_MAX );
-  std::string currentDir(buff);
-
-  return currentDir;
-}
-
-std::string getFoldersAndFilesInCurrentDir(void) {
-  struct dirent *d;
-  DIR *dr;
-  dr = opendir(".");
-  std::string res;
-  if(dr!=NULL) {
-    for(d=readdir(dr); d!=NULL; d=readdir(dr)) {
-      res+= std::string(d->d_name) + std::string("\n");
-    }
-    closedir(dr);
-  }
-  else
-    return "<null>";
-  return res;
-}
