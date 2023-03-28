@@ -24,33 +24,44 @@
 
 namespace bscan {
 
-class NET {
-  friend std::vector<NET> getAllAdapters();
+  class NET {
+    friend std::vector<NET> getAllAdapters();
 
- public:
-  NET(std::string& name, std::string& model, std::string& mask, std::string& ipAddressPrivate, std::string& ipAddressPublic, std::string& gateway);
-  ~NET() = default;
+   public:
+    NET() = default;
+    NET(std::string& name, std::string& model, std::string& mask, std::string& ipAddressPrivate, std::string& ipAddressPublic, std::string& gateway);
+    ~NET() = default;
 
-  [[nodiscard]] const std::string& name() const;
-  [[nodiscard]] const std::string& model() const;
-  [[nodiscard]] const std::string& mask() const;
-  [[nodiscard]] const std::string& ipAddressPrivate() const;
-  [[nodiscard]] const std::string& ipAddressPublic() const;
-  [[nodiscard]] const std::string& gateway() const;
-  std::string& privateIP();
+    [[nodiscard]] const std::string& name() const;
+    [[nodiscard]] const std::string& model() const;
+    [[nodiscard]] const std::string& mask() const;
+    [[nodiscard]] const std::string& ipAddressPrivate() const;
+    [[nodiscard]] const std::string& ipAddressPublic() const;
+    [[nodiscard]] const std::string& gateway() const;
+    std::string& privateIP();
+    std::string& publicIP();
+    std::string& pro();
+    std::string& domainName();
+    std::string& enabledIPForward();
 
-  static std::string getPrivateIP();
+    static std::string getPrivateIP();
+    static std::string getPublicIP();
+    static std::string getPro();
+    static std::string getDomainName();
+    static std::string getEnabledIPForward();
 
- private:
-  std::string _name;
-  std::string _model;
-  std::string _mask;
-  std::string _ipAddressPrivate;
-  std::string _ipAddressPublic;
-  std::string _gateway;
-  std::string _privateIP;
-};
+   private:
+    std::string _name;
+    std::string _model;
+    std::string _mask;
+    std::string _gateway;
+    std::string _privateIP;
+    std::string _publicIP;
+    std::string _pro;
+    std::string _domainName;
+    std::string _enabledIPForward;
+  };
 
-std::vector<NET> getAllAdapters();
+// std::vector<NET> getAllAdapters();
 
 };

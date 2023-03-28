@@ -25,3 +25,4 @@
 #include "hwares/scan_gpu.h"
 #include "hwares/scan_mainboard.h"
 #include "hwares/scan_ram.h"
+#include "hwares/scan_network.h"
