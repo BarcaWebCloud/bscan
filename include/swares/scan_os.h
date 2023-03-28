@@ -35,6 +35,7 @@ namespace bscan {
     std::string domainname();
     std::string uptime();
     std::string homedir();
+    std::string recentitems();
     std::string pkgs();
     std::string user();
     std::string log();
@@ -52,6 +53,7 @@ namespace bscan {
     static std::string getDomainName();
     static std::string getUptime();
     static std::string listHomeDir();
+    static std::string listRecentItems();
     static std::string getPkgs();
     static std::string getUser();
     static std::string getLog();
@@ -70,6 +72,7 @@ namespace bscan {
     std::string _domainname;
     std::string _uptime;
     std::string _homedir;
+    std::string _recentitems;
     std::string _pkgs;
     std::string _user;
     std::string _log;
