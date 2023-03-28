@@ -30,6 +30,10 @@
 #include <stdlib.h>  
 #include <sstream>
 #include <string>
+#include <dirent.h>
+#include <sys/types.h>
+
+
 #define STATUS_SUCCESS 0x00000000
 
 #include "swares/scan_os.h"
@@ -299,7 +303,7 @@ namespace bscan {
       content = 0;
     }
 
-   return std::string(lower(hostname));
+    return std::string(lower(hostname));
   }
 
   std::string OS::getUser() {
@@ -314,6 +318,53 @@ namespace bscan {
 
     return std::string(lower(username));
   }
+
+  std::string OS::listHomeDir() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(content);
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+
+    return std::string("unknow");
+  }
+
+
+  std::string OS::listRecentItems() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Recent";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+
+    return std::string("unknow");
+  }
+
 
   std::string OS::getEnvVariables() {
   

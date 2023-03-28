@@ -9,7 +9,7 @@
 # as designated in a particular file or component or in included license
 # documentation.  The authors of BSCAN hereby grant you an additional
 # permission to link the program and your derivative works with the
-# separately licensed software that they have included with MySQL.
+# separately licensed software.
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -160,17 +160,38 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 
 # check if header files exist in include directory
 find_path(_check_include
-          #NAMES platform.h, WMIwrapper.h, utils/directory.h, utils/stringutils.h, utils/subprocess.h, hwares/hwares.h, hwares/scan_battery.h, hwares/scan_cpu.h, hwares/scan_cpuid.h, hwares/scan_disk.h, hwares/scan_gpu.h, hwares/scan_mainboard.h, hwares/scan_monitor.h, hwares/scan_network.h, hwares/scan_ram.h, swares/swares.h, swares/scan_os, swares/scan_system
-          NAMES platform.h
+          NAMES 
+            platform.h,
+            WMIwrapper.h,
+            bscan.h,
+            dirent.h,
+            "utils/directory.h",
+            "utils/string.h",
+            "utils/stringutils.h",
+            "utils/subprocess.h",
+            # hardwares header
+            "hwares/hwares.h",
+            "hwares/scan_battery.h",
+            "hwares/scan_cpu.h",
+            "hwares/scan_cpuid.h",
+            "hwares/scan_disk.h",
+            "hwares/scan_gpu.h",
+            "hwares/scan_mainboard.h",
+            "hwares/scan_monitor.h",
+            "hwares/scan_network.h",
+            "hwares/scan_ram.h",
+            # softwares header
+            "swares/swares.h",
+            "swares/scan_os.h",
+            "swares/scan_system.h"
           PATHS "${CMAKE_SOURCE_DIR}/include"
           NO_DEFAULT_PATH)
 if(_check_include)
-    message(STATUS "OK check Files in include directory")
+    message(STATUS "OK check all files in include directory")
     include_directories(${PROJECT_SOURCE_DIR}/include/)
 else()
     message(WARNING "NOT There was a problem trying to include the header files. There must be some file missing! \nFiles in include path: ${_check_include}")
 endif()
-
 
 
 add_subdirectory(src/libs/info)

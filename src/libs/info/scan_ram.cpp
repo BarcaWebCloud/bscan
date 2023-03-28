@@ -73,7 +73,7 @@ namespace bscan {
 
   int64_t RAM::availableMemory() {
     if (_totalFreeSize_Bytes == -1) {
-      _totalFreeSize_Bytes = getAvailableMemory();
+      _totalFreeSize_Bytes = getAvailableMemory_Bytes();
     }
     return _totalFreeSize_Bytes;
   }

@@ -16,13 +16,28 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
 ### To Linux
 
 - [Python](https://www.python.org/) **v3.1** or greater
-- [C++](https://cplusplus.com/) **v17** or greater
+- [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
+  - [MinGW/GCC](https://www.mingw-w64.org)
+  - [Digital Mars](https://www.digitalmars.com/d/2.0/dmd-linux.html)
+  - [Clang](https://clang.llvm.org)
+  - [Intel](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html)
+  - [GNU GCC](http://gcc.gnu.org)
+  - [Code Block](https://wiki.codeblocks.org/index.php/Installing_a_supported_compiler)
+  - [Cygwin](http://www.cygwin.org)
+  - [Small Device](https://sdcc.sourceforge.net)
 - [Node.js](https://nodejs.org/) **v8** or greater
 
 ### To Windows
 
 - [Python](https://www.python.org/) **v3.1** or greater
-- [MinGW](https://nuwen.net/mingw.html) **v11.2** or greater
+- [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
+  - [MinGW/GCC](https://www.mingw-w64.org)
+  - [Clang](https://clang.llvm.org)
+  - [Intel](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html)
+  - [Visual](https://visualstudio.microsoft.com/vs/features/cplusplus)
+  - [Code Block](https://wiki.codeblocks.org/index.php/Installing_a_supported_compiler)
+  - [Cygwin](http://www.cygwin.org)
+  - [Small Device](https://sdcc.sourceforge.net)
 - [Node.js](https://nodejs.org/) **v8** or greater
 
 <br>
@@ -134,3 +149,4 @@ There are many ways to contribute:
 - [Review code and feature proposals](https://github.com/BarcaWebCloud/bscan/pulls)
 - Answer questions and discuss here on github and on the [Community Site](https://opensource.barca.com/)
 - [Contribute plugins](CONTRIBUTING.md)
+
