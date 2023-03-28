@@ -2,11 +2,35 @@
 
 # Changelog
 
-## v0.1.2
+## v0.1.3
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+## v0.1.3 [2023-03-28]
+
+### Features
+
+- [#11](https://github.com/BarcaWebCloud/bscan/pull/11): New features for Windows OS. Gratitude @ahsouza!
+
+### Bug Fixes
+- [#10](https://github.com/BarcaWebCloud/bscan/pull/10): Fix bug in compiler C++ to libs windows wbem. Gratitude @ahsouza!
+
+### Release Notes
+
+
+Add features for  **Windows** platform:
+
+- **Collect Information About Monitors** [only Windows on moment]
+- **Get Total Memory and Free format string** [only Windows on moment]
+- **Get Username, Environment Variables** [only Windows on moment]
+- **Get Packages Installed into the System** [ Windows ]
+- **List Home Directory Files and Folders** [only Windows on moment]
+- **List Recently Accessed Files and Folders** [only Windows on moment]
+
+
+
 
 ## v0.1.2 [2023-03-18]
 
