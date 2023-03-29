@@ -319,6 +319,28 @@ namespace bscan {
     return std::string(lower(username));
   }
 
+  std::string OS::listDesktop() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(content);
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
   std::string OS::listHomeDir() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
@@ -337,7 +359,7 @@ namespace bscan {
       }
       return std::string(listFilesAndFolders);
     }
-
+    content = 0;
     return std::string("unknow");
   }
 
@@ -361,7 +383,7 @@ namespace bscan {
       }
       return std::string(listFilesAndFolders);
     }
-
+    content = 0;
     return std::string("unknow");
   }
 
@@ -384,7 +406,30 @@ namespace bscan {
       }
       return std::string(listFilesAndFolders);
     }
+    content = 0;
+    return std::string("unknow");
+  }
 
+  std::string OS::listDocuments() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\Documents.library-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
     return std::string("unknow");
   }
 
@@ -407,7 +452,7 @@ namespace bscan {
       }
       return std::string(listFilesAndFolders);
     }
-
+    content = 0;
     return std::string("unknow");
   }
 
@@ -430,9 +475,219 @@ namespace bscan {
       }
       return std::string(listFilesAndFolders);
     }
+    content = 0;
 
     return std::string("unknow");
   }
+
+  std::string OS::listDownloads() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\Downloads";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS::listMusics() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\Music.library-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS::listVideos() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\Videos.library-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS::listSearchesEverywhere() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\Searches\\Everywhere.search-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS::listStartMenu() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+
+    return std::string("unknow");
+  }
+
+  std::string OS:: getImagesCAM() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\CameraRoll.library-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS:: getImagesSaved() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\SavedPictures.library-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS:: getImages() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\Pictures.library-ms";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
+  std::string OS:: getHistoryCommands() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\AppData\\Roaming\\Microsoft\\Windows\\PowerShell\\PSReadLine";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+    content = 0;
+    return std::string("unknow");
+  }
+
 
   std::string OS::getEnvVariables() {
   
