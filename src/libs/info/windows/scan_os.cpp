@@ -388,6 +388,52 @@ namespace bscan {
     return std::string("unknow");
   }
 
+  std::string OS::listPersonalDocuments() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\Documents";
+    content = getenv("USERPROFILE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+
+    return std::string("unknow");
+  }
+
+  std::string OS::listPublicDocuments() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content = 0;
+    const char *content2 = "\\Users\\Public\\Documents";
+    content = getenv("HOMEDRIVE");
+    if (content != 0) {
+      DIR *dr;
+      struct dirent *en;
+      dr = opendir(strcat(content, content2));
+      std::string listFilesAndFolders;
+      if (dr) {
+        while ((en = readdir(dr)) != NULL) {
+          listFilesAndFolders += std::string("\n") + std::string(en->d_name);
+        }
+        closedir(dr);
+      }
+      return std::string(listFilesAndFolders);
+    }
+
+    return std::string("unknow");
+  }
+
   std::string OS::getEnvVariables() {
   
    const char* env_vars[14] = {
