@@ -37,6 +37,8 @@ namespace bscan {
     std::string homedir();
     std::string recentitems();
     std::string programfiles();
+    std::string personaldocuments();
+    std::string publicdocuments();
     std::string pkgs();
     std::string user();
     std::string log();
@@ -56,6 +58,8 @@ namespace bscan {
     static std::string listHomeDir();
     static std::string listRecentItems();
     static std::string listProgramFiles();
+    static std::string listPersonalDocuments();
+    static std::string listPublicDocuments();
     static std::string getPkgs();
     static std::string getUser();
     static std::string getLog();
@@ -76,6 +80,8 @@ namespace bscan {
     std::string _homedir;
     std::string _recentitems;
     std::string _programfiles;
+    std::string _personaldocuments;
+    std::string _publicdocuments;
     std::string _pkgs;
     std::string _user;
     std::string _log;
