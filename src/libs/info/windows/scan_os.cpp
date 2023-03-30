@@ -1,5 +1,5 @@
 /************************************************************************************
-      
+
  *                 Copyright (C) 2021 - 2023, Barca, Inc. 
  
  *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
@@ -33,12 +33,12 @@
 #include <dirent.h>
 #include <sys/types.h>
 
-
 #define STATUS_SUCCESS 0x00000000
 
 #include "swares/scan_os.h"
+#include "utils/directory.h"
 #include "utils/string.h"
-#include <utils/subprocess.h>
+#include "utils/subprocess.h"
 
 namespace bscan {
 
