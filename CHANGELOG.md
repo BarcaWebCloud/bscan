@@ -2,11 +2,27 @@
 
 # Changelog
 
-## v0.1.3
+## v0.1.4
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+## v0.1.4 [2023-03-30]
+
+### Features
+
+- [#12](https://github.com/BarcaWebCloud/bscan/pull/12): New features for Windows OS. Gratitude @ahsouza!
+
+
+### Release Notes
+
+
+Add features for  **Windows** platform:
+
+- **List Program Files and Folders, Personal Documents & Public** [only Windows on moment]
+- **List Recent Items, Home Directory, Downloads, Musics, Videos/Images & Searched Items** [only Windows on moment]
+  
 
 ## v0.1.3 [2023-03-28]
 
@@ -28,7 +44,6 @@ Add features for  **Windows** platform:
 - **Get Packages Installed into the System** [ Windows ]
 - **List Home Directory Files and Folders** [only Windows on moment]
 - **List Recently Accessed Files and Folders** [only Windows on moment]
-
 
 
 

@@ -34,7 +34,7 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
   - [MinGW/GCC](https://www.mingw-w64.org)
   - [Clang](https://clang.llvm.org)
   - [Intel](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html)
-  - [Visual](https://visualstudio.microsoft.com/vs/features/cplusplus)
+  - [Visual (suggested)](https://visualstudio.microsoft.com/vs/features/cplusplus)
   - [Code Block](https://wiki.codeblocks.org/index.php/Installing_a_supported_compiler)
   - [Cygwin](http://www.cygwin.org)
   - [Small Device](https://sdcc.sourceforge.net)
