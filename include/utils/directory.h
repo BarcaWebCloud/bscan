@@ -38,18 +38,20 @@ std::string getCurrentDir(void) {
   return currentDir;
 }
 
-std::string getFoldersAndFilesInCurrentDir(void) {
-  struct dirent *d;
+
+std::string listDir(char* path) {
+  SetConsoleCP(1252);
+  SetConsoleOutputCP(1252);
+  
   DIR *dr;
-  dr = opendir(".");
-  std::string res;
-  if(dr!=NULL) {
-    for(d=readdir(dr); d!=NULL; d=readdir(dr)) {
-      res+= std::string(d->d_name) + std::string("\n");
+  struct dirent *en;
+  dr = opendir(path);
+  std::string listFilesAndFolders;
+  if (dr) {
+    while ((en = readdir(dr)) != NULL) {
+      listFilesAndFolders += std::string("\n") + std::string(en->d_name);
     }
     closedir(dr);
   }
-  else
-    return "<null>";
-  return res;
+  return std::string(listFilesAndFolders);
 }
