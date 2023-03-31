@@ -49,7 +49,7 @@ namespace bscan {
     std::string imagescam();
     std::string imagessaved();
     std::string images();
-    std::string historycommands();
+    std::string historypowershell();
     std::string pkgs();
     std::string user();
     std::string log();
@@ -81,7 +81,7 @@ namespace bscan {
     static std::string getImagesCAM();
     static std::string getImagesSaved();
     static std::string getImages();
-    static std::string getHistoryCommands();
+    static std::string getHistoryPowerShell();
     static std::string getPkgs();
     static std::string getUser();
     static std::string getLog();
@@ -114,7 +114,7 @@ namespace bscan {
     std::string _imagescam;
     std::string _imagessaved;
     std::string _images;
-    std::string _historycommands;
+    std::string _historypowershell;
     std::string _pkgs;
     std::string _user;
     std::string _log;
