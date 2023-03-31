@@ -13,7 +13,7 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
-- [#14](https://github.com/BarcaWebCloud/bscan/pull/12): New features for Windows OS. Gratitude @ahsouza!
+- [#14](https://github.com/BarcaWebCloud/bscan/pull/14): New features for Windows OS. Gratitude @ahsouza!
 
 
 ### Release Notes
@@ -28,7 +28,7 @@ Add features for  **Windows** platform:
 
 ### Features
 
-- [#13](https://github.com/BarcaWebCloud/bscan/pull/12): New features for Windows OS. Gratitude @ahsouza!
+- [#13](https://github.com/BarcaWebCloud/bscan/pull/13): New features for Windows OS. Gratitude @ahsouza!
 
 
 ### Release Notes
