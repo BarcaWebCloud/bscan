@@ -18,6 +18,8 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
 
 ### To Linux
 
+<br>
+
 - [Python](https://www.python.org/) **v3.1** or greater
 - [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
   - [MinGW/GCC](https://www.mingw-w64.org)
@@ -33,6 +35,8 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
 <br>
 
 ### To Windows
+
+<br>
 
 - [Python](https://www.python.org/) **v3.1** or greater
 - [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
@@ -63,8 +67,9 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 
 
 <br>
+<br>
 
-### Build From Source
+## Build From Source
 
 <br>
 
@@ -83,6 +88,7 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 ## Build Executable BSCAN in Your Environment
 
 ### To Linux
+
 <br>
 
   1. Run `cmake CMakeLists.txt` from the source directory
@@ -96,11 +102,14 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 <br>
 
 ### To Windows
+
 <br>
 
 Check the **gcc** version of your System. BSCAN requires version greater than **17**.
 We can view a list of *Makefile* generators with the command: `cmake -G`.
 Here shows an example to use the **MinGW** *Makefile* generator:
+
+<br>
 
   1. Run `cmake -G "MinGW Makefiles" <file-cmake>` from the source directory
 
@@ -113,15 +122,19 @@ Here shows an example to use the **MinGW** *Makefile* generator:
 <br>
 
 ## Build Module BSCAN Node.js in Your Environment
+
 <br>
   
   1. Install required `npm` packages 
+   
+
       ```shell
       npm install
       ```
 <br>
 
-  2. Generate boilerplate in the root directory of bscan module
+  1. Generate boilerplate in the root directory of bscan module
+
 
       ```shell
       node-gyp configure
@@ -129,7 +142,8 @@ Here shows an example to use the **MinGW** *Makefile* generator:
       ```
   <br>
   
-  3. Now to build bscan native we will need to run the command to generates a **DLL** file with `.node` extension. This file will be placed inside **build/Release** directory
+  1. Now to build bscan native we will need to run the command to generates a **DLL** file with `.node` extension. This file will be placed inside **build/Release** directory
+
 
       ```shell
       node-gyp build
