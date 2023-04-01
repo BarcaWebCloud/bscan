@@ -76,13 +76,23 @@ elseif(WIN32)
   endforeach()
   
   foreach(dir IN ITEMS
-    "$ENV{USERPROFILE}\\.bscan" 
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\logs\\bscan.log"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\storage"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\storage\\scan_cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\storage\\db\\bscan.db"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\settings"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\settings\\bscan.default.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\settings\\bscan-preferencies.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\docs"
+    "$ENV{USERPROFILE}\\.bscan"
     "$ENV{USERPROFILE}\\.bscan\\win32"
     "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}"
     "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\bin"
     "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\lib"
     "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\www"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\log")
+    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\logs")
       if (EXISTS ${dir})
         message(STATUS "directory exist")
       else()
