@@ -76,23 +76,25 @@ elseif(WIN32)
   endforeach()
   
   foreach(dir IN ITEMS
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\logs"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\logs\\bscan.log"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\storage"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\storage\\scan_cache"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\storage\\db\\bscan.db"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\settings"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\settings\\bscan.default.conf"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\settings\\bscan-preferencies.conf"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\bscan\\docs"
-    "$ENV{USERPROFILE}\\.bscan"
-    "$ENV{USERPROFILE}\\.bscan\\win32"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\bin"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\lib"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\www"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\logs")
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\readme.md"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}_cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\settings"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\logs"
+    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32"
+    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}\\bin"
+    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}\\lib"
+    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}\\www")
       if (EXISTS ${dir})
         message(STATUS "directory exist")
       else()
