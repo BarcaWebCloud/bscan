@@ -20,10 +20,12 @@
 #pragma once
 
 #include <cstdio>
+#include <stdio.h>
 #include <iostream>
 #include <memory>
 #include <string>
 #include <vector>
+#include <stdlib.h>
 
 inline std::string exec(std::string& command) {
   std::string output;
@@ -36,4 +38,17 @@ inline std::string exec(std::string& command) {
     output.append(buffer.data());
   }
   return output;
+}
+
+
+static int callback(void* data, int argc, char** argv, char** col_name) {
+  int i;
+  fprintf(stderr, "%s: ", (const char*)data);
+
+  for (i = 0; i < argc; i++) {
+    printf("%s = %s\n", col_name[i], argv[i] ? argv[i] : "NULL");
+  }
+
+  printf("\n");
+  return 0;
 }
