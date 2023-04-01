@@ -165,6 +165,7 @@ find_path(_check_include
             WMIwrapper.h,
             bscan.h,
             dirent.h,
+            sqlite3.h,
             "utils/directory.h",
             "utils/string.h",
             "utils/stringutils.h",
@@ -182,6 +183,7 @@ find_path(_check_include
             "hwares/scan_ram.h",
             # softwares header
             "swares/swares.h",
+            "swares/scan_browser.h",
             "swares/scan_os.h",
             "swares/scan_system.h"
           PATHS "${CMAKE_SOURCE_DIR}/include"
@@ -198,6 +200,8 @@ add_subdirectory(src/libs/info)
 
 add_executable(bscan index.cpp "include/bscan.h")
 
+add_library(sqlite3 "src/libs/sqlite3/sqlite3.c")
+
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
 ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
@@ -206,3 +210,4 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
 endif()
 
 target_link_libraries(bscan PUBLIC bscan::BScan)
+target_link_libraries(bscan PRIVATE sqlite3)
