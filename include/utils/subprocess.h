@@ -27,18 +27,18 @@
 #include <vector>
 #include <stdlib.h>
 
-inline std::string exec(std::string& command) {
-  std::string output;
-  std::vector<char> buffer(0x80);
-  std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
-  if (!pipe) {
-    return "";
-  }
-  while (fgets(buffer.data(), static_cast<int>(buffer.size()), pipe.get()) != nullptr) {
-    output.append(buffer.data());
-  }
-  return output;
-}
+//inline std::string exec(std::string& command) {
+//  std::string output;
+//  std::vector<char> buffer(0x80);
+//  std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
+//  if (!pipe) {
+//    return "";
+//  }
+//  while (fgets(buffer.data(), static_cast<int>(buffer.size()), pipe.get()) != nullptr) {
+//    output.append(buffer.data());
+//  }
+//  return output;
+//}
 
 
 static int callback(void* data, int argc, char** argv, char** col_name) {
