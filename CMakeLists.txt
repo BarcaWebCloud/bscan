@@ -66,7 +66,7 @@ elseif(WIN32)
   endif()
   
   #set(CMAKE_GENERATOR_CC gcc)
-  set(CMAKE_CXX_FLAGS "-utf-8 -lwsock32")
+  set(CMAKE_CXX_FLAGS "-utf-8")
   foreach(def IN ITEMS
     -D_HAS_EXCEPTIONS=0
     -DWIN32_LEAN_AND_MEAN
@@ -76,25 +76,25 @@ elseif(WIN32)
   endforeach()
   
   foreach(dir IN ITEMS
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\readme.md"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\logs"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}_cache"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\settings"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\readme.md"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}_cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\settings"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\cache"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\logs"
-    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32"
-    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}\\bin"
-    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}\\lib"
-    "$ENV{USERPROFILE}\\.${PROJECT_VERSION}\\win32\\v${PROJECT_VERSION}\\www")
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\bin"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\lib"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\www")
       if (EXISTS ${dir})
         message(STATUS "directory exist")
       else()
