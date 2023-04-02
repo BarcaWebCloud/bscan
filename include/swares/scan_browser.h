@@ -23,10 +23,10 @@
 
 namespace bscan {
 
-  class BROWSER {
+  class Browser {
    public:
-    BROWSER();
-    ~BROWSER() = default;
+    Browser();
+    ~Browser() = default;
 
     std::string history();
     std::string media();
@@ -48,6 +48,9 @@ namespace bscan {
     static std::string getDownloads();
     static std::string getBookmarks();
     static std::string getPreferencies();
+    static std::string getExtensions();
+    static std::string getApps();
+    static std::string getLogs();
 
    private:
     std::string _history;
@@ -58,6 +61,9 @@ namespace bscan {
     std::string _downloads;
     std::string _bookmarks;
     std::string _preferencies;
+    std::string _extensions;
+    std::string _apps;
+    std::string _logs;
   };
 
 };
