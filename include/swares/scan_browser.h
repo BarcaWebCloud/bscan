@@ -47,7 +47,6 @@ namespace bscan {
     std::string edgepreferences();
     std::string edgesecurepreferences();
     std::string edgeshortcuts();
-    std::string edgememberof();
     std::string edgeautofillemails();
     std::string edgeautofilladdresses();
     std::string edgeautofillphones();
@@ -79,7 +78,6 @@ namespace bscan {
     static std::string getEdgeMedia();
     static std::string getEdgeLogin();
     static std::string getEdgeShortcuts();
-    static std::string getEdgeMemberOf();
     static std::string getEdgeAutoFillEmails();
     static std::string getEdgeAutoFillAddresses();
     static std::string getEdgeAutoFillPhones();
@@ -113,7 +111,6 @@ namespace bscan {
     std::string _edgemedia;
     std::string _edgelogin;
     std::string _edgeshortcuts;
-    std::string _edgememberof;
     std::string _edgeautofillemails;
     std::string _edgeautofilladdresses;
     std::string _edgeautofillphones;
