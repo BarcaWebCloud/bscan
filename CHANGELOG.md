@@ -14,6 +14,7 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
+- [#16](https://github.com/BarcaWebCloud/bscan/pull/16): New features for windows. Gratitude @ahsouza!
 - [#15](https://github.com/BarcaWebCloud/bscan/pull/15): New features for windows. Gratitude @ahsouza!
 
 
@@ -22,8 +23,10 @@ This is the latest version introduces the use of the module and its features.
 <!-- save scan progress with sqlite3 -->
 Add features for **Windows** platform:
 
-- **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Chrome Browser** [only Windows on moment]
-- **Get Login Information Used In Chrome Browser** [only Windows on moment]
+- **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Chrome & Edge Browser** [only Windows on moment]
+- **Get All History Used In Edge Browser** [only Windows on moment]
+- **Get All Login Information Used In Edge Browser** [only Windows on moment]
+- **Get All Media Like Video And Images Used In Edge Browser** [only Windows on moment]
 
 <br>
 
