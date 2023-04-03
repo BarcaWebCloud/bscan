@@ -76,19 +76,18 @@ elseif(WIN32)
   endforeach()
   
   foreach(dir IN ITEMS
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\readme.md"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\logs"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}_cache"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\settings"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}-v${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\cache"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\readme.md"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
     "$ENV{USERPROFILE}\\.${PROJECT_NAME}"
     "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32"
     "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}"
@@ -177,6 +176,7 @@ find_path(_check_include
             WMIwrapper.h,
             bscan.h,
             dirent.h,
+            config.h,
             sqlite3.h,
             "utils/directory.h",
             "utils/string.h",
