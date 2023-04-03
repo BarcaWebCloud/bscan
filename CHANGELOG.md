@@ -8,21 +8,25 @@
 
 This is the latest version introduces the use of the module and its features.
 
+<br>
 
-## v0.1.5 [2023-03-31]
+## v0.1.5 [2023-04-03]
 
 ### Features
 
-- [#14](https://github.com/BarcaWebCloud/bscan/pull/14): New features for Windows OS. Gratitude @ahsouza!
+- [#14](https://github.com/BarcaWebCloud/bscan/pull/14): New features for multiplatform. Gratitude @ahsouza!
 
 
 ### Release Notes
 
+<!-- save scan progress with sqlite3 -->
+Add features for **Windows, Linux & Apple** platform:
 
-Add features for  **Windows** platform:
+- **Get All History Used In Chrome Broeser** [only Windows on moment]
+- **Get All Login Information Used In Chrome Browser** [only Windows on moment]
+- **Get All Media Like Video And Images Used In Chrome Browser** [only Windows on moment]
 
-- **List Images Saved & Camera Pictures** [only Windows on moment]
-- **List History PowerShell Commands** [only Windows on moment]
+<br>
 
 ## v0.1.4 [2023-03-30]
 
@@ -41,6 +45,7 @@ Add features for  **Windows** platform:
 - **List Images Saved & Camera Pictures** [only Windows on moment]
 - **List History PowerShell Commands** [only Windows on moment]
   
+<br>
 
 ## v0.1.3 [2023-03-28]
 
@@ -63,7 +68,7 @@ Add features for  **Windows** platform:
 - **List Home Directory Files and Folders** [only Windows on moment]
 - **List Recently Accessed Files and Folders** [only Windows on moment]
 
-
+<br>
 
 ## v0.1.2 [2023-03-18]
 
@@ -83,6 +88,7 @@ Add features for  **Windows** and **Linux** platforms:
 - **Get Packages Installed into the System** [ Linux ]
 - **Get Hostname, Name & Version into the System** [Windows | Linux]
 
+<br>
 
 ## v0.1.1 [2023-03-13]
 
@@ -99,6 +105,7 @@ Add features for  **MacOS**, **Linux** and **Windows** platforms:
 - **Collect Information About MotherBoard, CPU, GPU, Disk, Memory-RAM, OS, Battery** 
 - **Get legal information from the User logged into the Linux System** [only Linux on moment]
 
+<br>
 
 ## v0.1.0 [2023-03-11]
 
@@ -115,8 +122,6 @@ Add features for  **MacOS**, **Linux** and **Windows** platforms:
 
 Add settings for compiler on **MacOS**, **Linux** and **Windows** platforms:
 
-- **C++ 17** 
-- **GYP config** 
 - **Functions to Hardwares Info** 
 - **Functions to Softwares Info** 
 
