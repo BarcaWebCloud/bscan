@@ -171,6 +171,349 @@ namespace bscan {
     return "dada";
   };
 
+  std::string Browser::getChromePreferences() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-chrome-login.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-login.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from logins;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeSecurePreferences() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-chrome-login.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-login.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from logins;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Shortcuts","C:\\Windows\\Temp\\bscan-chrome-shortcuts.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-shortcuts.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from omni_box_shortcuts;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Affiliation Database","C:\\Windows\\Temp\\bscan-chrome-member-of.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-member-of.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from eq_class_members;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeAutofillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-chrome-autofill-emails.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-autofill-emails.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from autofill_profile_emails;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeAutofillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-chrome-autofill-profiles.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-autofill-profiles.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from autofill_profiles;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+
+  std::string Browser::getChromeAutofillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-chrome-autofill-addresses.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-autofill-addresses.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from autofill_profile_addresses;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeAutofillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-chrome-autofill-phones.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-autofill-addresses.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from autofill_profile_phones;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeAutofillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-chrome-autofill-names.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-autofill-names.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from autofill_profile_names;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
 };
 
 #endif  // END BSCAN_WINDOWS
