@@ -1,6 +1,6 @@
 {
   "name": "bscan",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "A Node.js library to capture important information from the Computing Device Hardwares & Softwares",
   "keywords": [
     "node-api",

@@ -3,17 +3,22 @@
 
 **BSCAN** is a library for Node.js that provides information about the hardware and software of a computing device. Allowing Developers to utilize scanning capabilities in their web applications
 
-1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, GPU,  Disk, Motheboard...
-2. [Softwares](/docs/swares/intro.md) get information about operating system and installed applications
-
 <br>
+
+1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, GPU,  Disk, Motheboard...
+2. [Softwares](/docs/swares/intro.md) get information about Operating System, Apps, User, Services...
+
 <br>
 
 ## Requirements
 
 It is necessary that you have installed the programs below to use **BSCAN** in developer mode.
 
+<br>
+
 ### To Linux
+
+<br>
 
 - [Python](https://www.python.org/) **v3.1** or greater
 - [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
@@ -27,7 +32,11 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
   - [Small Device](https://sdcc.sourceforge.net)
 - [Node.js](https://nodejs.org/) **v8** or greater
 
+<br>
+
 ### To Windows
+
+<br>
 
 - [Python](https://www.python.org/) **v3.1** or greater
 - [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
@@ -45,7 +54,11 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
 
 ## Obtaining BScan
 
+<br>
+
 View the [changelog](/CHANGELOG.md) for the latest updates and changes by version.
+
+<br>
 
 ### Binary Downloads
 
@@ -54,8 +67,11 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 
 
 <br>
+<br>
 
-### Build From Source
+## Build From Source
+
+<br>
 
 **BSCAN** requires C++ version 17 or newer, the CMakelists requires GNU cmake.
 
@@ -69,9 +85,11 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 
 <br>
 
-### Build Executable BSCAN in Your Environment
+## Build Executable BSCAN in Your Environment
 
-#### To Linux
+### To Linux
+
+<br>
 
   1. Run `cmake CMakeLists.txt` from the source directory
 
@@ -81,10 +99,17 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
       ```
   2. Now run `make all` or `make bscan` to compile the main program
 
-#### To Windows
+<br>
+
+### To Windows
+
+<br>
+
 Check the **gcc** version of your System. BSCAN requires version greater than **17**.
 We can view a list of *Makefile* generators with the command: `cmake -G`.
 Here shows an example to use the **MinGW** *Makefile* generator:
+
+<br>
 
   1. Run `cmake -G "MinGW Makefiles" <file-cmake>` from the source directory
 
@@ -96,18 +121,29 @@ Here shows an example to use the **MinGW** *Makefile* generator:
 
 <br>
 
-### Build Module BSCAN Node.js in Your Environment
+## Build Module BSCAN Node.js in Your Environment
+
+<br>
   
   1. Install required `npm` packages 
+   
+
       ```shell
       npm install
       ```
-  2. Generate boilerplate in the root directory of bscan module
+<br>
+
+  1. Generate boilerplate in the root directory of bscan module
+
 
       ```shell
       node-gyp configure
+
       ```
-  3. Now to build bscan native we will need to run the command to generates a **DLL** file with `.node` extension. This file will be placed inside **build/Release** directory
+  <br>
+  
+  1. Now to build bscan native we will need to run the command to generates a **DLL** file with `.node` extension. This file will be placed inside **build/Release** directory
+
 
       ```shell
       node-gyp build
@@ -116,6 +152,8 @@ Here shows an example to use the **MinGW** *Makefile* generator:
 <br>
 
 ## Getting Started
+
+<br>
 
 Create a **javascript** file to call the module
 
@@ -127,12 +165,16 @@ const bscan = require("./build/Release/bscan.node");
 console.log(bscan.info())
 ```
 
+<br>
+
 Now run the program
 
 ```shell
    node main.js
 ```
 
+<br>
+<br>
 
 ## Documentation
 
@@ -140,6 +182,7 @@ Now run the program
 
 For documentation on the latest development code see the [documentation index](/docs).
 
+<br>
 
 ## Contributing
 

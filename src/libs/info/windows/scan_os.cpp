@@ -439,12 +439,27 @@ namespace bscan {
     return std::string(listDir(strcat(content, "\\AppData\\Roaming\\Microsoft\\Windows\\Libraries\\Pictures.library-ms")));
   }
 
-  std::string OS:: getHistoryCommands() {
+  std::string OS:: getHistoryPowerShell() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
-    char* content;
-    content = getenv("USERPROFILE");
-    return std::string(listDir(strcat(content, "\\AppData\\Roaming\\Microsoft\\Windows\\PowerShell\\PSReadLine")));
+    char* path;
+    
+    const char *pathEnd = "\\AppData\\Roaming\\Microsoft\\Windows\\PowerShell\\PSReadLine";
+    path = getenv("USERPROFILE");
+    std::ifstream openFile;
+    openFile.open(std::string(strcat(path, pathEnd)) + "\\ConsoleHost_history.txt");
+    std::string lineInFile;
+    std::string contentFile;
+    if (openFile.is_open()) {
+      while (openFile) {
+        std::getline (openFile, lineInFile);
+        contentFile += std::string("\n") + std::string(lineInFile);
+      }
+    }
+    else {
+      contentFile = "Path to PowerShell was not found. Make sure it is installed on your Windows System.";
+    }
+    return contentFile;
   }
 
   std::string OS::getEnvVariables() {

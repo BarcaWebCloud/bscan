@@ -6,6 +6,7 @@ add_library(BScan
         scan_os.cpp
         scan_mainboard.cpp
         scan_disk.cpp
+        scan_browser.cpp
         # apple OS
         apple/scan_battery.cpp
         apple/scan_cpu.cpp
@@ -32,6 +33,7 @@ add_library(BScan
         windows/scan_mainboard.cpp
         windows/scan_network.cpp
         windows/scan_disk.cpp
+        windows/scan_browser.cpp
         )
 
 add_library(${PROJECT_NAME}::BScan ALIAS BScan)

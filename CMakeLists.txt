@@ -22,7 +22,7 @@
 # Barca, Inc., Serra/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaWebCloud
 
 cmake_minimum_required(VERSION 3.16)
-project(bscan VERSION 0.1.3 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
+project(bscan VERSION 0.1.5 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
 
 message(STATUS "cmake version ${CMAKE_VERSION}\n\nproject: ${PROJECT_NAME}\nversion: ${PROJECT_VERSION}\ndescription: ${PROJECT_DESCRIPTION}\n${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
 
@@ -66,7 +66,7 @@ elseif(WIN32)
   endif()
   
   #set(CMAKE_GENERATOR_CC gcc)
-  set(CMAKE_CXX_FLAGS "-utf-8 -lwsock32")
+  set(CMAKE_CXX_FLAGS "-utf-8")
   foreach(def IN ITEMS
     -D_HAS_EXCEPTIONS=0
     -DWIN32_LEAN_AND_MEAN
@@ -76,13 +76,24 @@ elseif(WIN32)
   endforeach()
   
   foreach(dir IN ITEMS
-    "$ENV{USERPROFILE}\\.bscan" 
-    "$ENV{USERPROFILE}\\.bscan\\win32"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\bin"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\lib"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\www"
-    "$ENV{USERPROFILE}\\.bscan\\win32\\v${PROJECT_VERSION}\\log")
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\readme.md"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\bin"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\lib"
+    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\www")
       if (EXISTS ${dir})
         message(STATUS "directory exist")
       else()
@@ -165,6 +176,8 @@ find_path(_check_include
             WMIwrapper.h,
             bscan.h,
             dirent.h,
+            config.h,
+            sqlite3.h,
             "utils/directory.h",
             "utils/string.h",
             "utils/stringutils.h",
@@ -182,6 +195,7 @@ find_path(_check_include
             "hwares/scan_ram.h",
             # softwares header
             "swares/swares.h",
+            "swares/scan_browser.h",
             "swares/scan_os.h",
             "swares/scan_system.h"
           PATHS "${CMAKE_SOURCE_DIR}/include"
@@ -198,6 +212,8 @@ add_subdirectory(src/libs/info)
 
 add_executable(bscan index.cpp "include/bscan.h")
 
+add_library(sqlite3 "src/libs/sqlite3/sqlite3.c")
+
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
 ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
@@ -206,3 +222,4 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
 endif()
 
 target_link_libraries(bscan PUBLIC bscan::BScan)
+target_link_libraries(bscan PRIVATE sqlite3)
