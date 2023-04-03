@@ -29,7 +29,8 @@ namespace bscan {
     ~Browser() = default;
 
     std::string chromehistory();
-    std::string media();
+    std::string chromemedia();
+    std::string chromelogin();
     std::string profile();
     std::string visitedlinks();
     std::string watched();
@@ -41,7 +42,8 @@ namespace bscan {
     std::string logs();
     
     static std::string getChromeHistory();
-    static std::string getMedia();
+    static std::string getChromeMedia();
+    static std::string getChromeLogin();
     static std::string getProfile();
     static std::string getVisitedLinks();
     static std::string getWatched();
@@ -54,7 +56,8 @@ namespace bscan {
 
    private:
     std::string _chromehistory;
-    std::string _media;
+    std::string _chromemedia;
+    std::string _chromelogin;
     std::string _profile;
     std::string _visitedlinks;
     std::string _watched;
