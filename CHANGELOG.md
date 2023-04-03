@@ -2,11 +2,28 @@
 
 # Changelog
 
-## v0.1.5
+## v0.1.6
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+<br>
+
+## v0.1.6 [2023-04-03]
+
+### Features
+
+- [#15](https://github.com/BarcaWebCloud/bscan/pull/15): New features for windows. Gratitude @ahsouza!
+
+
+### Release Notes
+
+<!-- save scan progress with sqlite3 -->
+Add features for **Windows** platform:
+
+- **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Chrome Browser** [only Windows on moment]
+- **Get Login Information Used In Chrome Browser** [only Windows on moment]
 
 <br>
 
@@ -22,7 +39,7 @@ This is the latest version introduces the use of the module and its features.
 <!-- save scan progress with sqlite3 -->
 Add features for **Windows, Linux & Apple** platform:
 
-- **Get All History Used In Chrome Broeser** [only Windows on moment]
+- **Get All History Used In Chrome Browser** [only Windows on moment]
 - **Get All Login Information Used In Chrome Browser** [only Windows on moment]
 - **Get All Media Like Video And Images Used In Chrome Browser** [only Windows on moment]
 
