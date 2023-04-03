@@ -93,7 +93,83 @@ namespace bscan {
 
     sqlite3_close(bscanDB);
     return "dada";
-  }
+  };
+
+   std::string Browser::getChromeMedia() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Media History","C:\\Windows\\Temp\\bscan-chrome-media.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-media.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from mediaImage;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
+
+  std::string Browser::getChromeLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    pathBSCAN = getenv("USERPROFILE");
+    string line;
+    
+    fs::copy(pathBSCAN + "/AppData/Local/Google/Chrome/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-chrome-login.db");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+    const char* data = "Callback function called";
+    char chromedb[] = "C:\\Windows\\Temp\\bscan-chrome-login.db";
+
+    rc = sqlite3_open(chromedb, &bscanDB);
+    if(rc) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(bscanDB));
+      return(0);
+    }
+    else {
+      fprintf(stderr, "Opened database successfully\n");
+    }
+    sql = "select * from logins;";
+    
+    rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+      std::cerr << "Error find" << std::endl;
+      sqlite3_free(zErrMsg);
+    }
+    else
+      std::cout << "Find Successfully!" << std::endl;
+      std::cout << stdout << std::endl;
+
+    sqlite3_close(bscanDB);
+    return "dada";
+  };
 
 };
 

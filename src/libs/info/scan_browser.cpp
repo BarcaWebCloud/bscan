@@ -31,4 +31,18 @@ namespace bscan {
     return _chromehistory;
   }
 
+  std::string Browser::chromemedia() {
+    if (_chromemedia.empty()) {
+      _chromemedia = getChromeMedia();
+    }
+    return _chromemedia;
+  }
+
+  std::string Browser::chromelogin() {
+    if (_chromelogin.empty()) {
+      _chromelogin = getChromeLogin();
+    }
+    return _chromemedia;
+  }
+
 };
