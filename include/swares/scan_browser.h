@@ -52,6 +52,18 @@ namespace bscan {
     std::string edgeautofillphones();
     std::string edgeautofillnames();
     std::string edgeautofillprofiles();
+    // opera browser
+    std::string operahistory();
+    std::string operamedia();
+    std::string operalogin();
+    std::string operapreferences();
+    std::string operasecurepreferences();
+    std::string operashortcuts();
+    std::string operaautofillemails();
+    std::string operaautofilladdresses();
+    std::string operaautofillphones();
+    std::string operaautofillnames();
+    std::string operaautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -83,6 +95,16 @@ namespace bscan {
     static std::string getEdgeAutoFillPhones();
     static std::string getEdgeAutoFillNames();
     static std::string getEdgeAutoFillProfiles();
+    // opera browser
+    static std::string getOperaHistory();
+    static std::string getOperaMedia();
+    static std::string getOperaLogin();
+    static std::string getOperaShortcuts();
+    static std::string getOperaAutoFillEmails();
+    static std::string getOperaAutoFillAddresses();
+    static std::string getOperaAutoFillPhones();
+    static std::string getOperaAutoFillNames();
+    static std::string getOperaAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -116,6 +138,16 @@ namespace bscan {
     std::string _edgeautofillphones;
     std::string _edgeautofillnames;
     std::string _edgeautofillprofiles;
+    // opera browser
+    std::string _operahistory;
+    std::string _operamedia;
+    std::string _operalogin;
+    std::string _operashortcuts;
+    std::string _operaautofillemails;
+    std::string _operaautofilladdresses;
+    std::string _operaautofillphones;
+    std::string _operaautofillnames;
+    std::string _operaautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;

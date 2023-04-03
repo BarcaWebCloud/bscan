@@ -159,4 +159,61 @@ namespace bscan {
     return _edgeautofillprofiles;
   }
 
+  // TO OPERA GX STABLE
+  std::string Browser::operahistory() {
+    if (_operahistory.empty()) {
+      _operahistory = getOperaHistory();
+    }
+    return _operahistory;
+  }
+
+  std::string Browser::operalogin() {
+    if (_operalogin.empty()) {
+      _operalogin = getOperaLogin();
+    }
+    return _operamedia;
+  }
+
+  std::string Browser::operashortcuts() {
+    if (_operashortcuts.empty()) {
+      _operashortcuts = getOperaShortcuts();
+    }
+    return _operashortcuts;
+  }
+
+  std::string Browser::operaautofillemails() {
+    if (_operaautofillemails.empty()) {
+      _operaautofillemails = getOperaAutoFillEmails();
+    }
+    return _operaautofillemails;
+  }
+  
+  std::string Browser::operaautofilladdresses() {
+    if (_operaautofilladdresses.empty()) {
+      _operaautofilladdresses = getOperaAutoFillAddresses();
+    }
+    return _operaautofilladdresses;
+  }
+
+  std::string Browser::operaautofillphones() {
+    if (_operaautofillphones.empty()) {
+      _operaautofillphones = getOperaAutoFillPhones();
+    }
+    return _operaautofillphones;
+  }
+
+  std::string Browser::operaautofillnames() {
+    if (_operaautofillnames.empty()) {
+      _operaautofillnames = getOperaAutoFillNames();
+    }
+    return _operaautofillnames;
+  }
+
+  std::string Browser::operaautofillprofiles() {
+    if (_operaautofillprofiles.empty()) {
+      _operaautofillprofiles = getOperaAutoFillProfiles();
+    }
+    return _operaautofillprofiles;
+  }
+
 };
