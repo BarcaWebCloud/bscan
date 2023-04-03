@@ -181,6 +181,13 @@ namespace bscan {
     return _operashortcuts;
   }
 
+  std::string Browser::operamemberof() {
+    if (_operamemberof.empty()) {
+      _operamemberof = getOperaMemberOf();
+    }
+    return _operamemberof;
+  }
+
   std::string Browser::operaautofillemails() {
     if (_operaautofillemails.empty()) {
       _operaautofillemails = getOperaAutoFillEmails();

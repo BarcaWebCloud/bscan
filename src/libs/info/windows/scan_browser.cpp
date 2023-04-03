@@ -1569,6 +1569,75 @@ namespace bscan {
     return "successfully found opera shortcuts";
   };
 
+  std::string Browser::getOperaMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-opera-member-of.db");
+    // check if the bscan-opera-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Affiliation Database");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Affiliation Database","C:\\Windows\\Temp\\bscan-opera-member-of.db");
+      } else {
+        return std::string("could not find file for opera browser affiliation");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera affiliation";
+  };
+
   std::string Browser::getOperaAutoFillEmails() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);

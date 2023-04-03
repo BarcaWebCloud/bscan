@@ -59,6 +59,7 @@ namespace bscan {
     std::string operapreferences();
     std::string operasecurepreferences();
     std::string operashortcuts();
+    std::string operamemberof();
     std::string operaautofillemails();
     std::string operaautofilladdresses();
     std::string operaautofillphones();
@@ -100,6 +101,7 @@ namespace bscan {
     static std::string getOperaMedia();
     static std::string getOperaLogin();
     static std::string getOperaShortcuts();
+    static std::string getOperaMemberOf();
     static std::string getOperaAutoFillEmails();
     static std::string getOperaAutoFillAddresses();
     static std::string getOperaAutoFillPhones();
@@ -143,6 +145,7 @@ namespace bscan {
     std::string _operamedia;
     std::string _operalogin;
     std::string _operashortcuts;
+    std::string _operamemberof;
     std::string _operaautofillemails;
     std::string _operaautofilladdresses;
     std::string _operaautofillphones;
