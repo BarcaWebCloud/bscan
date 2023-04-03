@@ -24,11 +24,11 @@ namespace bscan {
 
   Browser::Browser(){};
   
-  std::string Browser::history() {
-    if (_history.empty()) {
-      _history = getHistory();
+  std::string Browser::chromehistory() {
+    if (_chromehistory.empty()) {
+      _chromehistory = getChromeHistory();
     }
-    return _history;
+    return _chromehistory;
   }
 
 };
