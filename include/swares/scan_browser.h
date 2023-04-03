@@ -27,7 +27,7 @@ namespace bscan {
    public:
     Browser();
     ~Browser() = default;
-
+    // chrome browser
     std::string chromehistory();
     std::string chromemedia();
     std::string chromelogin();
@@ -40,6 +40,20 @@ namespace bscan {
     std::string chromeautofillphones();
     std::string chromeautofillnames();
     std::string chromeautofillprofiles();
+    // edge browser
+    std::string edgehistory();
+    std::string edgemedia();
+    std::string edgelogin();
+    std::string edgepreferences();
+    std::string edgesecurepreferences();
+    std::string edgeshortcuts();
+    std::string edgememberof();
+    std::string edgeautofillemails();
+    std::string edgeautofilladdresses();
+    std::string edgeautofillphones();
+    std::string edgeautofillnames();
+    std::string edgeautofillprofiles();
+    //
     std::string profile();
     std::string visitedlinks();
     std::string watched();
@@ -49,7 +63,7 @@ namespace bscan {
     std::string extensions();
     std::string apps();
     std::string logs();
-    
+    // chrome browser
     static std::string getChromeHistory();
     static std::string getChromeMedia();
     static std::string getChromeLogin();
@@ -60,6 +74,18 @@ namespace bscan {
     static std::string getChromeAutoFillPhones();
     static std::string getChromeAutoFillNames();
     static std::string getChromeAutoFillProfiles();
+    // edge browser
+    static std::string getEdgeHistory();
+    static std::string getEdgeMedia();
+    static std::string getEdgeLogin();
+    static std::string getEdgeShortcuts();
+    static std::string getEdgeMemberOf();
+    static std::string getEdgeAutoFillEmails();
+    static std::string getEdgeAutoFillAddresses();
+    static std::string getEdgeAutoFillPhones();
+    static std::string getEdgeAutoFillNames();
+    static std::string getEdgeAutoFillProfiles();
+    //
     static std::string getProfile();
     static std::string getVisitedLinks();
     static std::string getWatched();
@@ -71,6 +97,7 @@ namespace bscan {
     static std::string getLogs();
 
    private:
+    // chrome browser
     std::string _chromehistory;
     std::string _chromemedia;
     std::string _chromelogin;
@@ -81,6 +108,18 @@ namespace bscan {
     std::string _chromeautofillphones;
     std::string _chromeautofillnames;
     std::string _chromeautofillprofiles;
+    // edge browser
+    std::string _edgehistory;
+    std::string _edgemedia;
+    std::string _edgelogin;
+    std::string _edgeshortcuts;
+    std::string _edgememberof;
+    std::string _edgeautofillemails;
+    std::string _edgeautofilladdresses;
+    std::string _edgeautofillphones;
+    std::string _edgeautofillnames;
+    std::string _edgeautofillprofiles;
+    //
     std::string _profile;
     std::string _visitedlinks;
     std::string _watched;
