@@ -48,7 +48,7 @@ using namespace std;
 namespace fs = std::filesystem;
 
 namespace bscan {
-
+  // TO GOOGLE CHROME
   std::string Browser::getChromeHistory() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
@@ -122,7 +122,7 @@ namespace bscan {
     return "successfully found chrome history";
   };
 
-   std::string Browser::getChromeMedia() {
+  std::string Browser::getChromeMedia() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -536,7 +536,6 @@ namespace bscan {
     return "successfully found chrome autofill profiles";
   };
 
-
   std::string Browser::getChromeAutoFillAddresses() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
@@ -743,7 +742,146 @@ namespace bscan {
     
     return "successfully found chrome autofill names";
   };
+  // TO MICROSOFT EDGE
+  std::string Browser::getEdgeHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
 
+    char edgedb[] = "C:\\Windows\\Temp\\bscan-edge-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-edge-history.db");
+    // check if the bscan-edge-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(edgedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Local/Microsoft/Edge/User Data/Default/History");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Local/Microsoft/Edge/User Data/Default/History","C:\\Windows\\Temp\\bscan-edge-history.db");
+      } else {
+        return std::string("could not find file for edge browser history");
+      }
+ 
+      rc = sqlite3_open(edgedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find edge history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found edge history";
+  };
+
+  std::string Browser::getEdgeMedia() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMediaHistory;
+    std::ifstream tmpFileMediaHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char edgedb[] = "C:\\Windows\\Temp\\bscan-edge-media-history.db";
+    tmpFileMediaHistory.open("C:\\Windows\\Temp\\bscan-edge-media-history.db");
+    // check if the bscan-edge-media file exists
+    if(tmpFileMediaHistory) {
+      //if there is read the file
+      rc = sqlite3_open(edgedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from mediaImage;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileMediaHistory.open(pathBSCAN + "/AppData/Local/Microsoft/Edge/User Data/Default/Media History");
+      // if it exists move to the specified path
+      if(fileMediaHistory) {
+        fs::copy(pathBSCAN + "/AppData/Local/Microsoft/Edge/User Data/Default/Media History","C:\\Windows\\Temp\\bscan-edge-media-history.db");
+      } else {
+        return std::string("could not find file for edge browser media history");
+      }
+ 
+      rc = sqlite3_open(edgedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from mediaImage;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find edge media history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found edge media";
+  };
+
+  
 };
 
 #endif  // END BSCAN_WINDOWS
