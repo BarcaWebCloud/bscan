@@ -24,6 +24,7 @@ namespace bscan {
 
   Browser::Browser(){};
   
+  // TO GOOGLE CHROME
   std::string Browser::chromehistory() {
     if (_chromehistory.empty()) {
       _chromehistory = getChromeHistory();
@@ -92,6 +93,70 @@ namespace bscan {
       _chromeautofillprofiles = getChromeAutoFillProfiles();
     }
     return _chromeautofillprofiles;
+  }
+
+  // TO MICROSOFT EDGE
+  std::string Browser::edgehistory() {
+    if (_edgehistory.empty()) {
+      _edgehistory = getEdgeHistory();
+    }
+    return _edgehistory;
+  }
+
+  std::string Browser::edgemedia() {
+    if (_edgemedia.empty()) {
+      _edgemedia = getEdgeMedia();
+    }
+    return _edgemedia;
+  }
+
+  std::string Browser::edgelogin() {
+    if (_edgelogin.empty()) {
+      _edgelogin = getEdgeLogin();
+    }
+    return _edgemedia;
+  }
+
+  std::string Browser::edgeshortcuts() {
+    if (_edgeshortcuts.empty()) {
+      _edgeshortcuts = getEdgeShortcuts();
+    }
+    return _edgeshortcuts;
+  }
+
+  std::string Browser::edgeautofillemails() {
+    if (_edgeautofillemails.empty()) {
+      _edgeautofillemails = getEdgeAutoFillEmails();
+    }
+    return _edgeautofillemails;
+  }
+  
+  std::string Browser::edgeautofilladdresses() {
+    if (_edgeautofilladdresses.empty()) {
+      _edgeautofilladdresses = getEdgeAutoFillAddresses();
+    }
+    return _edgeautofilladdresses;
+  }
+
+  std::string Browser::edgeautofillphones() {
+    if (_edgeautofillphones.empty()) {
+      _edgeautofillphones = getEdgeAutoFillPhones();
+    }
+    return _edgeautofillphones;
+  }
+
+  std::string Browser::edgeautofillnames() {
+    if (_edgeautofillnames.empty()) {
+      _edgeautofillnames = getEdgeAutoFillNames();
+    }
+    return _edgeautofillnames;
+  }
+
+  std::string Browser::edgeautofillprofiles() {
+    if (_edgeautofillprofiles.empty()) {
+      _edgeautofillprofiles = getEdgeAutoFillProfiles();
+    }
+    return _edgeautofillprofiles;
   }
 
 };
