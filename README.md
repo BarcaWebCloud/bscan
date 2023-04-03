@@ -1,4 +1,4 @@
-# BSCAN
+# BSCAN v0.1.6-beta
 
 
 **BSCAN** is a library for Node.js that provides information about the hardware and software of a computing device. Allowing Developers to utilize scanning capabilities in their web applications
@@ -140,7 +140,7 @@ Here shows an example to use the **MinGW** *Makefile* generator:
       node-gyp configure
 
       ```
-  <br>
+<br>
   
   1. Now to build bscan native we will need to run the command to generates a **DLL** file with `.node` extension. This file will be placed inside **build/Release** directory
 
@@ -192,4 +192,3 @@ There are many ways to contribute:
 - [Review code and feature proposals](https://github.com/BarcaWebCloud/bscan/pulls)
 - Answer questions and discuss here on github and on the [Community Site](https://opensource.barca.com/)
 - [Contribute plugins](CONTRIBUTING.md)
-
