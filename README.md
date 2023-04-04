@@ -1,4 +1,4 @@
-# BSCAN v0.1.7-beta
+# BSCAN v0.1.8-beta
 
 
 **BSCAN** is a library for Node.js that provides information about the hardware and software of a computing device. Allowing Developers to utilize scanning capabilities in their web applications
@@ -7,6 +7,7 @@
 
 1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, GPU,  Disk, Motheboard...
 2. [Softwares](/docs/swares/intro.md) get information about Operating System, Apps, User, Services...
+3. [Atmosphere]()(/docs/swares/intro.md) - get information about troposphere, stratosphere, mesosphere, thermosphere and exosphere.
 
 <br>
 

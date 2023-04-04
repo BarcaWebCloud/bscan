@@ -2,11 +2,31 @@
 
 # Changelog
 
-## v0.1.7-BETA
+## v0.1.8-BETA
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+<br>
+
+## v0.1.8 [2023-04-04]
+
+### Features
+
+- [#19](https://github.com/BarcaWebCloud/bscan/pull/19): New features for windows. Gratitude @ahsouza!
+- [#18](https://github.com/BarcaWebCloud/bscan/pull/18): New features for docs. Gratitude @LiaCasatiRamaldes!
+
+
+### Release Notes
+
+
+Add features for **Windows** platform:
+- **Start Architecture For A Quick Start Guide** 
+- **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Opera GX, Orbitum, Maxthon, Pale Moon & Vivaldi Browser** [only Windows on moment]
+- **Get All History Used In Opera GX, Orbitum, Maxthon, Pale Moon & Vivaldi Browser** [only Windows on moment]
+- **Get All Login Information Used In Opera GX, Orbitum, Maxthon, Pale Moon & Vivaldi Browser** [only Windows on moment]
+- **Get All Media Like Video And Images Used In Opera GX, Orbitum, Maxthon, Pale Moon & Vivaldi Browser** [only Windows on moment]
 
 <br>
 
@@ -19,7 +39,7 @@ This is the latest version introduces the use of the module and its features.
 
 ### Release Notes
 
-<!-- save scan progress with sqlite3 -->
+
 Add features for **Windows** platform:
 
 - **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Opera & Brave Browser** [only Windows on moment]
@@ -39,7 +59,7 @@ Add features for **Windows** platform:
 
 ### Release Notes
 
-<!-- save scan progress with sqlite3 -->
+
 Add features for **Windows** platform:
 
 - **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Chrome & Edge Browser** [only Windows on moment]
@@ -58,7 +78,7 @@ Add features for **Windows** platform:
 
 ### Release Notes
 
-<!-- save scan progress with sqlite3 -->
+
 Add features for **Windows, Linux & Apple** platform:
 
 - **Get All History Used In Chrome Browser** [only Windows on moment]
