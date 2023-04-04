@@ -410,4 +410,132 @@ namespace bscan {
     }
     return _vivaldiautofillprofiles;
   }
+
+  // TO ORBITUM
+  std::string Browser::orbitumhistory() {
+    if (_orbitumhistory.empty()) {
+      _orbitumhistory = getOrbitumHistory();
+    }
+    return _orbitumhistory;
+  }
+
+  std::string Browser::orbitumlogin() {
+    if (_orbitumlogin.empty()) {
+      _orbitumlogin = getOrbitumLogin();
+    }
+    return _orbitummedia;
+  }
+
+  std::string Browser::orbitumshortcuts() {
+    if (_orbitumshortcuts.empty()) {
+      _orbitumshortcuts = getOrbitumShortcuts();
+    }
+    return _orbitumshortcuts;
+  }
+
+  std::string Browser::orbitummemberof() {
+    if (_orbitummemberof.empty()) {
+      _orbitummemberof = getOrbitumMemberOf();
+    }
+    return _orbitummemberof;
+  }
+
+  std::string Browser::orbitumautofillemails() {
+    if (_orbitumautofillemails.empty()) {
+      _orbitumautofillemails = getOrbitumAutoFillEmails();
+    }
+    return _orbitumautofillemails;
+  }
+  
+  std::string Browser::orbitumautofilladdresses() {
+    if (_orbitumautofilladdresses.empty()) {
+      _orbitumautofilladdresses = getOrbitumAutoFillAddresses();
+    }
+    return _orbitumautofilladdresses;
+  }
+
+  std::string Browser::orbitumautofillphones() {
+    if (_orbitumautofillphones.empty()) {
+      _orbitumautofillphones = getOrbitumAutoFillPhones();
+    }
+    return _orbitumautofillphones;
+  }
+
+  std::string Browser::orbitumautofillnames() {
+    if (_orbitumautofillnames.empty()) {
+      _orbitumautofillnames = getOrbitumAutoFillNames();
+    }
+    return _orbitumautofillnames;
+  }
+
+  std::string Browser::orbitumautofillprofiles() {
+    if (_orbitumautofillprofiles.empty()) {
+      _orbitumautofillprofiles = getOrbitumAutoFillProfiles();
+    }
+    return _orbitumautofillprofiles;
+  }
+  // TO PALE MOON
+  std::string Browser::palemoonhistory() {
+    if (_palemoonhistory.empty()) {
+      _palemoonhistory = getPaleMoonHistory();
+    }
+    return _palemoonhistory;
+  }
+
+  std::string Browser::palemoonlogin() {
+    if (_palemoonlogin.empty()) {
+      _palemoonlogin = getPaleMoonLogin();
+    }
+    return _palemoonmedia;
+  }
+
+  std::string Browser::palemoonshortcuts() {
+    if (_palemoonshortcuts.empty()) {
+      _palemoonshortcuts = getPaleMoonShortcuts();
+    }
+    return _palemoonshortcuts;
+  }
+
+  std::string Browser::palemoonmemberof() {
+    if (_palemoonmemberof.empty()) {
+      _palemoonmemberof = getPaleMoonMemberOf();
+    }
+    return _palemoonmemberof;
+  }
+
+  std::string Browser::palemoonautofillemails() {
+    if (_palemoonautofillemails.empty()) {
+      _palemoonautofillemails = getPaleMoonAutoFillEmails();
+    }
+    return _palemoonautofillemails;
+  }
+  
+  std::string Browser::palemoonautofilladdresses() {
+    if (_palemoonautofilladdresses.empty()) {
+      _palemoonautofilladdresses = getPaleMoonAutoFillAddresses();
+    }
+    return _palemoonautofilladdresses;
+  }
+
+  std::string Browser::palemoonautofillphones() {
+    if (_palemoonautofillphones.empty()) {
+      _palemoonautofillphones = getPaleMoonAutoFillPhones();
+    }
+    return _palemoonautofillphones;
+  }
+
+  std::string Browser::palemoonautofillnames() {
+    if (_palemoonautofillnames.empty()) {
+      _palemoonautofillnames = getPaleMoonAutoFillNames();
+    }
+    return _palemoonautofillnames;
+  }
+
+  std::string Browser::palemoonautofillprofiles() {
+    if (_palemoonautofillprofiles.empty()) {
+      _palemoonautofillprofiles = getPaleMoonAutoFillProfiles();
+    }
+    return _palemoonautofillprofiles;
+  }
+
 };
