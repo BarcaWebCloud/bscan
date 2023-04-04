@@ -537,5 +537,68 @@ namespace bscan {
     }
     return _palemoonautofillprofiles;
   }
+  // TO MAXTHON
+  std::string Browser::maxthonhistory() {
+    if (_maxthonhistory.empty()) {
+      _maxthonhistory = getMaxthonHistory();
+    }
+    return _maxthonhistory;
+  }
+
+  std::string Browser::maxthonlogin() {
+    if (_maxthonlogin.empty()) {
+      _maxthonlogin = getMaxthonLogin();
+    }
+    return _maxthonmedia;
+  }
+
+  std::string Browser::maxthonshortcuts() {
+    if (_maxthonshortcuts.empty()) {
+      _maxthonshortcuts = getMaxthonShortcuts();
+    }
+    return _maxthonshortcuts;
+  }
+
+  std::string Browser::maxthonmemberof() {
+    if (_maxthonmemberof.empty()) {
+      _maxthonmemberof = getMaxthonMemberOf();
+    }
+    return _maxthonmemberof;
+  }
+
+  std::string Browser::maxthonautofillemails() {
+    if (_maxthonautofillemails.empty()) {
+      _maxthonautofillemails = getMaxthonAutoFillEmails();
+    }
+    return _maxthonautofillemails;
+  }
+  
+  std::string Browser::maxthonautofilladdresses() {
+    if (_maxthonautofilladdresses.empty()) {
+      _maxthonautofilladdresses = getMaxthonAutoFillAddresses();
+    }
+    return _maxthonautofilladdresses;
+  }
+
+  std::string Browser::maxthonautofillphones() {
+    if (_maxthonautofillphones.empty()) {
+      _maxthonautofillphones = getMaxthonAutoFillPhones();
+    }
+    return _maxthonautofillphones;
+  }
+
+  std::string Browser::maxthonautofillnames() {
+    if (_maxthonautofillnames.empty()) {
+      _maxthonautofillnames = getMaxthonAutoFillNames();
+    }
+    return _maxthonautofillnames;
+  }
+
+  std::string Browser::maxthonautofillprofiles() {
+    if (_maxthonautofillprofiles.empty()) {
+      _maxthonautofillprofiles = getMaxthonAutoFillProfiles();
+    }
+    return _maxthonautofillprofiles;
+  }
 
 };

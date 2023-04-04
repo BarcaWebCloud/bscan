@@ -126,6 +126,18 @@ namespace bscan {
     std::string palemoonautofillphones();
     std::string palemoonautofillnames();
     std::string palemoonautofillprofiles();
+    // maxthon browser
+    std::string maxthonhistory();
+    std::string maxthonlogin();
+    std::string maxthonpreferences();
+    std::string maxthonsecurepreferences();
+    std::string maxthonshortcuts();
+    std::string maxthonmemberof();
+    std::string maxthonautofillemails();
+    std::string maxthonautofilladdresses();
+    std::string maxthonautofillphones();
+    std::string maxthonautofillnames();
+    std::string maxthonautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -219,6 +231,16 @@ namespace bscan {
     static std::string getPaleMoonAutoFillPhones();
     static std::string getPaleMoonAutoFillNames();
     static std::string getPaleMoonAutoFillProfiles();
+    // maxthon browser
+    static std::string getMaxthonHistory();
+    static std::string getMaxthonLogin();
+    static std::string getMaxthonShortcuts();
+    static std::string getMaxthonMemberOf();
+    static std::string getMaxthonAutoFillEmails();
+    static std::string getMaxthonAutoFillAddresses();
+    static std::string getMaxthonAutoFillPhones();
+    static std::string getMaxthonAutoFillNames();
+    static std::string getMaxthonAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -314,6 +336,16 @@ namespace bscan {
     std::string _palemoonautofillphones;
     std::string _palemoonautofillnames;
     std::string _palemoonautofillprofiles;
+    // maxthon browser
+    std::string _maxthonhistory;
+    std::string _maxthonlogin;
+    std::string _maxthonshortcuts;
+    std::string _maxthonmemberof;
+    std::string _maxthonautofillemails;
+    std::string _maxthonautofilladdresses;
+    std::string _maxthonautofillphones;
+    std::string _maxthonautofillnames;
+    std::string _maxthonautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
