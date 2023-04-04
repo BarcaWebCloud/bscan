@@ -1,0 +1,19 @@
+{
+  "name": "bscan",
+  "version": "0.1.7",
+  "description": "Library cross-platform to get Information about a Computing Device's Hardwares and Softwares for Node.js, Python, PHP, GO, .NET and more.",
+  "main": "index.js",
+  "authors": {
+    "name": "Lia",
+    "email": "liac.ramaldes2@gmail.com"
+  },
+  "repository": "https://github.com/BarcaWebCloud/bscan.git",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
