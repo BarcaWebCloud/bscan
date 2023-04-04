@@ -77,6 +77,18 @@ namespace bscan {
     std::string braveautofillphones();
     std::string braveautofillnames();
     std::string braveautofillprofiles();
+    // vivaldi browser
+    std::string vivaldihistory();
+    std::string vivaldilogin();
+    std::string vivaldipreferences();
+    std::string vivaldisecurepreferences();
+    std::string vivaldishortcuts();
+    std::string vivaldimemberof();
+    std::string vivaldiautofillemails();
+    std::string vivaldiautofilladdresses();
+    std::string vivaldiautofillphones();
+    std::string vivaldiautofillnames();
+    std::string vivaldiautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -129,6 +141,16 @@ namespace bscan {
     static std::string getBraveAutoFillPhones();
     static std::string getBraveAutoFillNames();
     static std::string getBraveAutoFillProfiles();
+    // vivaldi browser
+    static std::string getVivaldiHistory();
+    static std::string getVivaldiLogin();
+    static std::string getVivaldiShortcuts();
+    static std::string getVivaldiMemberOf();
+    static std::string getVivaldiAutoFillEmails();
+    static std::string getVivaldiAutoFillAddresses();
+    static std::string getVivaldiAutoFillPhones();
+    static std::string getVivaldiAutoFillNames();
+    static std::string getVivaldiAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -183,6 +205,16 @@ namespace bscan {
     std::string _braveautofillphones;
     std::string _braveautofillnames;
     std::string _braveautofillprofiles;
+    // vivaldi browser
+    std::string _vivaldihistory;
+    std::string _vivaldilogin;
+    std::string _vivaldishortcuts;
+    std::string _vivaldimemberof;
+    std::string _vivaldiautofillemails;
+    std::string _vivaldiautofilladdresses;
+    std::string _vivaldiautofillphones;
+    std::string _vivaldiautofillnames;
+    std::string _vivaldiautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
