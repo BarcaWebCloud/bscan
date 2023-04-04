@@ -222,5 +222,67 @@ namespace bscan {
     }
     return _operaautofillprofiles;
   }
+  // TO BRAVE
+  std::string Browser::bravehistory() {
+    if (_bravehistory.empty()) {
+      _bravehistory = getBraveHistory();
+    }
+    return _bravehistory;
+  }
 
+  std::string Browser::bravelogin() {
+    if (_bravelogin.empty()) {
+      _bravelogin = getBraveLogin();
+    }
+    return _bravemedia;
+  }
+
+  std::string Browser::braveshortcuts() {
+    if (_braveshortcuts.empty()) {
+      _braveshortcuts = getBraveShortcuts();
+    }
+    return _braveshortcuts;
+  }
+
+  std::string Browser::bravememberof() {
+    if (_bravememberof.empty()) {
+      _bravememberof = getBraveMemberOf();
+    }
+    return _bravememberof;
+  }
+
+  std::string Browser::braveautofillemails() {
+    if (_braveautofillemails.empty()) {
+      _braveautofillemails = getBraveAutoFillEmails();
+    }
+    return _braveautofillemails;
+  }
+  
+  std::string Browser::braveautofilladdresses() {
+    if (_braveautofilladdresses.empty()) {
+      _braveautofilladdresses = getBraveAutoFillAddresses();
+    }
+    return _braveautofilladdresses;
+  }
+
+  std::string Browser::braveautofillphones() {
+    if (_braveautofillphones.empty()) {
+      _braveautofillphones = getBraveAutoFillPhones();
+    }
+    return _braveautofillphones;
+  }
+
+  std::string Browser::braveautofillnames() {
+    if (_braveautofillnames.empty()) {
+      _braveautofillnames = getBraveAutoFillNames();
+    }
+    return _braveautofillnames;
+  }
+
+  std::string Browser::braveautofillprofiles() {
+    if (_braveautofillprofiles.empty()) {
+      _braveautofillprofiles = getBraveAutoFillProfiles();
+    }
+    return _braveautofillprofiles;
+  }
 };
