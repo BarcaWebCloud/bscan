@@ -1,4 +1,4 @@
-# BSCAN v0.1.6-beta
+# BSCAN v0.1.7-beta
 
 
 **BSCAN** is a library for Node.js that provides information about the hardware and software of a computing device. Allowing Developers to utilize scanning capabilities in their web applications

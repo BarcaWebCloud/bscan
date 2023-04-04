@@ -22,7 +22,7 @@
 # Barca, Inc., Serra/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaWebCloud
 
 cmake_minimum_required(VERSION 3.16)
-project(bscan VERSION 0.1.6 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
+project(bscan VERSION 0.1.7 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
 
 message(STATUS "cmake version ${CMAKE_VERSION}\n\nproject: ${PROJECT_NAME}\nversion: ${PROJECT_VERSION}\ndescription: ${PROJECT_DESCRIPTION}\n${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
 

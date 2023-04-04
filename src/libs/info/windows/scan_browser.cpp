@@ -1361,6 +1361,1246 @@ namespace bscan {
     
     return "successfully found edge autofill names";
   };
+  // TO OPERA GX STABLE
+  std::string Browser::getOperaHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-opera-history.db");
+    // check if the bscan-opera-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/History");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/History","C:\\Windows\\Temp\\bscan-opera-history.db");
+      } else {
+        return std::string("could not find file for opera browser history");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera history";
+  };
+
+  std::string Browser::getOperaLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileLogins;
+    std::ifstream tmpFileLogins;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-opera-logins.db");
+    // check if the bscan-opera-logins file exists
+    if(tmpFileLogins) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the logins file exists
+      fileLogins.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Login Data");
+      // if it exists move to the specified path
+      if(fileLogins) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Login Data","C:\\Windows\\Temp\\bscan-opera-logins.db");
+      } else {
+        return std::string("could not find file for opera browser logins");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera logins" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera logins";
+  };
+
+  std::string Browser::getOperaShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileShortcuts;
+    std::ifstream tmpFileShortcuts;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-opera-shortcuts.db");
+    // check if the bscan-opera-shortcuts file exists
+    if(tmpFileShortcuts) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the shortcuts file exists
+      fileShortcuts.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Shortcuts");
+      // if it exists move to the specified path
+      if(fileShortcuts) {
+        fs::copy(pathBSCAN + "/AppData/Local/Roaming/Opera Software/Opera GX Stable/Shortcuts","C:\\Windows\\Temp\\bscan-opera-shortcuts.db");
+      } else {
+        return std::string("could not find file for opera browser shortcuts");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera shortcuts" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera shortcuts";
+  };
+
+  std::string Browser::getOperaMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-opera-member-of.db");
+    // check if the bscan-opera-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Affiliation Database");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Affiliation Database","C:\\Windows\\Temp\\bscan-opera-member-of.db");
+      } else {
+        return std::string("could not find file for opera browser affiliation");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera affiliation";
+  };
+
+  std::string Browser::getOperaAutoFillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillEmails;
+    std::ifstream tmpFileAutoFillEmails;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-opera-autofill-emails.db");
+    // check if the bscan-opera-autofill emails file exists
+    if(tmpFileAutoFillEmails) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill emails file exists
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillEmails) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data","C:\\Windows\\Temp\\bscan-opera-autofill-emails.db");
+      } else {
+        return std::string("could not find file for opera browser autofill emails");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera autofill emails" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera autofill emails";
+  };
+
+  std::string Browser::getOperaAutoFillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillProfiles;
+    std::ifstream tmpFileAutoFillProfiles;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-opera-autofill-profiles.db");
+    // check if the bscan-opera-autofill profiles file exists
+    if(tmpFileAutoFillProfiles) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill profiles file exists
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillProfiles) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data","C:\\Windows\\Temp\\bscan-opera-autofill-profiles.db");
+      } else {
+        return std::string("could not find file for opera browser autofill profiles");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera autofill profiles" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found opera autofill profiles";
+  };
+
+  std::string Browser::getOperaAutoFillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillAddresses;
+    std::ifstream tmpFileAutoFillAddresses;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-opera-autofill-addresses.db");
+    // check if the bscan-opera-autofill-addresses file exists
+    if(tmpFileAutoFillAddresses) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill addresses file exists
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillAddresses) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data","C:\\Windows\\Temp\\bscan-opera-autofill-addresses.db");
+      } else {
+        return std::string("could not find file for opera browser autofill addresses");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera autofill addresses" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found opera autofill addresses";
+  };
+
+  std::string Browser::getOperaAutoFillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillPhones;
+    std::ifstream tmpFileAutoFillPhones;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-opera-autofill-phones.db");
+    // check if the bscan-opera-autoFill-phones file exists
+    if(tmpFileAutoFillPhones) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill phones file exists
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillPhones) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data","C:\\Windows\\Temp\\bscan-opera-autofill-phones.db");
+      } else {
+        return std::string("could not find file for opera browser autofill phones");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera autofill phones" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found opera autofill phones";
+  };
+
+  std::string Browser::getOperaAutoFillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillNames;
+    std::ifstream tmpFileAutoFillNames;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char operadb[] = "C:\\Windows\\Temp\\bscan-opera-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-opera-autofill-names.db");
+    // check if the bscan-opera-autofill names file exists
+    if(tmpFileAutoFillNames) {
+      //if there is read the file   
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill names file exists
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillNames) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/Opera Software/Opera GX Stable/Web Data","C:\\Windows\\Temp\\bscan-opera-autofill-names.db");
+      } else {
+        return std::string("could not find file for opera browser autofill names");
+      }
+ 
+      rc = sqlite3_open(operadb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find opera autofill names" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found opera autofill names";
+  };
+  // TO BRAVE
+  std::string Browser::getBraveHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-brave-history.db");
+    // check if the bscan-brave-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/History");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/History","C:\\Windows\\Temp\\bscan-brave-history.db");
+      } else {
+        return std::string("could not find file for brave browser history");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found brave history";
+  };
+
+  std::string Browser::getBraveLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileLogins;
+    std::ifstream tmpFileLogins;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-brave-logins.db");
+    // check if the bscan-brave-logins file exists
+    if(tmpFileLogins) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the logins file exists
+      fileLogins.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Login Data");
+      // if it exists move to the specified path
+      if(fileLogins) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-brave-logins.db");
+      } else {
+        return std::string("could not find file for brave browser logins");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave logins" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found brave logins";
+  };
+
+  std::string Browser::getBraveShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileShortcuts;
+    std::ifstream tmpFileShortcuts;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-brave-shortcuts.db");
+    // check if the bscan-brave-shortcuts file exists
+    if(tmpFileShortcuts) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the shortcuts file exists
+      fileShortcuts.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Shortcuts");
+      // if it exists move to the specified path
+      if(fileShortcuts) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Shortcuts","C:\\Windows\\Temp\\bscan-brave-shortcuts.db");
+      } else {
+        return std::string("could not find file for brave browser shortcuts");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave shortcuts" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found brave shortcuts";
+  };
+
+  std::string Browser::getBraveMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-brave-member-of.db");
+    // check if the bscan-brave-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Affiliation Database");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Affiliation Database","C:\\Windows\\Temp\\bscan-brave-member-of.db");
+      } else {
+        return std::string("could not find file for brave browser affiliation");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found brave affiliation";
+  };
+
+  std::string Browser::getBraveAutoFillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillEmails;
+    std::ifstream tmpFileAutoFillEmails;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-brave-autofill-emails.db");
+    // check if the bscan-brave-autofill emails file exists
+    if(tmpFileAutoFillEmails) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill emails file exists
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillEmails) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-brave-autofill-emails.db");
+      } else {
+        return std::string("could not find file for brave browser autofill emails");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave autofill emails" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found brave autofill emails";
+  };
+
+  std::string Browser::getBraveAutoFillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillProfiles;
+    std::ifstream tmpFileAutoFillProfiles;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-brave-autofill-profiles.db");
+    // check if the bscan-brave-autofill profiles file exists
+    if(tmpFileAutoFillProfiles) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill profiles file exists
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillProfiles) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-brave-autofill-profiles.db");
+      } else {
+        return std::string("could not find file for brave browser autofill profiles");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave autofill profiles" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found brave autofill profiles";
+  };
+
+  std::string Browser::getBraveAutoFillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillAddresses;
+    std::ifstream tmpFileAutoFillAddresses;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-brave-autofill-addresses.db");
+    // check if the bscan-brave-autofill-addresses file exists
+    if(tmpFileAutoFillAddresses) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill addresses file exists
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillAddresses) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-brave-autofill-addresses.db");
+      } else {
+        return std::string("could not find file for brave browser autofill addresses");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave autofill addresses" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found brave autofill addresses";
+  };
+
+  std::string Browser::getBraveAutoFillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillPhones;
+    std::ifstream tmpFileAutoFillPhones;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-brave-autofill-phones.db");
+    // check if the bscan-brave-autoFill-phones file exists
+    if(tmpFileAutoFillPhones) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the autofill phones file exists
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillPhones) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-brave-autofill-phones.db");
+      } else {
+        return std::string("could not find file for brave browser autofill phones");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave autofill phones" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found brave autofill phones";
+  };
+
+  std::string Browser::getBraveAutoFillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillNames;
+    std::ifstream tmpFileAutoFillNames;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char bravedb[] = "C:\\Windows\\Temp\\bscan-brave-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-brave-autofill-names.db");
+    // check if the bscan-brave-autofill names file exists
+    if(tmpFileAutoFillNames) {
+      //if there is read the file   
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill names file exists
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillNames) {
+        fs::copy(pathBSCAN + "/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-brave-autofill-names.db");
+      } else {
+        return std::string("could not find file for brave browser autofill names");
+      }
+ 
+      rc = sqlite3_open(bravedb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find brave autofill names" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found brave autofill names";
+  };
+  //todo: make media
+
+
 };
 
 #endif  // END BSCAN_WINDOWS
