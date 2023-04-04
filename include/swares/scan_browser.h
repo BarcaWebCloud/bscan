@@ -52,6 +52,19 @@ namespace bscan {
     std::string edgeautofillphones();
     std::string edgeautofillnames();
     std::string edgeautofillprofiles();
+    // opera gx browser
+    std::string operagxhistory();
+    std::string operagxmedia();
+    std::string operagxlogin();
+    std::string operagxpreferences();
+    std::string operagxsecurepreferences();
+    std::string operagxshortcuts();
+    std::string operagxmemberof();
+    std::string operagxautofillemails();
+    std::string operagxautofilladdresses();
+    std::string operagxautofillphones();
+    std::string operagxautofillnames();
+    std::string operagxautofillprofiles();
     // opera browser
     std::string operahistory();
     std::string operamedia();
@@ -120,6 +133,17 @@ namespace bscan {
     static std::string getEdgeAutoFillPhones();
     static std::string getEdgeAutoFillNames();
     static std::string getEdgeAutoFillProfiles();
+    // opera gx browser
+    static std::string getOperaGXHistory();
+    static std::string getOperaGXMedia();
+    static std::string getOperaGXLogin();
+    static std::string getOperaGXShortcuts();
+    static std::string getOperaGXMemberOf();
+    static std::string getOperaGXAutoFillEmails();
+    static std::string getOperaGXAutoFillAddresses();
+    static std::string getOperaGXAutoFillPhones();
+    static std::string getOperaGXAutoFillNames();
+    static std::string getOperaGXAutoFillProfiles();
     // opera browser
     static std::string getOperaHistory();
     static std::string getOperaMedia();
@@ -184,6 +208,17 @@ namespace bscan {
     std::string _edgeautofillphones;
     std::string _edgeautofillnames;
     std::string _edgeautofillprofiles;
+    // opera gx browser
+    std::string _operagxhistory;
+    std::string _operagxmedia;
+    std::string _operagxlogin;
+    std::string _operagxshortcuts;
+    std::string _operagxmemberof;
+    std::string _operagxautofillemails;
+    std::string _operagxautofilladdresses;
+    std::string _operagxautofillphones;
+    std::string _operagxautofillnames;
+    std::string _operagxautofillprofiles;
     // opera browser
     std::string _operahistory;
     std::string _operamedia;
