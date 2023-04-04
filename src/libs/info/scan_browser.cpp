@@ -285,4 +285,67 @@ namespace bscan {
     }
     return _braveautofillprofiles;
   }
+  // TO VIVALDI
+  std::string Browser::vivaldihistory() {
+    if (_vivaldihistory.empty()) {
+      _vivaldihistory = getVivaldiHistory();
+    }
+    return _vivaldihistory;
+  }
+
+  std::string Browser::vivaldilogin() {
+    if (_vivaldilogin.empty()) {
+      _vivaldilogin = getVivaldiLogin();
+    }
+    return _vivaldimedia;
+  }
+
+  std::string Browser::vivaldishortcuts() {
+    if (_vivaldishortcuts.empty()) {
+      _vivaldishortcuts = getvivaldiShortcuts();
+    }
+    return _vivaldishortcuts;
+  }
+
+  std::string Browser::vivaldimemberof() {
+    if (_vivaldimemberof.empty()) {
+      _vivaldimemberof = getVivaldiMemberOf();
+    }
+    return _vivaldimemberof;
+  }
+
+  std::string Browser::vivaldiautofillemails() {
+    if (_vivaldiautofillemails.empty()) {
+      _vivaldiautofillemails = getVivaldiAutoFillEmails();
+    }
+    return _vivaldiautofillemails;
+  }
+  
+  std::string Browser::vivaldiautofilladdresses() {
+    if (_vivaldiautofilladdresses.empty()) {
+      _vivaldiautofilladdresses = getVivaldiAutoFillAddresses();
+    }
+    return _vivaldiautofilladdresses;
+  }
+
+  std::string Browser::vivaldiautofillphones() {
+    if (_vivaldiautofillphones.empty()) {
+      _vivaldiautofillphones = getVivaldiAutoFillPhones();
+    }
+    return _vivaldiautofillphones;
+  }
+
+  std::string Browser::vivaldiautofillnames() {
+    if (_vivaldiautofillnames.empty()) {
+      _vivaldiautofillnames = getVivaldiAutoFillNames();
+    }
+    return _vivaldiautofillnames;
+  }
+
+  std::string Browser::vivaldiautofillprofiles() {
+    if (_vivaldiautofillprofiles.empty()) {
+      _vivaldiautofillprofiles = getVivaldiAutoFillProfiles();
+    }
+    return _vivaldiautofillprofiles;
+  }
 };
