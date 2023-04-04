@@ -2,11 +2,30 @@
 
 # Changelog
 
-## v0.1.6
+## v0.1.7-BETA
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+<br>
+
+## v0.1.7 [2023-04-03]
+
+### Features
+
+- [#17](https://github.com/BarcaWebCloud/bscan/pull/17): New features for windows. Gratitude @ahsouza!
+
+
+### Release Notes
+
+<!-- save scan progress with sqlite3 -->
+Add features for **Windows** platform:
+
+- **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Opera & Brave Browser** [only Windows on moment]
+- **Get All History Used In Opera & Brave Browser** [only Windows on moment]
+- **Get All Login Information Used In Opera & Brave Browser** [only Windows on moment]
+- **Get All Media Like Video And Images Used In Opera & Brave Browser** [only Windows on moment]
 
 <br>
 
