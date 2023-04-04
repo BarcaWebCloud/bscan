@@ -2598,6 +2598,619 @@ namespace bscan {
     
     return "successfully found brave autofill names";
   };
+  // TO VIVALDI
+  std::string Browser::getVivaldiHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-vivaldi-history.db");
+    // check if the bscan-vivaldi-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/History");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/History","C:\\Windows\\Temp\\bscan-vivaldi-history.db");
+      } else {
+        return std::string("could not find file for vivaldi browser history");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found vivaldi history";
+  };
+
+  std::string Browser::getVivaldiLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileLogins;
+    std::ifstream tmpFileLogins;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-vivaldi-logins.db");
+    // check if the bscan-vivaldi-logins file exists
+    if(tmpFileLogins) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the logins file exists
+      fileLogins.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Login Data");
+      // if it exists move to the specified path
+      if(fileLogins) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-vivaldi-logins.db");
+      } else {
+        return std::string("could not find file for vivaldi browser logins");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi logins" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found vivaldi logins";
+  };
+
+  std::string Browser::getVivaldiShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileShortcuts;
+    std::ifstream tmpFileShortcuts;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-vivaldi-shortcuts.db");
+    // check if the bscan-vivaldi-shortcuts file exists
+    if(tmpFileShortcuts) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the shortcuts file exists
+      fileShortcuts.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Shortcuts");
+      // if it exists move to the specified path
+      if(fileShortcuts) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Shortcuts","C:\\Windows\\Temp\\bscan-vivaldi-shortcuts.db");
+      } else {
+        return std::string("could not find file for vivaldi browser shortcuts");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi shortcuts" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found vivaldi shortcuts";
+  };
+
+  std::string Browser::getVivaldiMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-vivaldi-member-of.db");
+    // check if the bscan-vivaldi-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Affiliation Database");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Affiliation Database","C:\\Windows\\Temp\\bscan-vivaldi-member-of.db");
+      } else {
+        return std::string("could not find file for vivaldi browser affiliation");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found vivaldi affiliation";
+  };
+
+  std::string Browser::getVivaldiAutoFillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillEmails;
+    std::ifstream tmpFileAutoFillEmails;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-vivaldi-autofill-emails.db");
+    // check if the bscan-vivaldi-autofill emails file exists
+    if(tmpFileAutoFillEmails) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill emails file exists
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillEmails) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-vivaldi-autofill-emails.db");
+      } else {
+        return std::string("could not find file for vivaldi browser autofill emails");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi autofill emails" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found vivaldi autofill emails";
+  };
+
+  std::string Browser::getVivaldiAutoFillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillProfiles;
+    std::ifstream tmpFileAutoFillProfiles;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-vivaldi-autofill-profiles.db");
+    // check if the bscan-vivaldi-autofill profiles file exists
+    if(tmpFileAutoFillProfiles) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill profiles file exists
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillProfiles) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-vivaldi-autofill-profiles.db");
+      } else {
+        return std::string("could not find file for vivaldi browser autofill profiles");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi autofill profiles" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found vivaldi autofill profiles";
+  };
+
+  std::string Browser::getVivaldiAutoFillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillAddresses;
+    std::ifstream tmpFileAutoFillAddresses;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-vivaldi-autofill-addresses.db");
+    // check if the bscan-vivaldi-autofill-addresses file exists
+    if(tmpFileAutoFillAddresses) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill addresses file exists
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillAddresses) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-vivaldi-autofill-addresses.db");
+      } else {
+        return std::string("could not find file for vivaldi browser autofill addresses");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi autofill addresses" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found vivaldi autofill addresses";
+  };
+
+  std::string Browser::getVivaldiAutoFillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillPhones;
+    std::ifstream tmpFileAutoFillPhones;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-vivaldi-autofill-phones.db");
+    // check if the bscan-vivaldi-autoFill-phones file exists
+    if(tmpFileAutoFillPhones) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill phones file exists
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillPhones) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-vivaldi-autofill-phones.db");
+      } else {
+        return std::string("could not find file for vivaldi browser autofill phones");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi autofill phones" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found vivaldi autofill phones";
+  };
+
+  std::string Browser::getVivaldiAutoFillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillNames;
+    std::ifstream tmpFileAutoFillNames;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char vivaldidb[] = "C:\\Windows\\Temp\\bscan-vivaldi-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-vivaldi-autofill-names.db");
+    // check if the bscan-vivaldi-autofill names file exists
+    if(tmpFileAutoFillNames) {
+      //if there is read the file   
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill names file exists
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillNames) {
+        fs::copy(pathBSCAN + "/AppData/Local/Vivaldi/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-vivaldi-autofill-names.db");
+      } else {
+        return std::string("could not find file for vivaldi browser autofill names");
+      }
+ 
+      rc = sqlite3_open(vivaldidb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find vivaldi autofill names" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found vivaldi autofill names";
+  };
   //todo: make media
 
 
