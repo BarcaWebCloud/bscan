@@ -158,8 +158,70 @@ namespace bscan {
     }
     return _edgeautofillprofiles;
   }
+ // TO OPERA GX STABLE
+  std::string Browser::operagxhistory() {
+    if (_operagxhistory.empty()) {
+      _operagxhistory = getOperaGXHistory();
+    }
+    return _operagxhistory;
+  }
 
-  // TO OPERA GX STABLE
+  std::string Browser::operagxlogin() {
+    if (_operagxlogin.empty()) {
+      _operagxlogin = getOperaGXLogin();
+    }
+    return _operagxmedia;
+  }
+
+  std::string Browser::operagxshortcuts() {
+    if (_operagxshortcuts.empty()) {
+      _operagxshortcuts = getOperaGXShortcuts();
+    }
+    return _operagxshortcuts;
+  }
+
+  std::string Browser::operagxmemberof() {
+    if (_operagxmemberof.empty()) {
+      _operagxmemberof = getOperaGXMemberOf();
+    }
+    return _operagxmemberof;
+  }
+
+  std::string Browser::operagxautofillemails() {
+    if (_operagxautofillemails.empty()) {
+      _operagxautofillemails = getOperaGXAutoFillEmails();
+    }
+    return _operagxautofillemails;
+  }
+  
+  std::string Browser::operagxautofilladdresses() {
+    if (_operagxautofilladdresses.empty()) {
+      _operagxautofilladdresses = getOperaGXAutoFillAddresses();
+    }
+    return _operagxautofilladdresses;
+  }
+
+  std::string Browser::operagxautofillphones() {
+    if (_operagxautofillphones.empty()) {
+      _operagxautofillphones = getOperaGXAutoFillPhones();
+    }
+    return _operagxautofillphones;
+  }
+
+  std::string Browser::operagxautofillnames() {
+    if (_operagxautofillnames.empty()) {
+      _operagxautofillnames = getOperaGXAutoFillNames();
+    }
+    return _operagxautofillnames;
+  }
+
+  std::string Browser::operagxautofillprofiles() {
+    if (_operagxautofillprofiles.empty()) {
+      _operagxautofillprofiles = getOperaGXAutoFillProfiles();
+    }
+    return _operagxautofillprofiles;
+  }
+  // TO OPERA STABLE
   std::string Browser::operahistory() {
     if (_operahistory.empty()) {
       _operahistory = getOperaHistory();
