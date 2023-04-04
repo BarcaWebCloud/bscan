@@ -52,6 +52,19 @@ namespace bscan {
     std::string edgeautofillphones();
     std::string edgeautofillnames();
     std::string edgeautofillprofiles();
+    // opera gx browser
+    std::string operagxhistory();
+    std::string operagxmedia();
+    std::string operagxlogin();
+    std::string operagxpreferences();
+    std::string operagxsecurepreferences();
+    std::string operagxshortcuts();
+    std::string operagxmemberof();
+    std::string operagxautofillemails();
+    std::string operagxautofilladdresses();
+    std::string operagxautofillphones();
+    std::string operagxautofillnames();
+    std::string operagxautofillprofiles();
     // opera browser
     std::string operahistory();
     std::string operamedia();
@@ -89,6 +102,42 @@ namespace bscan {
     std::string vivaldiautofillphones();
     std::string vivaldiautofillnames();
     std::string vivaldiautofillprofiles();
+    // orbitum browser
+    std::string orbitumhistory();
+    std::string orbitumlogin();
+    std::string orbitumpreferences();
+    std::string orbitumsecurepreferences();
+    std::string orbitumshortcuts();
+    std::string orbitummemberof();
+    std::string orbitumautofillemails();
+    std::string orbitumautofilladdresses();
+    std::string orbitumautofillphones();
+    std::string orbitumautofillnames();
+    std::string orbitumautofillprofiles();
+    // palemoon browser
+    std::string palemoonhistory();
+    std::string palemoonlogin();
+    std::string palemoonpreferences();
+    std::string palemoonsecurepreferences();
+    std::string palemoonshortcuts();
+    std::string palemoonmemberof();
+    std::string palemoonautofillemails();
+    std::string palemoonautofilladdresses();
+    std::string palemoonautofillphones();
+    std::string palemoonautofillnames();
+    std::string palemoonautofillprofiles();
+    // maxthon browser
+    std::string maxthonhistory();
+    std::string maxthonlogin();
+    std::string maxthonpreferences();
+    std::string maxthonsecurepreferences();
+    std::string maxthonshortcuts();
+    std::string maxthonmemberof();
+    std::string maxthonautofillemails();
+    std::string maxthonautofilladdresses();
+    std::string maxthonautofillphones();
+    std::string maxthonautofillnames();
+    std::string maxthonautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -120,6 +169,17 @@ namespace bscan {
     static std::string getEdgeAutoFillPhones();
     static std::string getEdgeAutoFillNames();
     static std::string getEdgeAutoFillProfiles();
+    // opera gx browser
+    static std::string getOperaGXHistory();
+    static std::string getOperaGXMedia();
+    static std::string getOperaGXLogin();
+    static std::string getOperaGXShortcuts();
+    static std::string getOperaGXMemberOf();
+    static std::string getOperaGXAutoFillEmails();
+    static std::string getOperaGXAutoFillAddresses();
+    static std::string getOperaGXAutoFillPhones();
+    static std::string getOperaGXAutoFillNames();
+    static std::string getOperaGXAutoFillProfiles();
     // opera browser
     static std::string getOperaHistory();
     static std::string getOperaMedia();
@@ -151,6 +211,36 @@ namespace bscan {
     static std::string getVivaldiAutoFillPhones();
     static std::string getVivaldiAutoFillNames();
     static std::string getVivaldiAutoFillProfiles();
+    // orbitum browser
+    static std::string getOrbitumHistory();
+    static std::string getOrbitumLogin();
+    static std::string getOrbitumShortcuts();
+    static std::string getOrbitumMemberOf();
+    static std::string getOrbitumAutoFillEmails();
+    static std::string getOrbitumAutoFillAddresses();
+    static std::string getOrbitumAutoFillPhones();
+    static std::string getOrbitumAutoFillNames();
+    static std::string getOrbitumAutoFillProfiles();
+    // palemoon browser
+    static std::string getPaleMoonHistory();
+    static std::string getPaleMoonLogin();
+    static std::string getPaleMoonShortcuts();
+    static std::string getPaleMoonMemberOf();
+    static std::string getPaleMoonAutoFillEmails();
+    static std::string getPaleMoonAutoFillAddresses();
+    static std::string getPaleMoonAutoFillPhones();
+    static std::string getPaleMoonAutoFillNames();
+    static std::string getPaleMoonAutoFillProfiles();
+    // maxthon browser
+    static std::string getMaxthonHistory();
+    static std::string getMaxthonLogin();
+    static std::string getMaxthonShortcuts();
+    static std::string getMaxthonMemberOf();
+    static std::string getMaxthonAutoFillEmails();
+    static std::string getMaxthonAutoFillAddresses();
+    static std::string getMaxthonAutoFillPhones();
+    static std::string getMaxthonAutoFillNames();
+    static std::string getMaxthonAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -184,6 +274,17 @@ namespace bscan {
     std::string _edgeautofillphones;
     std::string _edgeautofillnames;
     std::string _edgeautofillprofiles;
+    // opera gx browser
+    std::string _operagxhistory;
+    std::string _operagxmedia;
+    std::string _operagxlogin;
+    std::string _operagxshortcuts;
+    std::string _operagxmemberof;
+    std::string _operagxautofillemails;
+    std::string _operagxautofilladdresses;
+    std::string _operagxautofillphones;
+    std::string _operagxautofillnames;
+    std::string _operagxautofillprofiles;
     // opera browser
     std::string _operahistory;
     std::string _operamedia;
@@ -215,6 +316,36 @@ namespace bscan {
     std::string _vivaldiautofillphones;
     std::string _vivaldiautofillnames;
     std::string _vivaldiautofillprofiles;
+    // orbitum browser
+    std::string _orbitumhistory;
+    std::string _orbitumlogin;
+    std::string _orbitumshortcuts;
+    std::string _orbitummemberof;
+    std::string _orbitumautofillemails;
+    std::string _orbitumautofilladdresses;
+    std::string _orbitumautofillphones;
+    std::string _orbitumautofillnames;
+    std::string _orbitumautofillprofiles;
+    // palemoon browser
+    std::string _palemoonhistory;
+    std::string _palemoonlogin;
+    std::string _palemoonshortcuts;
+    std::string _palemoonmemberof;
+    std::string _palemoonautofillemails;
+    std::string _palemoonautofilladdresses;
+    std::string _palemoonautofillphones;
+    std::string _palemoonautofillnames;
+    std::string _palemoonautofillprofiles;
+    // maxthon browser
+    std::string _maxthonhistory;
+    std::string _maxthonlogin;
+    std::string _maxthonshortcuts;
+    std::string _maxthonmemberof;
+    std::string _maxthonautofillemails;
+    std::string _maxthonautofilladdresses;
+    std::string _maxthonautofillphones;
+    std::string _maxthonautofillnames;
+    std::string _maxthonautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;

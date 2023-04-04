@@ -158,8 +158,70 @@ namespace bscan {
     }
     return _edgeautofillprofiles;
   }
+ // TO OPERA GX STABLE
+  std::string Browser::operagxhistory() {
+    if (_operagxhistory.empty()) {
+      _operagxhistory = getOperaGXHistory();
+    }
+    return _operagxhistory;
+  }
 
-  // TO OPERA GX STABLE
+  std::string Browser::operagxlogin() {
+    if (_operagxlogin.empty()) {
+      _operagxlogin = getOperaGXLogin();
+    }
+    return _operagxmedia;
+  }
+
+  std::string Browser::operagxshortcuts() {
+    if (_operagxshortcuts.empty()) {
+      _operagxshortcuts = getOperaGXShortcuts();
+    }
+    return _operagxshortcuts;
+  }
+
+  std::string Browser::operagxmemberof() {
+    if (_operagxmemberof.empty()) {
+      _operagxmemberof = getOperaGXMemberOf();
+    }
+    return _operagxmemberof;
+  }
+
+  std::string Browser::operagxautofillemails() {
+    if (_operagxautofillemails.empty()) {
+      _operagxautofillemails = getOperaGXAutoFillEmails();
+    }
+    return _operagxautofillemails;
+  }
+  
+  std::string Browser::operagxautofilladdresses() {
+    if (_operagxautofilladdresses.empty()) {
+      _operagxautofilladdresses = getOperaGXAutoFillAddresses();
+    }
+    return _operagxautofilladdresses;
+  }
+
+  std::string Browser::operagxautofillphones() {
+    if (_operagxautofillphones.empty()) {
+      _operagxautofillphones = getOperaGXAutoFillPhones();
+    }
+    return _operagxautofillphones;
+  }
+
+  std::string Browser::operagxautofillnames() {
+    if (_operagxautofillnames.empty()) {
+      _operagxautofillnames = getOperaGXAutoFillNames();
+    }
+    return _operagxautofillnames;
+  }
+
+  std::string Browser::operagxautofillprofiles() {
+    if (_operagxautofillprofiles.empty()) {
+      _operagxautofillprofiles = getOperaGXAutoFillProfiles();
+    }
+    return _operagxautofillprofiles;
+  }
+  // TO OPERA STABLE
   std::string Browser::operahistory() {
     if (_operahistory.empty()) {
       _operahistory = getOperaHistory();
@@ -348,4 +410,195 @@ namespace bscan {
     }
     return _vivaldiautofillprofiles;
   }
+
+  // TO ORBITUM
+  std::string Browser::orbitumhistory() {
+    if (_orbitumhistory.empty()) {
+      _orbitumhistory = getOrbitumHistory();
+    }
+    return _orbitumhistory;
+  }
+
+  std::string Browser::orbitumlogin() {
+    if (_orbitumlogin.empty()) {
+      _orbitumlogin = getOrbitumLogin();
+    }
+    return _orbitummedia;
+  }
+
+  std::string Browser::orbitumshortcuts() {
+    if (_orbitumshortcuts.empty()) {
+      _orbitumshortcuts = getOrbitumShortcuts();
+    }
+    return _orbitumshortcuts;
+  }
+
+  std::string Browser::orbitummemberof() {
+    if (_orbitummemberof.empty()) {
+      _orbitummemberof = getOrbitumMemberOf();
+    }
+    return _orbitummemberof;
+  }
+
+  std::string Browser::orbitumautofillemails() {
+    if (_orbitumautofillemails.empty()) {
+      _orbitumautofillemails = getOrbitumAutoFillEmails();
+    }
+    return _orbitumautofillemails;
+  }
+  
+  std::string Browser::orbitumautofilladdresses() {
+    if (_orbitumautofilladdresses.empty()) {
+      _orbitumautofilladdresses = getOrbitumAutoFillAddresses();
+    }
+    return _orbitumautofilladdresses;
+  }
+
+  std::string Browser::orbitumautofillphones() {
+    if (_orbitumautofillphones.empty()) {
+      _orbitumautofillphones = getOrbitumAutoFillPhones();
+    }
+    return _orbitumautofillphones;
+  }
+
+  std::string Browser::orbitumautofillnames() {
+    if (_orbitumautofillnames.empty()) {
+      _orbitumautofillnames = getOrbitumAutoFillNames();
+    }
+    return _orbitumautofillnames;
+  }
+
+  std::string Browser::orbitumautofillprofiles() {
+    if (_orbitumautofillprofiles.empty()) {
+      _orbitumautofillprofiles = getOrbitumAutoFillProfiles();
+    }
+    return _orbitumautofillprofiles;
+  }
+  // TO PALE MOON
+  std::string Browser::palemoonhistory() {
+    if (_palemoonhistory.empty()) {
+      _palemoonhistory = getPaleMoonHistory();
+    }
+    return _palemoonhistory;
+  }
+
+  std::string Browser::palemoonlogin() {
+    if (_palemoonlogin.empty()) {
+      _palemoonlogin = getPaleMoonLogin();
+    }
+    return _palemoonmedia;
+  }
+
+  std::string Browser::palemoonshortcuts() {
+    if (_palemoonshortcuts.empty()) {
+      _palemoonshortcuts = getPaleMoonShortcuts();
+    }
+    return _palemoonshortcuts;
+  }
+
+  std::string Browser::palemoonmemberof() {
+    if (_palemoonmemberof.empty()) {
+      _palemoonmemberof = getPaleMoonMemberOf();
+    }
+    return _palemoonmemberof;
+  }
+
+  std::string Browser::palemoonautofillemails() {
+    if (_palemoonautofillemails.empty()) {
+      _palemoonautofillemails = getPaleMoonAutoFillEmails();
+    }
+    return _palemoonautofillemails;
+  }
+  
+  std::string Browser::palemoonautofilladdresses() {
+    if (_palemoonautofilladdresses.empty()) {
+      _palemoonautofilladdresses = getPaleMoonAutoFillAddresses();
+    }
+    return _palemoonautofilladdresses;
+  }
+
+  std::string Browser::palemoonautofillphones() {
+    if (_palemoonautofillphones.empty()) {
+      _palemoonautofillphones = getPaleMoonAutoFillPhones();
+    }
+    return _palemoonautofillphones;
+  }
+
+  std::string Browser::palemoonautofillnames() {
+    if (_palemoonautofillnames.empty()) {
+      _palemoonautofillnames = getPaleMoonAutoFillNames();
+    }
+    return _palemoonautofillnames;
+  }
+
+  std::string Browser::palemoonautofillprofiles() {
+    if (_palemoonautofillprofiles.empty()) {
+      _palemoonautofillprofiles = getPaleMoonAutoFillProfiles();
+    }
+    return _palemoonautofillprofiles;
+  }
+  // TO MAXTHON
+  std::string Browser::maxthonhistory() {
+    if (_maxthonhistory.empty()) {
+      _maxthonhistory = getMaxthonHistory();
+    }
+    return _maxthonhistory;
+  }
+
+  std::string Browser::maxthonlogin() {
+    if (_maxthonlogin.empty()) {
+      _maxthonlogin = getMaxthonLogin();
+    }
+    return _maxthonmedia;
+  }
+
+  std::string Browser::maxthonshortcuts() {
+    if (_maxthonshortcuts.empty()) {
+      _maxthonshortcuts = getMaxthonShortcuts();
+    }
+    return _maxthonshortcuts;
+  }
+
+  std::string Browser::maxthonmemberof() {
+    if (_maxthonmemberof.empty()) {
+      _maxthonmemberof = getMaxthonMemberOf();
+    }
+    return _maxthonmemberof;
+  }
+
+  std::string Browser::maxthonautofillemails() {
+    if (_maxthonautofillemails.empty()) {
+      _maxthonautofillemails = getMaxthonAutoFillEmails();
+    }
+    return _maxthonautofillemails;
+  }
+  
+  std::string Browser::maxthonautofilladdresses() {
+    if (_maxthonautofilladdresses.empty()) {
+      _maxthonautofilladdresses = getMaxthonAutoFillAddresses();
+    }
+    return _maxthonautofilladdresses;
+  }
+
+  std::string Browser::maxthonautofillphones() {
+    if (_maxthonautofillphones.empty()) {
+      _maxthonautofillphones = getMaxthonAutoFillPhones();
+    }
+    return _maxthonautofillphones;
+  }
+
+  std::string Browser::maxthonautofillnames() {
+    if (_maxthonautofillnames.empty()) {
+      _maxthonautofillnames = getMaxthonAutoFillNames();
+    }
+    return _maxthonautofillnames;
+  }
+
+  std::string Browser::maxthonautofillprofiles() {
+    if (_maxthonautofillprofiles.empty()) {
+      _maxthonautofillprofiles = getMaxthonAutoFillProfiles();
+    }
+    return _maxthonautofillprofiles;
+  }
+
 };
