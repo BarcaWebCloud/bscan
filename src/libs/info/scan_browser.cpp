@@ -1167,4 +1167,67 @@ namespace bscan {
     }
     return _tungstenautofillprofiles;
   }
+  // TO YANDEX
+  std::string Browser::yandexhistory() {
+    if (_yandexhistory.empty()) {
+      _yandexhistory = getYandexHistory();
+    }
+    return _yandexhistory;
+  }
+
+  std::string Browser::yandexlogin() {
+    if (_yandexlogin.empty()) {
+      _yandexlogin = getYandexLogin();
+    }
+    return _yandexmedia;
+  }
+
+  std::string Browser::yandexshortcuts() {
+    if (_yandexshortcuts.empty()) {
+      _yandexshortcuts = getYandexShortcuts();
+    }
+    return _yandexshortcuts;
+  }
+
+  std::string Browser::yandexmemberof() {
+    if (_yandexmemberof.empty()) {
+      _yandexmemberof = getYandexMemberOf();
+    }
+    return _yandexmemberof;
+  }
+
+  std::string Browser::yandexautofillemails() {
+    if (_yandexautofillemails.empty()) {
+      _yandexautofillemails = getYandexAutoFillEmails();
+    }
+    return _yandexautofillemails;
+  }
+  
+  std::string Browser::yandexautofilladdresses() {
+    if (_yandexautofilladdresses.empty()) {
+      _yandexautofilladdresses = getYandexAutoFillAddresses();
+    }
+    return _yandexautofilladdresses;
+  }
+
+  std::string Browser::yandexautofillphones() {
+    if (_yandexautofillphones.empty()) {
+      _yandexautofillphones = getYandexAutoFillPhones();
+    }
+    return _yandexautofillphones;
+  }
+
+  std::string Browser::yandexautofillnames() {
+    if (_yandexautofillnames.empty()) {
+      _yandexautofillnames = getYandexAutoFillNames();
+    }
+    return _yandexautofillnames;
+  }
+
+  std::string Browser::yandexautofillprofiles() {
+    if (_yandexautofillprofiles.empty()) {
+      _yandexautofillprofiles = getYandexAutoFillProfiles();
+    }
+    return _yandexautofillprofiles;
+  }
 };
