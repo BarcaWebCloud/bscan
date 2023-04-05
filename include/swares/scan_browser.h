@@ -162,6 +162,18 @@ namespace bscan {
     std::string comododragonautofillphones();
     std::string comododragonautofillnames();
     std::string comododragonautofillprofiles();
+    // comodo ice dragon browser
+    std::string comodoicedragonhistory();
+    std::string comodoicedragonlogin();
+    std::string comodoicedragonpreferences();
+    std::string comodoicedragonsecurepreferences();
+    std::string comodoicedragonshortcuts();
+    std::string comodoicedragonmemberof();
+    std::string comodoicedragonautofillemails();
+    std::string comodoicedragonautofilladdresses();
+    std::string comodoicedragonautofillphones();
+    std::string comodoicedragonautofillnames();
+    std::string comodoicedragonautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -275,16 +287,26 @@ namespace bscan {
     static std::string getSeaMonkeyAutoFillPhones();
     static std::string getSeaMonkeyAutoFillNames();
     static std::string getSeaMonkeyAutoFillProfiles();
-    // comodo browser
-    static std::string getComodoHistory();
-    static std::string getComodoLogin();
-    static std::string getComodoShortcuts();
-    static std::string getComodoMemberOf();
-    static std::string getComodoAutoFillEmails();
-    static std::string getComodoAutoFillAddresses();
-    static std::string getComodoAutoFillPhones();
-    static std::string getComodoAutoFillNames();
-    static std::string getComodoAutoFillProfiles();    
+    // comodo dragon browser
+    static std::string getComodoDragonHistory();
+    static std::string getComodoDragonLogin();
+    static std::string getComodoDragonShortcuts();
+    static std::string getComodoDragonMemberOf();
+    static std::string getComodoDragonAutoFillEmails();
+    static std::string getComodoDragonAutoFillAddresses();
+    static std::string getComodoDragonAutoFillPhones();
+    static std::string getComodoDragonAutoFillNames();
+    static std::string getComodoDragonAutoFillProfiles();
+    // comodo ice dragon browser
+    static std::string getComodoIceDragonHistory();
+    static std::string getComodoIceDragonLogin();
+    static std::string getComodoIceDragonShortcuts();
+    static std::string getComodoIceDragonMemberOf();
+    static std::string getComodoIceDragonAutoFillEmails();
+    static std::string getComodoIceDragonAutoFillAddresses();
+    static std::string getComodoIceDragonAutoFillPhones();
+    static std::string getComodoIceDragonAutoFillNames();
+    static std::string getComodoIceDragonAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -410,6 +432,16 @@ namespace bscan {
     std::string _comododragonautofillphones;
     std::string _comododragonautofillnames;
     std::string _comododragonautofillprofiles;
+    // comodo ice dragon browser
+    std::string _comodoicedragonhistory;
+    std::string _comodoicedragonlogin;
+    std::string _comodoicedragonshortcuts;
+    std::string _comodoicedragonmemberof;
+    std::string _comodoicedragonautofillemails;
+    std::string _comodoicedragonautofilladdresses;
+    std::string _comodoicedragonautofillphones;
+    std::string _comodoicedragonautofillnames;
+    std::string _comodoicedragonautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
