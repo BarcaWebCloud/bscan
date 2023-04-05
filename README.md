@@ -1,15 +1,14 @@
 # BSCAN v0.1.9-beta
 
-
-**BSCAN** is a Library Cross-Platform that provides information about the Hardwares and Software of a Computing Device & atmospheric environment. Enabling Developers to utilize digitization capabilities in their Web and Mobile Applications with their preferred languages ​​such as: **Python**, **JavaScript**/**TypeScript**, **JAVA**, **Ruby**, **PHP**, **GO**, **Rust** and more.
+**BSCAN** is a library cross-platform that provides information about the **hardwares** and **softwares** where to have a computing device & **atmospheric environment**. Enabling developers to utilize digitization capabilities in their Web and mobile applications with their preferred languages ​​such as: *Python, JavaScript/TypeScript, JAVA, Ruby, PHP, GO, Rust* and more.
 
 We can install **BSCAN** desktop version on *Windows, Linux & MacOS* systems.
 
 <br>
 
-1. [Hardwares](/docs/hwares/intro.md) get information about RAM, CPU, GPU,  Disk, Motheboard...
-2. [Softwares](/docs/swares/intro.md) get information about Operating System, Apps, User, Services...
-3. [Atmosphere](/docs/atmosphere/intro.md) - get information about troposphere, stratosphere, mesosphere, thermosphere and exosphere.
+1. [Hardwares](/docs/hwares/intro.md) - get information about RAM, CPU, GPU, Disk, Motheboard, Monitors, USB Devices, Bluetooth, Wifi and more.
+2. [Softwares](/docs/swares/intro.md) - get information about Operating System, Apps, User, Services, Databases, Office and more.
+3. [Atmosphere](/docs/atmosphere/intro.md) - get information about Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere, Climate and more.
 
 <br>
 
