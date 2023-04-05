@@ -174,6 +174,18 @@ namespace bscan {
     std::string comodoicedragonautofillphones();
     std::string comodoicedragonautofillnames();
     std::string comodoicedragonautofillprofiles();
+    // 360 chrome x browser
+    std::string chromexhistory();
+    std::string chromexlogin();
+    std::string chromexpreferences();
+    std::string chromexsecurepreferences();
+    std::string chromexshortcuts();
+    std::string chromexmemberof();
+    std::string chromexautofillemails();
+    std::string chromexautofilladdresses();
+    std::string chromexautofillphones();
+    std::string chromexautofillnames();
+    std::string chromexautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -307,6 +319,16 @@ namespace bscan {
     static std::string getComodoIceDragonAutoFillPhones();
     static std::string getComodoIceDragonAutoFillNames();
     static std::string getComodoIceDragonAutoFillProfiles();
+    // 360 chrome x browser
+    static std::string get360ChromeXHistory();
+    static std::string get360ChromeXLogin();
+    static std::string get360ChromeXShortcuts();
+    static std::string get360ChromeXMemberOf();
+    static std::string get360ChromeXAutoFillEmails();
+    static std::string get360ChromeXAutoFillAddresses();
+    static std::string get360ChromeXAutoFillPhones();
+    static std::string get360ChromeXAutoFillNames();
+    static std::string get360ChromeXAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -442,6 +464,16 @@ namespace bscan {
     std::string _comodoicedragonautofillphones;
     std::string _comodoicedragonautofillnames;
     std::string _comodoicedragonautofillprofiles;
+    // 360 chrome x browser
+    std::string chromexhistory;
+    std::string chromexlogin;
+    std::string chromexshortcuts;
+    std::string chromexmemberof;
+    std::string chromexautofillemails;
+    std::string chromexautofilladdresses;
+    std::string chromexautofillphones;
+    std::string chromexautofillnames;
+    std::string chromexautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
