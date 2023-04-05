@@ -600,5 +600,256 @@ namespace bscan {
     }
     return _maxthonautofillprofiles;
   }
+  // TO SEAMONKEY
+  std::string Browser::seamonkeyhistory() {
+    if (_seamonkeyhistory.empty()) {
+      _seamonkeyhistory = getSeaMonkeyHistory();
+    }
+    return _seamonkeyhistory;
+  }
 
+  std::string Browser::seamonkeylogin() {
+    if (_seamonkeylogin.empty()) {
+      _seamonkeylogin = getSeaMonkeyLogin();
+    }
+    return _seamonkeymedia;
+  }
+
+  std::string Browser::seamonkeyshortcuts() {
+    if (_seamonkeyshortcuts.empty()) {
+      _seamonkeyshortcuts = getSeaMonkeyShortcuts();
+    }
+    return _seamonkeyshortcuts;
+  }
+
+  std::string Browser::seamonkeymemberof() {
+    if (_seamonkeymemberof.empty()) {
+      _seamonkeymemberof = getSeaMonkeyMemberOf();
+    }
+    return _seamonkeymemberof;
+  }
+
+  std::string Browser::seamonkeyautofillemails() {
+    if (_seamonkeyautofillemails.empty()) {
+      _seamonkeyautofillemails = getSeaMonkeyAutoFillEmails();
+    }
+    return _seamonkeyautofillemails;
+  }
+  
+  std::string Browser::seamonkeyautofilladdresses() {
+    if (_seamonkeyautofilladdresses.empty()) {
+      _seamonkeyautofilladdresses = getSeaMonkeyAutoFillAddresses();
+    }
+    return _seamonkeyautofilladdresses;
+  }
+
+  std::string Browser::seamonkeyautofillphones() {
+    if (_seamonkeyautofillphones.empty()) {
+      _seamonkeyautofillphones = getSeaMonkeyAutoFillPhones();
+    }
+    return _seamonkeyautofillphones;
+  }
+
+  std::string Browser::seamonkeyautofillnames() {
+    if (_seamonkeyautofillnames.empty()) {
+      _seamonkeyautofillnames = getSeaMonkeyAutoFillNames();
+    }
+    return _seamonkeyautofillnames;
+  }
+
+  std::string Browser::seamonkeyautofillprofiles() {
+    if (_seamonkeyautofillprofiles.empty()) {
+      _seamonkeyautofillprofiles = getSeaMonkeyAutoFillProfiles();
+    }
+    return _seamonkeyautofillprofiles;
+  }
+  // TO COMODO DRAGON
+  std::string Browser::comododragonhistory() {
+    if (_comododragonhistory.empty()) {
+      _comododragonhistory = getComodoDragonHistory();
+    }
+    return _comododragonhistory;
+  }
+
+  std::string Browser::comododragonlogin() {
+    if (_comododragonlogin.empty()) {
+      _comododragonlogin = getComodoDragonLogin();
+    }
+    return _comododragonmedia;
+  }
+
+  std::string Browser::comododragonshortcuts() {
+    if (_comododragonshortcuts.empty()) {
+      _comododragonshortcuts = getComodoDragonShortcuts();
+    }
+    return _comododragonshortcuts;
+  }
+
+  std::string Browser::comododragonmemberof() {
+    if (_comododragonmemberof.empty()) {
+      _comododragonmemberof = getComodoDragonMemberOf();
+    }
+    return _comododragonmemberof;
+  }
+
+  std::string Browser::comododragonautofillemails() {
+    if (_comododragonautofillemails.empty()) {
+      _comododragonautofillemails = getComodoDragonAutoFillEmails();
+    }
+    return _comododragonautofillemails;
+  }
+  
+  std::string Browser::comododragonautofilladdresses() {
+    if (_comododragonautofilladdresses.empty()) {
+      _comododragonautofilladdresses = getComodoDragonAutoFillAddresses();
+    }
+    return _comododragonautofilladdresses;
+  }
+
+  std::string Browser::comododragonautofillphones() {
+    if (_comododragonautofillphones.empty()) {
+      _comododragonautofillphones = getComodoDragonAutoFillPhones();
+    }
+    return _comododragonautofillphones;
+  }
+
+  std::string Browser::comododragonautofillnames() {
+    if (_comododragonautofillnames.empty()) {
+      _comododragonautofillnames = getComodoDragonAutoFillNames();
+    }
+    return _comododragonautofillnames;
+  }
+
+  std::string Browser::comododragonautofillprofiles() {
+    if (_comododragonautofillprofiles.empty()) {
+      _comododragonautofillprofiles = getComodoDragonAutoFillProfiles();
+    }
+    return _comododragonautofillprofiles;
+  }
+  // TO COMODO ICE DRAGON
+  std::string Browser::comodoicedragonhistory() {
+    if (_comodoicedragonhistory.empty()) {
+      _comodoicedragonhistory = getComodoIceDragonHistory();
+    }
+    return _comodoicedragonhistory;
+  }
+
+  std::string Browser::comodoicedragonlogin() {
+    if (_comodoicedragonlogin.empty()) {
+      _comodoicedragonlogin = getComodoIceDragonLogin();
+    }
+    return _comodoicedragonmedia;
+  }
+
+  std::string Browser::comodoicedragonshortcuts() {
+    if (_comodoicedragonshortcuts.empty()) {
+      _comodoicedragonshortcuts = getComodoIceDragonShortcuts();
+    }
+    return _comodoicedragonshortcuts;
+  }
+
+  std::string Browser::comodoicedragonmemberof() {
+    if (_comodoicedragonmemberof.empty()) {
+      _comodoicedragonmemberof = getComodoIceDragonMemberOf();
+    }
+    return _comodoicedragonmemberof;
+  }
+
+  std::string Browser::comodoicedragonautofillemails() {
+    if (_comodoicedragonautofillemails.empty()) {
+      _comodoicedragonautofillemails = getComodoIceDragonAutoFillEmails();
+    }
+    return _comodoicedragonautofillemails;
+  }
+  
+  std::string Browser::comodoicedragonautofilladdresses() {
+    if (_comodoicedragonautofilladdresses.empty()) {
+      _comodoicedragonautofilladdresses = getComodoIceDragonAutoFillAddresses();
+    }
+    return _comodoicedragonautofilladdresses;
+  }
+
+  std::string Browser::comodoicedragonautofillphones() {
+    if (_comodoicedragonautofillphones.empty()) {
+      _comodoicedragonautofillphones = getComodoIceDragonAutoFillPhones();
+    }
+    return _comodoicedragonautofillphones;
+  }
+
+  std::string Browser::comodoicedragonautofillnames() {
+    if (_comodoicedragonautofillnames.empty()) {
+      _comodoicedragonautofillnames = getComodoIceDragonAutoFillNames();
+    }
+    return _comodoicedragonautofillnames;
+  }
+
+  std::string Browser::comodoicedragonautofillprofiles() {
+    if (_comodoicedragonautofillprofiles.empty()) {
+      _comodoicedragonautofillprofiles = getComodoIceDragonAutoFillProfiles();
+    }
+    return _comodoicedragonautofillprofiles;
+  }
+  // TO 360 CHROME X
+  std::string Browser::chromexhistory() {
+    if (_chromexhistory.empty()) {
+      _chromexhistory = get360ChromeXHistory();
+    }
+    return _chromexhistory;
+  }
+
+  std::string Browser::chromexlogin() {
+    if (_chromexlogin.empty()) {
+      _chromexlogin = get360ChromeXLogin();
+    }
+    return _chromexmedia;
+  }
+
+  std::string Browser::chromexshortcuts() {
+    if (_chromexshortcuts.empty()) {
+      _chromexshortcuts = get360ChromeXShortcuts();
+    }
+    return _chromexshortcuts;
+  }
+
+  std::string Browser::chromexmemberof() {
+    if (_chromexmemberof.empty()) {
+      _chromexmemberof = get360ChromeXMemberOf();
+    }
+    return _chromexmemberof;
+  }
+
+  std::string Browser::chromexautofillemails() {
+    if (_chromexautofillemails.empty()) {
+      _chromexautofillemails = get360ChromeXAutoFillEmails();
+    }
+    return _chromexautofillemails;
+  }
+  
+  std::string Browser::chromexautofilladdresses() {
+    if (_chromexautofilladdresses.empty()) {
+      _chromexautofilladdresses = get360ChromeXAutoFillAddresses();
+    }
+    return _chromexautofilladdresses;
+  }
+
+  std::string Browser::chromexautofillphones() {
+    if (_chromexautofillphones.empty()) {
+      _chromexautofillphones = get360ChromeXAutoFillPhones();
+    }
+    return _chromexautofillphones;
+  }
+
+  std::string Browser::chromexautofillnames() {
+    if (_chromexautofillnames.empty()) {
+      _chromexautofillnames = get360ChromeXAutoFillNames();
+    }
+    return _chromexautofillnames;
+  }
+
+  std::string Browser::chromexautofillprofiles() {
+    if (_chromexautofillprofiles.empty()) {
+      _chromexautofillprofiles = get360ChromeXAutoFillProfiles();
+    }
+    return _chromexautofillprofiles;
+  }
 };

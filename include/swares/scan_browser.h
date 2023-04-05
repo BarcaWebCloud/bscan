@@ -138,6 +138,54 @@ namespace bscan {
     std::string maxthonautofillphones();
     std::string maxthonautofillnames();
     std::string maxthonautofillprofiles();
+    // seamonkey browser
+    std::string seamonkeyhistory();
+    std::string seamonkeylogin();
+    std::string seamonkeypreferences();
+    std::string seamonkeysecurepreferences();
+    std::string seamonkeyshortcuts();
+    std::string seamonkeymemberof();
+    std::string seamonkeyautofillemails();
+    std::string seamonkeyautofilladdresses();
+    std::string seamonkeyautofillphones();
+    std::string seamonkeyautofillnames();
+    std::string seamonkeyautofillprofiles();
+    // comodo dragon browser
+    std::string comododragonhistory();
+    std::string comododragonlogin();
+    std::string comododragonpreferences();
+    std::string comododragonsecurepreferences();
+    std::string comododragonshortcuts();
+    std::string comododragonmemberof();
+    std::string comododragonautofillemails();
+    std::string comododragonautofilladdresses();
+    std::string comododragonautofillphones();
+    std::string comododragonautofillnames();
+    std::string comododragonautofillprofiles();
+    // comodo ice dragon browser
+    std::string comodoicedragonhistory();
+    std::string comodoicedragonlogin();
+    std::string comodoicedragonpreferences();
+    std::string comodoicedragonsecurepreferences();
+    std::string comodoicedragonshortcuts();
+    std::string comodoicedragonmemberof();
+    std::string comodoicedragonautofillemails();
+    std::string comodoicedragonautofilladdresses();
+    std::string comodoicedragonautofillphones();
+    std::string comodoicedragonautofillnames();
+    std::string comodoicedragonautofillprofiles();
+    // 360 chrome x browser
+    std::string chromexhistory();
+    std::string chromexlogin();
+    std::string chromexpreferences();
+    std::string chromexsecurepreferences();
+    std::string chromexshortcuts();
+    std::string chromexmemberof();
+    std::string chromexautofillemails();
+    std::string chromexautofilladdresses();
+    std::string chromexautofillphones();
+    std::string chromexautofillnames();
+    std::string chromexautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -241,6 +289,46 @@ namespace bscan {
     static std::string getMaxthonAutoFillPhones();
     static std::string getMaxthonAutoFillNames();
     static std::string getMaxthonAutoFillProfiles();
+    // seamonkey browser
+    static std::string getSeaMonkeyHistory();
+    static std::string getSeaMonkeyLogin();
+    static std::string getSeaMonkeyShortcuts();
+    static std::string getSeaMonkeyMemberOf();
+    static std::string getSeaMonkeyAutoFillEmails();
+    static std::string getSeaMonkeyAutoFillAddresses();
+    static std::string getSeaMonkeyAutoFillPhones();
+    static std::string getSeaMonkeyAutoFillNames();
+    static std::string getSeaMonkeyAutoFillProfiles();
+    // comodo dragon browser
+    static std::string getComodoDragonHistory();
+    static std::string getComodoDragonLogin();
+    static std::string getComodoDragonShortcuts();
+    static std::string getComodoDragonMemberOf();
+    static std::string getComodoDragonAutoFillEmails();
+    static std::string getComodoDragonAutoFillAddresses();
+    static std::string getComodoDragonAutoFillPhones();
+    static std::string getComodoDragonAutoFillNames();
+    static std::string getComodoDragonAutoFillProfiles();
+    // comodo ice dragon browser
+    static std::string getComodoIceDragonHistory();
+    static std::string getComodoIceDragonLogin();
+    static std::string getComodoIceDragonShortcuts();
+    static std::string getComodoIceDragonMemberOf();
+    static std::string getComodoIceDragonAutoFillEmails();
+    static std::string getComodoIceDragonAutoFillAddresses();
+    static std::string getComodoIceDragonAutoFillPhones();
+    static std::string getComodoIceDragonAutoFillNames();
+    static std::string getComodoIceDragonAutoFillProfiles();
+    // 360 chrome x browser
+    static std::string get360ChromeXHistory();
+    static std::string get360ChromeXLogin();
+    static std::string get360ChromeXShortcuts();
+    static std::string get360ChromeXMemberOf();
+    static std::string get360ChromeXAutoFillEmails();
+    static std::string get360ChromeXAutoFillAddresses();
+    static std::string get360ChromeXAutoFillPhones();
+    static std::string get360ChromeXAutoFillNames();
+    static std::string get360ChromeXAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -346,6 +434,46 @@ namespace bscan {
     std::string _maxthonautofillphones;
     std::string _maxthonautofillnames;
     std::string _maxthonautofillprofiles;
+    // seamonkey browser
+    std::string _seamonkeyhistory;
+    std::string _seamonkeylogin;
+    std::string _seamonkeyshortcuts;
+    std::string _seamonkeymemberof;
+    std::string _seamonkeyautofillemails;
+    std::string _seamonkeyautofilladdresses;
+    std::string _seamonkeyautofillphones;
+    std::string _seamonkeyautofillnames;
+    std::string _seamonkeyautofillprofiles;
+    // comodo dragon browser
+    std::string _comododragonhistory;
+    std::string _comododragonlogin;
+    std::string _comododragonshortcuts;
+    std::string _comododragonmemberof;
+    std::string _comododragonautofillemails;
+    std::string _comododragonautofilladdresses;
+    std::string _comododragonautofillphones;
+    std::string _comododragonautofillnames;
+    std::string _comododragonautofillprofiles;
+    // comodo ice dragon browser
+    std::string _comodoicedragonhistory;
+    std::string _comodoicedragonlogin;
+    std::string _comodoicedragonshortcuts;
+    std::string _comodoicedragonmemberof;
+    std::string _comodoicedragonautofillemails;
+    std::string _comodoicedragonautofilladdresses;
+    std::string _comodoicedragonautofillphones;
+    std::string _comodoicedragonautofillnames;
+    std::string _comodoicedragonautofillprofiles;
+    // 360 chrome x browser
+    std::string chromexhistory;
+    std::string chromexlogin;
+    std::string chromexshortcuts;
+    std::string chromexmemberof;
+    std::string chromexautofillemails;
+    std::string chromexautofilladdresses;
+    std::string chromexautofillphones;
+    std::string chromexautofillnames;
+    std::string chromexautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
