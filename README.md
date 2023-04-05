@@ -1,4 +1,4 @@
-# BSCAN v0.1.9-beta
+# BSCAN v0.2.0-beta
 
 **BSCAN** is a library cross-platform that provides information about the **hardwares** and **softwares** where to have a computing device & **atmospheric environment**. Enabling developers to utilize digitization capabilities in their Web and mobile applications with their preferred languages ​​such as: *Python, JavaScript/TypeScript, JAVA, Ruby, PHP, GO, Rust* and more.
 
@@ -15,8 +15,6 @@ We can install **BSCAN** desktop version on *Windows, Linux & MacOS* systems.
 ## Requirements
 
 It is necessary that you have installed the programs below to use **BSCAN** in developer mode.
-
-<br>
 
 ### To Linux
 
@@ -49,6 +47,20 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
   - [Code Block](https://wiki.codeblocks.org/index.php/Installing_a_supported_compiler)
   - [Cygwin](http://www.cygwin.org)
   - [Small Device](https://sdcc.sourceforge.net)
+- [Node.js](https://nodejs.org/) **v8** or greater
+  
+<br>
+
+### To Apple
+
+<br>
+
+- [Python](https://www.python.org/) **v3.1** or greater
+- [Compilers C/C++](https://school.barca.com/edu/ti/overview/c++/compiler/intro.html) 
+  - [MinGW/GCC](https://www.mingw-w64.org)
+  - [Clang](https://clang.llvm.org)
+  - [XCode](https://wiki.xcode.org/index.php/Installing_a_supported_compiler)
+  - [Cygwin](http://www.cygwin.org)
 - [Node.js](https://nodejs.org/) **v8** or greater
 
 <br>
