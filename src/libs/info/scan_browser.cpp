@@ -663,5 +663,67 @@ namespace bscan {
     }
     return _seamonkeyautofillprofiles;
   }
+  // TO COMODO DRAGON
+  std::string Browser::comododragonhistory() {
+    if (_comododragonhistory.empty()) {
+      _comododragonhistory = getComodoDragonHistory();
+    }
+    return _comododragonhistory;
+  }
 
+  std::string Browser::comododragonlogin() {
+    if (_comododragonlogin.empty()) {
+      _comododragonlogin = getComodoDragonLogin();
+    }
+    return _comododragonmedia;
+  }
+
+  std::string Browser::comododragonshortcuts() {
+    if (_comododragonshortcuts.empty()) {
+      _comododragonshortcuts = getComodoDragonShortcuts();
+    }
+    return _comododragonshortcuts;
+  }
+
+  std::string Browser::comododragonmemberof() {
+    if (_comododragonmemberof.empty()) {
+      _comododragonmemberof = getComodoDragonMemberOf();
+    }
+    return _comododragonmemberof;
+  }
+
+  std::string Browser::comododragonautofillemails() {
+    if (_comododragonautofillemails.empty()) {
+      _comododragonautofillemails = getComodoDragonAutoFillEmails();
+    }
+    return _comododragonautofillemails;
+  }
+  
+  std::string Browser::comododragonautofilladdresses() {
+    if (_comododragonautofilladdresses.empty()) {
+      _comododragonautofilladdresses = getComodoDragonAutoFillAddresses();
+    }
+    return _comododragonautofilladdresses;
+  }
+
+  std::string Browser::comododragonautofillphones() {
+    if (_comododragonautofillphones.empty()) {
+      _comododragonautofillphones = getComodoDragonAutoFillPhones();
+    }
+    return _comododragonautofillphones;
+  }
+
+  std::string Browser::comododragonautofillnames() {
+    if (_comododragonautofillnames.empty()) {
+      _comododragonautofillnames = getComodoDragonAutoFillNames();
+    }
+    return _comododragonautofillnames;
+  }
+
+  std::string Browser::comododragonautofillprofiles() {
+    if (_comododragonautofillprofiles.empty()) {
+      _comododragonautofillprofiles = getComodoDragonAutoFillProfiles();
+    }
+    return _comododragonautofillprofiles;
+  }
 };
