@@ -726,4 +726,67 @@ namespace bscan {
     }
     return _comododragonautofillprofiles;
   }
+  // TO COMODO ICE DRAGON
+  std::string Browser::comodoicedragonhistory() {
+    if (_comodoicedragonhistory.empty()) {
+      _comodoicedragonhistory = getComodoIceDragonHistory();
+    }
+    return _comodoicedragonhistory;
+  }
+
+  std::string Browser::comodoicedragonlogin() {
+    if (_comodoicedragonlogin.empty()) {
+      _comodoicedragonlogin = getComodoIceDragonLogin();
+    }
+    return _comodoicedragonmedia;
+  }
+
+  std::string Browser::comodoicedragonshortcuts() {
+    if (_comodoicedragonshortcuts.empty()) {
+      _comodoicedragonshortcuts = getComodoIceDragonShortcuts();
+    }
+    return _comodoicedragonshortcuts;
+  }
+
+  std::string Browser::comodoicedragonmemberof() {
+    if (_comodoicedragonmemberof.empty()) {
+      _comodoicedragonmemberof = getComodoIceDragonMemberOf();
+    }
+    return _comodoicedragonmemberof;
+  }
+
+  std::string Browser::comodoicedragonautofillemails() {
+    if (_comodoicedragonautofillemails.empty()) {
+      _comodoicedragonautofillemails = getComodoIceDragonAutoFillEmails();
+    }
+    return _comodoicedragonautofillemails;
+  }
+  
+  std::string Browser::comodoicedragonautofilladdresses() {
+    if (_comodoicedragonautofilladdresses.empty()) {
+      _comodoicedragonautofilladdresses = getComodoIceDragonAutoFillAddresses();
+    }
+    return _comodoicedragonautofilladdresses;
+  }
+
+  std::string Browser::comodoicedragonautofillphones() {
+    if (_comodoicedragonautofillphones.empty()) {
+      _comodoicedragonautofillphones = getComodoIceDragonAutoFillPhones();
+    }
+    return _comodoicedragonautofillphones;
+  }
+
+  std::string Browser::comodoicedragonautofillnames() {
+    if (_comodoicedragonautofillnames.empty()) {
+      _comodoicedragonautofillnames = getComodoIceDragonAutoFillNames();
+    }
+    return _comodoicedragonautofillnames;
+  }
+
+  std::string Browser::comodoicedragonautofillprofiles() {
+    if (_comodoicedragonautofillprofiles.empty()) {
+      _comodoicedragonautofillprofiles = getComodoIceDragonAutoFillProfiles();
+    }
+    return _comodoicedragonautofillprofiles;
+  }
 };
