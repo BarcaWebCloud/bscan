@@ -2,11 +2,30 @@
 
 # Changelog
 
-## v0.1.8-BETA
+## v0.1.9-BETA
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+<br>
+
+## v0.1.9 [2023-04-05]
+
+### Features
+
+- [#20](https://github.com/BarcaWebCloud/bscan/pull/20): New features for windows. Gratitude @ahsouza!
+
+
+### Release Notes
+
+
+Add features for **Windows** platform:
+- **Get Autocomplete Information For Phones, Emails, Addresses, Names and More Used In Sea Monkey, Comodo Dragon, Comodo Ice Dragon & 360 Chrome X Browser** [only Windows on moment]
+- **Get All History Used In Sea Monkey, Comodo Dragon, Comodo Ice Dragon & 360 Chrome X Browser** [only Windows on moment]
+- **Get All Login Information Used In Sea Monkey, Comodo Dragon, Comodo Ice Dragon & 360 Chrome X Browser** [only Windows on moment]
+- **Get All Media Like Video And Images Used In Sea Monkey, Comodo Dragon, Comodo Ice Dragon & 360 Chrome X Browser** [only Windows on moment]
+- 
 
 <br>
 

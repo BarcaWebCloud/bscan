@@ -1,4 +1,4 @@
-# BSCAN v0.1.8-beta
+# BSCAN v0.1.9-beta
 
 
 **BSCAN** is a Library Cross-Platform that provides information about the Hardwares and Software of a Computing Device & atmospheric environment. Enabling Developers to utilize digitization capabilities in their Web and Mobile Applications with their preferred languages ​​such as: **Python**, **JavaScript**/**TypeScript**, **JAVA**, **Ruby**, **PHP**, **GO**, **Rust** and more.
