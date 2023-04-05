@@ -1041,4 +1041,67 @@ namespace bscan {
     }
     return _slimautofillprofiles;
   }
+  // TO SRWARE IRON
+  std::string Browser::srwawreironhistory() {
+    if (_srwawreironhistory.empty()) {
+      _srwawreironhistory = getSRWawreIronHistory();
+    }
+    return _srwawreironhistory;
+  }
+
+  std::string Browser::srwawreironlogin() {
+    if (_srwawreironlogin.empty()) {
+      _srwawreironlogin = getSRWawreIronLogin();
+    }
+    return _srwawreironmedia;
+  }
+
+  std::string Browser::srwawreironshortcuts() {
+    if (_srwawreironshortcuts.empty()) {
+      _srwawreironshortcuts = getSRWawreIronShortcuts();
+    }
+    return _srwawreironshortcuts;
+  }
+
+  std::string Browser::srwawreironmemberof() {
+    if (_srwawreironmemberof.empty()) {
+      _srwawreironmemberof = getSRWawreIronMemberOf();
+    }
+    return _srwawreironmemberof;
+  }
+
+  std::string Browser::srwawreironautofillemails() {
+    if (_srwawreironautofillemails.empty()) {
+      _srwawreironautofillemails = getSRWawreIronAutoFillEmails();
+    }
+    return _srwawreironautofillemails;
+  }
+  
+  std::string Browser::srwawreironautofilladdresses() {
+    if (_srwawreironautofilladdresses.empty()) {
+      _srwawreironautofilladdresses = getSRWawreIronAutoFillAddresses();
+    }
+    return _srwawreironautofilladdresses;
+  }
+
+  std::string Browser::srwawreironautofillphones() {
+    if (_srwawreironautofillphones.empty()) {
+      _srwawreironautofillphones = getSRWawreIronAutoFillPhones();
+    }
+    return _srwawreironautofillphones;
+  }
+
+  std::string Browser::srwawreironautofillnames() {
+    if (_srwawreironautofillnames.empty()) {
+      _srwawreironautofillnames = getSRWawreIronAutoFillNames();
+    }
+    return _srwawreironautofillnames;
+  }
+
+  std::string Browser::srwawreironautofillprofiles() {
+    if (_srwawreironautofillprofiles.empty()) {
+      _srwawreironautofillprofiles = getSRWawreIronAutoFillProfiles();
+    }
+    return _srwawreironautofillprofiles;
+  }
 };

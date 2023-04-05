@@ -9353,9 +9353,8 @@ namespace bscan {
     
     return "successfully found otter autofill names";
   };
-    // TO SLIM
-  // TODO: fixed bug in path files
-  std::string Browser::getSlimHistory() {
+  // TO SRWARE IRON
+  std::string Browser::getSRWareIronHistory() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9367,12 +9366,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-history.db";
-    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-slim-history.db");
-    // check if the bscan-slim-media file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-srwareiron-history.db");
+    // check if the bscan-srwareiron-media file exists
     if(tmpFileHistory) {
       //if there is read the file
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9392,15 +9391,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the media history file exists
-      fileHistory.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileHistory.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileHistory) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-history.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/History","C:\\Windows\\Temp\\bscan-srwareiron-history.db");
       } else {
-        return std::string("could not find file for slim browser history");
+        return std::string("could not find file for srwareiron browser history");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9412,7 +9411,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim history" << std::endl;
+        std::cerr << "error find srwareiron history" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9420,10 +9419,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found slim history";
+    return "successfully found srwareiron history";
   };
 
-  std::string Browser::getSlimLogin() {
+  std::string Browser::getSRWareIronLogin() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9435,12 +9434,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-logins.db";
-    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-slim-logins.db");
-    // check if the bscan-slim-logins file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-srwareiron-logins.db");
+    // check if the bscan-srwareiron-logins file exists
     if(tmpFileLogins) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9460,15 +9459,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the logins file exists
-      fileLogins.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileLogins.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileLogins) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-logins.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-srwareiron-logins.db");
       } else {
-        return std::string("could not find file for slim browser logins");
+        return std::string("could not find file for srwareiron browser logins");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9480,7 +9479,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim logins" << std::endl;
+        std::cerr << "error find srwareiron logins" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9488,10 +9487,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found slim logins";
+    return "successfully found srwareiron logins";
   };
 
-  std::string Browser::getSlimShortcuts() {
+  std::string Browser::getSRWareIronShortcuts() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9503,12 +9502,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-shortcuts.db";
-    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-slim-shortcuts.db");
-    // check if the bscan-slim-shortcuts file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-srwareiron-shortcuts.db");
+    // check if the bscan-srwareiron-shortcuts file exists
     if(tmpFileShortcuts) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9528,15 +9527,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the shortcuts file exists
-      fileShortcuts.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileShortcuts.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileShortcuts) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-shortcuts.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Shortcuts","C:\\Windows\\Temp\\bscan-srwareiron-shortcuts.db");
       } else {
-        return std::string("could not find file for slim browser shortcuts");
+        return std::string("could not find file for srwareiron browser shortcuts");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9548,7 +9547,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim shortcuts" << std::endl;
+        std::cerr << "error find srwareiron shortcuts" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9556,10 +9555,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found slim shortcuts";
+    return "successfully found srwareiron shortcuts";
   };
 
-  std::string Browser::getSlimMemberOf() {
+  std::string Browser::getSRWareIronMemberOf() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9571,12 +9570,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-member-of.db";
-    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-slim-member-of.db");
-    // check if the bscan-slim-member of file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-srwareiron-member-of.db");
+    // check if the bscan-srwareiron-member of file exists
     if(tmpFileMemberOf) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9596,15 +9595,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the member of file exists
-      fileMemberOf.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite");
+      fileMemberOf.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileMemberOf) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default","C:\\Windows\\Temp\\bscan-slim-member-of.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Affiliation Database","C:\\Windows\\Temp\\bscan-srwareiron-member-of.db");
       } else {
-        return std::string("could not find file for slim browser affiliation");
+        return std::string("could not find file for srwareiron browser affiliation");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9616,7 +9615,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim affiliation" << std::endl;
+        std::cerr << "error find srwareiron affiliation" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9624,10 +9623,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found slim affiliation";
+    return "successfully found srwareiron affiliation";
   };
 
-  std::string Browser::getSlimAutoFillEmails() {
+  std::string Browser::getSRWareIronAutoFillEmails() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9639,12 +9638,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-emails.db";
-    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-slim-autofill-emails.db");
-    // check if the bscan-slim-autofill emails file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-srwareiron-autofill-emails.db");
+    // check if the bscan-srwareiron-autofill emails file exists
     if(tmpFileAutoFillEmails) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9664,15 +9663,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the autofill emails file exists
-      fileAutoFillEmails.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileAutoFillEmails) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-emails.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-srwareiron-autofill-emails.db");
       } else {
-        return std::string("could not find file for slim browser autofill emails");
+        return std::string("could not find file for srwareiron browser autofill emails");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9684,7 +9683,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim autofill emails" << std::endl;
+        std::cerr << "error find srwareiron autofill emails" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9692,10 +9691,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found slim autofill emails";
+    return "successfully found srwareiron autofill emails";
   };
 
-  std::string Browser::getSlimAutoFillProfiles() {
+  std::string Browser::getSRWareIronAutoFillProfiles() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9707,12 +9706,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-profiles.db";
-    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-slim-autofill-profiles.db");
-    // check if the bscan-slim-autofill profiles file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-srwareiron-autofill-profiles.db");
+    // check if the bscan-srwareiron-autofill profiles file exists
     if(tmpFileAutoFillProfiles) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9732,15 +9731,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the autofill profiles file exists
-      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileAutoFillProfiles) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-profiles.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-srwareiron-autofill-profiles.db");
       } else {
-        return std::string("could not find file for slim browser autofill profiles");
+        return std::string("could not find file for srwareiron browser autofill profiles");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9752,7 +9751,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim autofill profiles" << std::endl;
+        std::cerr << "error find srwareiron autofill profiles" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9760,10 +9759,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found slim autofill profiles";
+    return "successfully found srwareiron autofill profiles";
   };
 
-  std::string Browser::getSlimAutoFillAddresses() {
+  std::string Browser::getSRWareIronAutoFillAddresses() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9775,12 +9774,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-addresses.db";
-    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-slim-autofill-addresses.db");
-    // check if the bscan-slim-autofill-addresses file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-srwareiron-autofill-addresses.db");
+    // check if the bscan-srwareiron-autofill-addresses file exists
     if(tmpFileAutoFillAddresses) {
       //if there is read the file
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9800,15 +9799,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the autofill addresses file exists
-      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileAutoFillAddresses) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-addresses.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-srwareiron-autofill-addresses.db");
       } else {
-        return std::string("could not find file for slim browser autofill addresses");
+        return std::string("could not find file for srwareiron browser autofill addresses");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9820,7 +9819,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim autofill addresses" << std::endl;
+        std::cerr << "error find srwareiron autofill addresses" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9828,10 +9827,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
     
-    return "successfully found slim autofill addresses";
+    return "successfully found srwareiron autofill addresses";
   };
 
-  std::string Browser::getSlimAutoFillPhones() {
+  std::string Browser::getSRWareIronAutoFillPhones() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9843,12 +9842,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-phones.db";
-    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-slim-autofill-phones.db");
-    // check if the bscan-slim-autoFill-phones file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-srwareiron-autofill-phones.db");
+    // check if the bscan-srwareiron-autoFill-phones file exists
     if(tmpFileAutoFillPhones) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9868,15 +9867,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the autofill phones file exists
-      fileAutoFillPhones.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileAutoFillPhones) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-phones.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Web Data");
       } else {
-        return std::string("could not find file for slim browser autofill phones");
+        return std::string("could not find file for srwareiron browser autofill phones");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9888,7 +9887,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim autofill phones" << std::endl;
+        std::cerr << "error find srwareiron autofill phones" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9896,10 +9895,10 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
     
-    return "successfully found slim autofill phones";
+    return "successfully found srwareiron autofill phones";
   };
 
-  std::string Browser::getSlimAutoFillNames() {
+  std::string Browser::getSRWareIronAutoFillNames() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
     std::string pathBSCAN;
@@ -9911,12 +9910,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-names.db";
-    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-slim-autofill-names.db");
-    // check if the bscan-slim-autofill names file exists
+    char srwareirondb[] = "C:\\Windows\\Temp\\bscan-srwareiron-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-srwareiron-autofill-names.db");
+    // check if the bscan-srwareiron-autofill names file exists
     if(tmpFileAutoFillNames) {
       //if there is read the file   
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9936,15 +9935,15 @@ namespace bscan {
       sqlite3_close(bscanDB);
     } else {
       // check if the autofill names file exists
-      fileAutoFillNames.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Local/Chromium/User Data/Default");
       // if it exists move to the specified path
       if(fileAutoFillNames) {
-        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-names.db");
+        fs::copy(pathBSCAN + "/AppData/Local/Chromium/User Data/Default/Web Data");
       } else {
-        return std::string("could not find file for slim browser autofill names");
+        return std::string("could not find file for srwareiron browser autofill names");
       }
  
-      rc = sqlite3_open(slimdb, &bscanDB);
+      rc = sqlite3_open(srwareirondb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -9956,7 +9955,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find slim autofill names" << std::endl;
+        std::cerr << "error find srwareiron autofill names" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -9964,7 +9963,7 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
     
-    return "successfully found slim autofill names";
+    return "successfully found srwareiron autofill names";
   };
   //todo: make media
 };
