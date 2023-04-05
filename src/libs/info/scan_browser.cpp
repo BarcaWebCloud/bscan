@@ -1104,4 +1104,67 @@ namespace bscan {
     }
     return _srwawreironautofillprofiles;
   }
+  // TO TUNGSTEN
+  std::string Browser::tungstenhistory() {
+    if (_tungstenhistory.empty()) {
+      _tungstenhistory = getTungstenHistory();
+    }
+    return _tungstenhistory;
+  }
+
+  std::string Browser::tungstenlogin() {
+    if (_tungstenlogin.empty()) {
+      _tungstenlogin = getTungstenLogin();
+    }
+    return _tungstenmedia;
+  }
+
+  std::string Browser::tungstenshortcuts() {
+    if (_tungstenshortcuts.empty()) {
+      _tungstenshortcuts = getTungstenShortcuts();
+    }
+    return _tungstenshortcuts;
+  }
+
+  std::string Browser::tungstenmemberof() {
+    if (_tungstenmemberof.empty()) {
+      _tungstenmemberof = getTungstenMemberOf();
+    }
+    return _tungstenmemberof;
+  }
+
+  std::string Browser::tungstenautofillemails() {
+    if (_tungstenautofillemails.empty()) {
+      _tungstenautofillemails = getTungstenAutoFillEmails();
+    }
+    return _tungstenautofillemails;
+  }
+  
+  std::string Browser::tungstenautofilladdresses() {
+    if (_tungstenautofilladdresses.empty()) {
+      _tungstenautofilladdresses = getTungstenAutoFillAddresses();
+    }
+    return _tungstenautofilladdresses;
+  }
+
+  std::string Browser::tungstenautofillphones() {
+    if (_tungstenautofillphones.empty()) {
+      _tungstenautofillphones = getTungstenAutoFillPhones();
+    }
+    return _tungstenautofillphones;
+  }
+
+  std::string Browser::tungstenautofillnames() {
+    if (_tungstenautofillnames.empty()) {
+      _tungstenautofillnames = getTungstenAutoFillNames();
+    }
+    return _tungstenautofillnames;
+  }
+
+  std::string Browser::tungstenautofillprofiles() {
+    if (_tungstenautofillprofiles.empty()) {
+      _tungstenautofillprofiles = getTungstenAutoFillProfiles();
+    }
+    return _tungstenautofillprofiles;
+  }
 };
