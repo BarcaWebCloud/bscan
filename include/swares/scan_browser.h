@@ -150,6 +150,18 @@ namespace bscan {
     std::string seamonkeyautofillphones();
     std::string seamonkeyautofillnames();
     std::string seamonkeyautofillprofiles();
+    // comodo dragon browser
+    std::string comododragonhistory();
+    std::string comododragonlogin();
+    std::string comododragonpreferences();
+    std::string comododragonsecurepreferences();
+    std::string comododragonshortcuts();
+    std::string comododragonmemberof();
+    std::string comododragonautofillemails();
+    std::string comododragonautofilladdresses();
+    std::string comododragonautofillphones();
+    std::string comododragonautofillnames();
+    std::string comododragonautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -263,6 +275,16 @@ namespace bscan {
     static std::string getSeaMonkeyAutoFillPhones();
     static std::string getSeaMonkeyAutoFillNames();
     static std::string getSeaMonkeyAutoFillProfiles();
+    // comodo browser
+    static std::string getComodoHistory();
+    static std::string getComodoLogin();
+    static std::string getComodoShortcuts();
+    static std::string getComodoMemberOf();
+    static std::string getComodoAutoFillEmails();
+    static std::string getComodoAutoFillAddresses();
+    static std::string getComodoAutoFillPhones();
+    static std::string getComodoAutoFillNames();
+    static std::string getComodoAutoFillProfiles();    
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -378,6 +400,16 @@ namespace bscan {
     std::string _seamonkeyautofillphones;
     std::string _seamonkeyautofillnames;
     std::string _seamonkeyautofillprofiles;
+    // comodo dragon browser
+    std::string _comododragonhistory;
+    std::string _comododragonlogin;
+    std::string _comododragonshortcuts;
+    std::string _comododragonmemberof;
+    std::string _comododragonautofillemails;
+    std::string _comododragonautofilladdresses;
+    std::string _comododragonautofillphones;
+    std::string _comododragonautofillnames;
+    std::string _comododragonautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
