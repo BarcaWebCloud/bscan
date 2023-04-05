@@ -852,4 +852,67 @@ namespace bscan {
     }
     return _chromexautofillprofiles;
   }
+  // TO WATERFOX
+  std::string Browser::waterfoxhistory() {
+    if (_waterfoxhistory.empty()) {
+      _waterfoxhistory = getWaterfoxHistory();
+    }
+    return _waterfoxhistory;
+  }
+
+  std::string Browser::waterfoxlogin() {
+    if (_waterfoxlogin.empty()) {
+      _waterfoxlogin = getWaterfoxLogin();
+    }
+    return _waterfoxmedia;
+  }
+
+  std::string Browser::waterfoxshortcuts() {
+    if (_waterfoxshortcuts.empty()) {
+      _waterfoxshortcuts = getWaterfoxShortcuts();
+    }
+    return _waterfoxshortcuts;
+  }
+
+  std::string Browser::waterfoxmemberof() {
+    if (_waterfoxmemberof.empty()) {
+      _waterfoxmemberof = getWaterfoxMemberOf();
+    }
+    return _waterfoxmemberof;
+  }
+
+  std::string Browser::waterfoxautofillemails() {
+    if (_waterfoxautofillemails.empty()) {
+      _waterfoxautofillemails = getWaterfoxAutoFillEmails();
+    }
+    return _waterfoxautofillemails;
+  }
+  
+  std::string Browser::waterfoxautofilladdresses() {
+    if (_waterfoxautofilladdresses.empty()) {
+      _waterfoxautofilladdresses = getWaterfoxAutoFillAddresses();
+    }
+    return _waterfoxautofilladdresses;
+  }
+
+  std::string Browser::waterfoxautofillphones() {
+    if (_waterfoxautofillphones.empty()) {
+      _waterfoxautofillphones = get360waterfoxAutoFillPhones();
+    }
+    return _waterfoxautofillphones;
+  }
+
+  std::string Browser::waterfoxautofillnames() {
+    if (_waterfoxautofillnames.empty()) {
+      _waterfoxautofillnames = getWaterfoxAutoFillNames();
+    }
+    return _waterfoxautofillnames;
+  }
+
+  std::string Browser::waterfoxautofillprofiles() {
+    if (_waterfoxautofillprofiles.empty()) {
+      _waterfoxautofillprofiles = getWaterfoxAutoFillProfiles();
+    }
+    return _waterfoxautofillprofiles;
+  }
 };

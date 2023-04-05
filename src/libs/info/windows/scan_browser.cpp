@@ -6898,7 +6898,7 @@ namespace bscan {
     
     return "successfully found comodoicedragon autofill names";
   };
-    // TO 360 CHROME X
+  // TO 360 CHROME X
   std::string Browser::get360ChromeXHistory() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
@@ -6911,12 +6911,12 @@ namespace bscan {
     char *zErrMsg;
     int rc;
 
-    char comododragondb[] = "C:\\Windows\\Temp\\bscan-comododragon-history.db";
-    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-comododragon-history.db");
-    // check if the bscan-comododragon-media file exists
+    char chromexdb[] = "C:\\Windows\\Temp\\bscan-chromex-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-chromex-history.db");
+    // check if the bscan-chromex-media file exists
     if(tmpFileHistory) {
       //if there is read the file
-      rc = sqlite3_open(comododragondb, &bscanDB);
+      rc = sqlite3_open(chromexdb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -6940,12 +6940,12 @@ namespace bscan {
       fileHistory.open(pathBSCAN + "/AppData/Local/360ChromeX/Chrome/User Data/Default/360History");
       // if it exists move to the specified path
       if(fileHistory) {
-        fs::copy(pathBSCAN + "/AppData/Local/360ChromeX/Chrome/User Data/Default/360History","C:\\Windows\\Temp\\bscan-comododragon-history.db");
+        fs::copy(pathBSCAN + "/AppData/Local/360ChromeX/Chrome/User Data/Default/360History","C:\\Windows\\Temp\\bscan-chromex-history.db");
       } else {
-        return std::string("could not find file for comododragon browser history");
+        return std::string("could not find file for chromex browser history");
       }
  
-      rc = sqlite3_open(comododragondb, &bscanDB);
+      rc = sqlite3_open(chromexdb, &bscanDB);
       if(rc) {
         fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
         return(0);
@@ -6957,7 +6957,7 @@ namespace bscan {
       
       rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
       if (rc != SQLITE_OK) {
-        std::cerr << "error find comododragon history" << std::endl;
+        std::cerr << "error find chromex history" << std::endl;
         sqlite3_free(zErrMsg);
       }
       else
@@ -6965,7 +6965,7 @@ namespace bscan {
       sqlite3_close(bscanDB);
     };
 
-    return "successfully found comododragon history";
+    return "successfully found chromex history";
   };
 
   std::string Browser::get360ChromeXLogin() {
@@ -7510,6 +7510,620 @@ namespace bscan {
     };
     
     return "successfully found chromex autofill names";
+  };
+  // TO WATERFOX
+  // TODO: path 
+  std::string Browser::getWaterfoxHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char comododragondb[] = "C:\\Windows\\Temp\\bscan-waterfox-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-waterfox-history.db");
+    // check if the bscan-waterfox-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Local/360ChromeX/Chrome/User Data/Default/360History");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Local/360ChromeX/Chrome/User Data/Default/360History","C:\\Windows\\Temp\\bscan-waterfox-history.db");
+      } else {
+        return std::string("could not find file for waterfox browser history");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found waterfox history";
+  };
+
+  std::string Browser::getWaterfoxLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileLogins;
+    std::ifstream tmpFileLogins;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-waterfox-logins.db");
+    // check if the bscan-waterfox-logins file exists
+    if(tmpFileLogins) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the logins file exists
+      fileLogins.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Login Data");
+      // if it exists move to the specified path
+      if(fileLogins) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Login Data","C:\\Windows\\Temp\\bscan-waterfox-logins.db");
+      } else {
+        return std::string("could not find file for waterfox browser logins");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox logins" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found waterfox logins";
+  };
+
+  std::string Browser::getWaterfoxShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileShortcuts;
+    std::ifstream tmpFileShortcuts;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-waterfox-shortcuts.db");
+    // check if the bscan-waterfox-shortcuts file exists
+    if(tmpFileShortcuts) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the shortcuts file exists
+      fileShortcuts.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Shortcuts");
+      // if it exists move to the specified path
+      if(fileShortcuts) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Shortcuts","C:\\Windows\\Temp\\bscan-waterfox-shortcuts.db");
+      } else {
+        return std::string("could not find file for waterfox browser shortcuts");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox shortcuts" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found waterfox shortcuts";
+  };
+
+  std::string Browser::getWaterfoxMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-waterfox-member-of.db");
+    // check if the bscan-waterfox-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Affiliation Database");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Affiliation Database","C:\\Windows\\Temp\\bscan-waterfox-member-of.db");
+      } else {
+        return std::string("could not find file for waterfox browser affiliation");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found waterfox affiliation";
+  };
+
+  std::string Browser::getWaterfoxAutoFillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillEmails;
+    std::ifstream tmpFileAutoFillEmails;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-waterfox-autofill-emails.db");
+    // check if the bscan-waterfox-autofill emails file exists
+    if(tmpFileAutoFillEmails) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill emails file exists
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillEmails) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-waterfox-autofill-emails.db");
+      } else {
+        return std::string("could not find file for waterfox browser autofill emails");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox autofill emails" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found waterfox autofill emails";
+  };
+
+  std::string Browser::getWaterfoxAutoFillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillProfiles;
+    std::ifstream tmpFileAutoFillProfiles;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-waterfox-autofill-profiles.db");
+    // check if the bscan-waterfox-autofill profiles file exists
+    if(tmpFileAutoFillProfiles) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill profiles file exists
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillProfiles) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-waterfox-autofill-profiles.db");
+      } else {
+        return std::string("could not find file for waterfox browser autofill profiles");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox autofill profiles" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found waterfox autofill profiles";
+  };
+
+  std::string Browser::getWaterfoxAutoFillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillAddresses;
+    std::ifstream tmpFileAutoFillAddresses;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-waterfox-autofill-addresses.db");
+    // check if the bscan-waterfox-autofill-addresses file exists
+    if(tmpFileAutoFillAddresses) {
+      //if there is read the file
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill addresses file exists
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillAddresses) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-waterfox-autofill-addresses.db");
+      } else {
+        return std::string("could not find file for waterfox browser autofill addresses");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox autofill addresses" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found waterfox autofill addresses";
+  };
+
+  std::string Browser::getWaterfoxAutoFillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillPhones;
+    std::ifstream tmpFileAutoFillPhones;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-waterfox-autofill-phones.db");
+    // check if the bscan-waterfox-autoFill-phones file exists
+    if(tmpFileAutoFillPhones) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill phones file exists
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillPhones) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-waterfox-autofill-phones.db");
+      } else {
+        return std::string("could not find file for waterfox browser autofill phones");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox autofill phones" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found waterfox autofill phones";
+  };
+
+  std::string Browser::getWaterfoxAutoFillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillNames;
+    std::ifstream tmpFileAutoFillNames;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char waterfoxdb[] = "C:\\Windows\\Temp\\bscan-waterfox-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-waterfox-autofill-names.db");
+    // check if the bscan-waterfox-autofill names file exists
+    if(tmpFileAutoFillNames) {
+      //if there is read the file   
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill names file exists
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillNames) {
+        fs::copy(pathBSCAN + "/AppData/Local/360waterfox/Chrome/User Data/Default/Web Data","C:\\Windows\\Temp\\bscan-waterfox-autofill-names.db");
+      } else {
+        return std::string("could not find file for waterfox browser autofill names");
+      }
+ 
+      rc = sqlite3_open(waterfoxdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find waterfox autofill names" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found waterfox autofill names";
   };
   //todo: make media
 
