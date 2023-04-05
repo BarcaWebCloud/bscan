@@ -915,4 +915,67 @@ namespace bscan {
     }
     return _waterfoxautofillprofiles;
   }
+  // TO BRISK BARD
+  std::string Browser::briskbardhistory() {
+    if (_briskbardhistory.empty()) {
+      _briskbardhistory = getBriskBardHistory();
+    }
+    return _briskbardhistory;
+  }
+
+  std::string Browser::briskbardlogin() {
+    if (_briskbardlogin.empty()) {
+      _briskbardlogin = getBriskBardLogin();
+    }
+    return _briskbardmedia;
+  }
+
+  std::string Browser::briskbardshortcuts() {
+    if (_briskbardshortcuts.empty()) {
+      _briskbardshortcuts = getBriskBardShortcuts();
+    }
+    return _briskbardshortcuts;
+  }
+
+  std::string Browser::briskbardmemberof() {
+    if (_briskbardmemberof.empty()) {
+      _briskbardmemberof = getBriskBardMemberOf();
+    }
+    return _briskbardmemberof;
+  }
+
+  std::string Browser::briskbardautofillemails() {
+    if (_briskbardautofillemails.empty()) {
+      _briskbardautofillemails = getBriskBardAutoFillEmails();
+    }
+    return _briskbardautofillemails;
+  }
+  
+  std::string Browser::briskbardautofilladdresses() {
+    if (_briskbardautofilladdresses.empty()) {
+      _briskbardautofilladdresses = getBriskBardAutoFillAddresses();
+    }
+    return _briskbardautofilladdresses;
+  }
+
+  std::string Browser::briskbardautofillphones() {
+    if (_briskbardautofillphones.empty()) {
+      _briskbardautofillphones = getBriskBardAutoFillPhones();
+    }
+    return _briskbardautofillphones;
+  }
+
+  std::string Browser::briskbardautofillnames() {
+    if (_briskbardautofillnames.empty()) {
+      _briskbardautofillnames = getBriskBardAutoFillNames();
+    }
+    return _briskbardautofillnames;
+  }
+
+  std::string Browser::briskbardautofillprofiles() {
+    if (_briskbardautofillprofiles.empty()) {
+      _briskbardautofillprofiles = getBriskBardAutoFillProfiles();
+    }
+    return _briskbardautofillprofiles;
+  }
 };
