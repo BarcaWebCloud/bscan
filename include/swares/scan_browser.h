@@ -186,6 +186,18 @@ namespace bscan {
     std::string chromexautofillphones();
     std::string chromexautofillnames();
     std::string chromexautofillprofiles();
+    // waterfox browser
+    std::string waterfoxhistory();
+    std::string waterfoxlogin();
+    std::string waterfoxpreferences();
+    std::string waterfoxsecurepreferences();
+    std::string waterfoxshortcuts();
+    std::string waterfoxmemberof();
+    std::string waterfoxautofillemails();
+    std::string waterfoxautofilladdresses();
+    std::string waterfoxautofillphones();
+    std::string waterfoxautofillnames();
+    std::string waterfoxautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -329,6 +341,16 @@ namespace bscan {
     static std::string get360ChromeXAutoFillPhones();
     static std::string get360ChromeXAutoFillNames();
     static std::string get360ChromeXAutoFillProfiles();
+    // Waterfox browser
+    static std::string getWaterfoxHistory();
+    static std::string getWaterfoxLogin();
+    static std::string getWaterfoxShortcuts();
+    static std::string getWaterfoxMemberOf();
+    static std::string getWaterfoxAutoFillEmails();
+    static std::string getWaterfoxAutoFillAddresses();
+    static std::string getWaterfoxAutoFillPhones();
+    static std::string getWaterfoxAutoFillNames();
+    static std::string getWaterfoxAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -474,6 +496,16 @@ namespace bscan {
     std::string chromexautofillphones;
     std::string chromexautofillnames;
     std::string chromexautofillprofiles;
+    // watefox browser
+    std::string waterfoxhistory;
+    std::string waterfoxlogin;
+    std::string waterfoxshortcuts;
+    std::string waterfoxmemberof;
+    std::string waterfoxautofillemails;
+    std::string waterfoxautofilladdresses;
+    std::string waterfoxautofillphones;
+    std::string waterfoxautofillnames;
+    std::string waterfoxautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
