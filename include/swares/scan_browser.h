@@ -210,6 +210,18 @@ namespace bscan {
     std::string briskbardautofillphones();
     std::string briskbardautofillnames();
     std::string briskbardautofillprofiles();
+    // slim browser
+    std::string slimhistory();
+    std::string slimlogin();
+    std::string slimpreferences();
+    std::string slimsecurepreferences();
+    std::string slimshortcuts();
+    std::string slimmemberof();
+    std::string slimautofillemails();
+    std::string slimautofilladdresses();
+    std::string slimautofillphones();
+    std::string slimautofillnames();
+    std::string slimautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -373,6 +385,26 @@ namespace bscan {
     static std::string getBriskBardAutoFillPhones();
     static std::string getBriskBardAutoFillNames();
     static std::string getBriskBardAutoFillProfiles();
+    // otter browser
+    static std::string getOtterHistory();
+    static std::string getOtterLogin();
+    static std::string getOtterShortcuts();
+    static std::string getOtterMemberOf();
+    static std::string getOtterAutoFillEmails();
+    static std::string getOtterAutoFillAddresses();
+    static std::string getOtterAutoFillPhones();
+    static std::string getOtterAutoFillNames();
+    static std::string getOtterAutoFillProfiles();
+    // slim browser
+    static std::string getSlimHistory();
+    static std::string getSlimLogin();
+    static std::string getSlimShortcuts();
+    static std::string getSlimMemberOf();
+    static std::string getSlimAutoFillEmails();
+    static std::string getSlimAutoFillAddresses();
+    static std::string getSlimAutoFillPhones();
+    static std::string getSlimAutoFillNames();
+    static std::string getSlimAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -538,6 +570,26 @@ namespace bscan {
     std::string briskbardautofillphones;
     std::string briskbardautofillnames;
     std::string briskbardautofillprofiles;
+    // otter browser
+    std::string otterhistory;
+    std::string otterlogin;
+    std::string ottershortcuts;
+    std::string ottermemberof;
+    std::string otterautofillemails;
+    std::string otterautofilladdresses;
+    std::string otterautofillphones;
+    std::string otterautofillnames;
+    std::string otterautofillprofiles;
+    // slim browser
+    std::string slimhistory;
+    std::string slimlogin;
+    std::string slimshortcuts;
+    std::string slimmemberof;
+    std::string slimautofillemails;
+    std::string slimautofilladdresses;
+    std::string slimautofillphones;
+    std::string slimautofillnames;
+    std::string slimautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
