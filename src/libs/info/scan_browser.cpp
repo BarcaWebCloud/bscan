@@ -600,5 +600,68 @@ namespace bscan {
     }
     return _maxthonautofillprofiles;
   }
+  // TO SEAMONKEY
+  std::string Browser::seamonkeyhistory() {
+    if (_seamonkeyhistory.empty()) {
+      _seamonkeyhistory = getSeaMonkeyHistory();
+    }
+    return _seamonkeyhistory;
+  }
+
+  std::string Browser::seamonkeylogin() {
+    if (_seamonkeylogin.empty()) {
+      _seamonkeylogin = getSeaMonkeyLogin();
+    }
+    return _seamonkeymedia;
+  }
+
+  std::string Browser::seamonkeyshortcuts() {
+    if (_seamonkeyshortcuts.empty()) {
+      _seamonkeyshortcuts = getSeaMonkeyShortcuts();
+    }
+    return _seamonkeyshortcuts;
+  }
+
+  std::string Browser::seamonkeymemberof() {
+    if (_seamonkeymemberof.empty()) {
+      _seamonkeymemberof = getSeaMonkeyMemberOf();
+    }
+    return _seamonkeymemberof;
+  }
+
+  std::string Browser::seamonkeyautofillemails() {
+    if (_seamonkeyautofillemails.empty()) {
+      _seamonkeyautofillemails = getSeaMonkeyAutoFillEmails();
+    }
+    return _seamonkeyautofillemails;
+  }
+  
+  std::string Browser::seamonkeyautofilladdresses() {
+    if (_seamonkeyautofilladdresses.empty()) {
+      _seamonkeyautofilladdresses = getSeaMonkeyAutoFillAddresses();
+    }
+    return _seamonkeyautofilladdresses;
+  }
+
+  std::string Browser::seamonkeyautofillphones() {
+    if (_seamonkeyautofillphones.empty()) {
+      _seamonkeyautofillphones = getSeaMonkeyAutoFillPhones();
+    }
+    return _seamonkeyautofillphones;
+  }
+
+  std::string Browser::seamonkeyautofillnames() {
+    if (_seamonkeyautofillnames.empty()) {
+      _seamonkeyautofillnames = getSeaMonkeyAutoFillNames();
+    }
+    return _seamonkeyautofillnames;
+  }
+
+  std::string Browser::seamonkeyautofillprofiles() {
+    if (_seamonkeyautofillprofiles.empty()) {
+      _seamonkeyautofillprofiles = getSeaMonkeyAutoFillProfiles();
+    }
+    return _seamonkeyautofillprofiles;
+  }
 
 };
