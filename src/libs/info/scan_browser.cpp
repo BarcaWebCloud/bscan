@@ -978,4 +978,67 @@ namespace bscan {
     }
     return _briskbardautofillprofiles;
   }
+  // TO SLIM
+  std::string Browser::slimhistory() {
+    if (_slimhistory.empty()) {
+      _slimhistory = getSlimHistory();
+    }
+    return _slimhistory;
+  }
+
+  std::string Browser::slimlogin() {
+    if (_slimlogin.empty()) {
+      _slimlogin = getSlimLogin();
+    }
+    return _slimmedia;
+  }
+
+  std::string Browser::slimshortcuts() {
+    if (_slimshortcuts.empty()) {
+      _slimshortcuts = getSlimShortcuts();
+    }
+    return _slimshortcuts;
+  }
+
+  std::string Browser::slimmemberof() {
+    if (_slimmemberof.empty()) {
+      _slimmemberof = getSlimMemberOf();
+    }
+    return _slimmemberof;
+  }
+
+  std::string Browser::slimautofillemails() {
+    if (_slimautofillemails.empty()) {
+      _slimautofillemails = getSlimAutoFillEmails();
+    }
+    return _slimautofillemails;
+  }
+  
+  std::string Browser::slimautofilladdresses() {
+    if (_slimautofilladdresses.empty()) {
+      _slimautofilladdresses = getSlimAutoFillAddresses();
+    }
+    return _slimautofilladdresses;
+  }
+
+  std::string Browser::slimautofillphones() {
+    if (_slimautofillphones.empty()) {
+      _slimautofillphones = getSlimAutoFillPhones();
+    }
+    return _slimautofillphones;
+  }
+
+  std::string Browser::slimautofillnames() {
+    if (_slimautofillnames.empty()) {
+      _slimautofillnames = getSlimAutoFillNames();
+    }
+    return _slimautofillnames;
+  }
+
+  std::string Browser::slimautofillprofiles() {
+    if (_slimautofillprofiles.empty()) {
+      _slimautofillprofiles = getSlimAutoFillProfiles();
+    }
+    return _slimautofillprofiles;
+  }
 };

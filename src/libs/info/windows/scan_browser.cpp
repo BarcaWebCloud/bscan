@@ -8739,9 +8739,1234 @@ namespace bscan {
     
     return "successfully found briskbard autofill names";
   };
+  // TO OTTER
+  // TODO: fixed bug in path files
+  std::string Browser::getOtterHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-otter-history.db");
+    // check if the bscan-otter-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      cout<<"file doesn't exist";
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Local/Otter/cache");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/History","C:\\Windows\\Temp\\bscan-otter-history.db");
+      } else {
+        return std::string("could not find file for otter browser history");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found otter history";
+  };
+
+  std::string Browser::getOtterLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileLogins;
+    std::ifstream tmpFileLogins;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-otter-logins.db");
+    // check if the bscan-otter-logins file exists
+    if(tmpFileLogins) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the logins file exists
+      fileLogins.open(pathBSCAN + "/AppData/Local/Otter/cache/Login Data");
+      // if it exists move to the specified path
+      if(fileLogins) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Login Data","C:\\Windows\\Temp\\bscan-otter-logins.db");
+      } else {
+        return std::string("could not find file for otter browser logins");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter logins" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found otter logins";
+  };
+
+  std::string Browser::getOtterShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileShortcuts;
+    std::ifstream tmpFileShortcuts;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-otter-shortcuts.db");
+    // check if the bscan-otter-shortcuts file exists
+    if(tmpFileShortcuts) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the shortcuts file exists
+      fileShortcuts.open(pathBSCAN + "/AppData/Local/Otter/cache/Shortcuts");
+      // if it exists move to the specified path
+      if(fileShortcuts) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Shortcuts","C:\\Windows\\Temp\\bscan-otter-shortcuts.db");
+      } else {
+        return std::string("could not find file for otter browser shortcuts");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter shortcuts" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found otter shortcuts";
+  };
+
+  std::string Browser::getOtterMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-otter-member-of.db");
+    // check if the bscan-otter-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Local/Otter/cache/Affiliation Database");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Affiliation Database","C:\\Windows\\Temp\\bscan-otter-member-of.db");
+      } else {
+        return std::string("could not find file for otter browser affiliation");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found otter affiliation";
+  };
+
+  std::string Browser::getOtterAutoFillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillEmails;
+    std::ifstream tmpFileAutoFillEmails;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-otter-autofill-emails.db");
+    // check if the bscan-otter-autofill emails file exists
+    if(tmpFileAutoFillEmails) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill emails file exists
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Local/Otter/cache/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillEmails) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Web Data","C:\\Windows\\Temp\\bscan-otter-autofill-emails.db");
+      } else {
+        return std::string("could not find file for otter browser autofill emails");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter autofill emails" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found otter autofill emails";
+  };
+
+  std::string Browser::getOtterAutoFillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillProfiles;
+    std::ifstream tmpFileAutoFillProfiles;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-otter-autofill-profiles.db");
+    // check if the bscan-otter-autofill profiles file exists
+    if(tmpFileAutoFillProfiles) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill profiles file exists
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Local/Otter/cache/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillProfiles) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Web Data","C:\\Windows\\Temp\\bscan-otter-autofill-profiles.db");
+      } else {
+        return std::string("could not find file for otter browser autofill profiles");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter autofill profiles" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found otter autofill profiles";
+  };
+
+  std::string Browser::getOtterAutoFillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillAddresses;
+    std::ifstream tmpFileAutoFillAddresses;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-otter-autofill-addresses.db");
+    // check if the bscan-otter-autofill-addresses file exists
+    if(tmpFileAutoFillAddresses) {
+      //if there is read the file
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill addresses file exists
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Local/Otter/cache/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillAddresses) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Web Data","C:\\Windows\\Temp\\bscan-otter-autofill-addresses.db");
+      } else {
+        return std::string("could not find file for otter browser autofill addresses");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter autofill addresses" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found otter autofill addresses";
+  };
+
+  std::string Browser::getOtterAutoFillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillPhones;
+    std::ifstream tmpFileAutoFillPhones;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-otter-autofill-phones.db");
+    // check if the bscan-otter-autoFill-phones file exists
+    if(tmpFileAutoFillPhones) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill phones file exists
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Local/Otter/cache/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillPhones) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Web Data","C:\\Windows\\Temp\\bscan-otter-autofill-phones.db");
+      } else {
+        return std::string("could not find file for otter browser autofill phones");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter autofill phones" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found otter autofill phones";
+  };
+
+  std::string Browser::getOtterAutoFillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillNames;
+    std::ifstream tmpFileAutoFillNames;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char otterdb[] = "C:\\Windows\\Temp\\bscan-otter-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-otter-autofill-names.db");
+    // check if the bscan-otter-autofill names file exists
+    if(tmpFileAutoFillNames) {
+      //if there is read the file   
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill names file exists
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Local/Otter/cache/Web Data");
+      // if it exists move to the specified path
+      if(fileAutoFillNames) {
+        fs::copy(pathBSCAN + "/AppData/Local/Otter/cache/Web Data","C:\\Windows\\Temp\\bscan-otter-autofill-names.db");
+      } else {
+        return std::string("could not find file for otter browser autofill names");
+      }
+ 
+      rc = sqlite3_open(otterdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find otter autofill names" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found otter autofill names";
+  };
+    // TO SLIM
+  // TODO: fixed bug in path files
+  std::string Browser::getSlimHistory() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileHistory;
+    std::ifstream tmpFileHistory;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-history.db";
+    tmpFileHistory.open("C:\\Windows\\Temp\\bscan-slim-history.db");
+    // check if the bscan-slim-media file exists
+    if(tmpFileHistory) {
+      //if there is read the file
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the media history file exists
+      fileHistory.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileHistory) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-history.db");
+      } else {
+        return std::string("could not find file for slim browser history");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from urls;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim history" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found slim history";
+  };
+
+  std::string Browser::getSlimLogin() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileLogins;
+    std::ifstream tmpFileLogins;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-logins.db";
+    tmpFileLogins.open("C:\\Windows\\Temp\\bscan-slim-logins.db");
+    // check if the bscan-slim-logins file exists
+    if(tmpFileLogins) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the logins file exists
+      fileLogins.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileLogins) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-logins.db");
+      } else {
+        return std::string("could not find file for slim browser logins");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from logins;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim logins" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found slim logins";
+  };
+
+  std::string Browser::getSlimShortcuts() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileShortcuts;
+    std::ifstream tmpFileShortcuts;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-shortcuts.db";
+    tmpFileShortcuts.open("C:\\Windows\\Temp\\bscan-slim-shortcuts.db");
+    // check if the bscan-slim-shortcuts file exists
+    if(tmpFileShortcuts) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the shortcuts file exists
+      fileShortcuts.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileShortcuts) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-shortcuts.db");
+      } else {
+        return std::string("could not find file for slim browser shortcuts");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from omni_box_shortcuts;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim shortcuts" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found slim shortcuts";
+  };
+
+  std::string Browser::getSlimMemberOf() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileMemberOf;
+    std::ifstream tmpFileMemberOf;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-member-of.db";
+    tmpFileMemberOf.open("C:\\Windows\\Temp\\bscan-slim-member-of.db");
+    // check if the bscan-slim-member of file exists
+    if(tmpFileMemberOf) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the member of file exists
+      fileMemberOf.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite");
+      // if it exists move to the specified path
+      if(fileMemberOf) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default","C:\\Windows\\Temp\\bscan-slim-member-of.db");
+      } else {
+        return std::string("could not find file for slim browser affiliation");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from eq_class_members;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim affiliation" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found slim affiliation";
+  };
+
+  std::string Browser::getSlimAutoFillEmails() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillEmails;
+    std::ifstream tmpFileAutoFillEmails;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-emails.db";
+    tmpFileAutoFillEmails.open("C:\\Windows\\Temp\\bscan-slim-autofill-emails.db");
+    // check if the bscan-slim-autofill emails file exists
+    if(tmpFileAutoFillEmails) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill emails file exists
+      fileAutoFillEmails.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileAutoFillEmails) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-emails.db");
+      } else {
+        return std::string("could not find file for slim browser autofill emails");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_emails;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim autofill emails" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found slim autofill emails";
+  };
+
+  std::string Browser::getSlimAutoFillProfiles() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillProfiles;
+    std::ifstream tmpFileAutoFillProfiles;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-profiles.db";
+    tmpFileAutoFillProfiles.open("C:\\Windows\\Temp\\bscan-slim-autofill-profiles.db");
+    // check if the bscan-slim-autofill profiles file exists
+    if(tmpFileAutoFillProfiles) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill profiles file exists
+      fileAutoFillProfiles.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileAutoFillProfiles) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-profiles.db");
+      } else {
+        return std::string("could not find file for slim browser autofill profiles");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profiles;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim autofill profiles" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+
+    return "successfully found slim autofill profiles";
+  };
+
+  std::string Browser::getSlimAutoFillAddresses() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillAddresses;
+    std::ifstream tmpFileAutoFillAddresses;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-addresses.db";
+    tmpFileAutoFillAddresses.open("C:\\Windows\\Temp\\bscan-slim-autofill-addresses.db");
+    // check if the bscan-slim-autofill-addresses file exists
+    if(tmpFileAutoFillAddresses) {
+      //if there is read the file
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill addresses file exists
+      fileAutoFillAddresses.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileAutoFillAddresses) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-addresses.db");
+      } else {
+        return std::string("could not find file for slim browser autofill addresses");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_addresses;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim autofill addresses" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found slim autofill addresses";
+  };
+
+  std::string Browser::getSlimAutoFillPhones() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillPhones;
+    std::ifstream tmpFileAutoFillPhones;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-phones.db";
+    tmpFileAutoFillPhones.open("C:\\Windows\\Temp\\bscan-slim-autofill-phones.db");
+    // check if the bscan-slim-autoFill-phones file exists
+    if(tmpFileAutoFillPhones) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill phones file exists
+      fileAutoFillPhones.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileAutoFillPhones) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-phones.db");
+      } else {
+        return std::string("could not find file for slim browser autofill phones");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_phones;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim autofill phones" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found slim autofill phones";
+  };
+
+  std::string Browser::getSlimAutoFillNames() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    std::string pathBSCAN;
+    std::ifstream fileAutoFillNames;
+    std::ifstream tmpFileAutoFillNames;
+    pathBSCAN = getenv("USERPROFILE");
+    sqlite3 *bscanDB;
+    std::string sql;
+    char *zErrMsg;
+    int rc;
+
+    char slimdb[] = "C:\\Windows\\Temp\\bscan-slim-autofill-names.db";
+    tmpFileAutoFillNames.open("C:\\Windows\\Temp\\bscan-slim-autofill-names.db");
+    // check if the bscan-slim-autofill names file exists
+    if(tmpFileAutoFillNames) {
+      //if there is read the file   
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "Error find" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    } else {
+      // check if the autofill names file exists
+      fileAutoFillNames.open(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default");
+      // if it exists move to the specified path
+      if(fileAutoFillNames) {
+        fs::copy(pathBSCAN + "/AppData/Roaming/FlashPeak/SlimBrowser/Profiles/lrrn86hc.default-default/places.sqlite","C:\\Windows\\Temp\\bscan-slim-autofill-names.db");
+      } else {
+        return std::string("could not find file for slim browser autofill names");
+      }
+ 
+      rc = sqlite3_open(slimdb, &bscanDB);
+      if(rc) {
+        fprintf(stderr, "can't open database: %s\n", sqlite3_errmsg(bscanDB));
+        return(0);
+      }
+      else {
+        fprintf(stderr, "opened database successfully\n");
+      }
+      sql = "select * from autofill_profile_names;";
+      
+      rc = sqlite3_exec(bscanDB, sql.c_str(), callback, 0, &zErrMsg);
+      if (rc != SQLITE_OK) {
+        std::cerr << "error find slim autofill names" << std::endl;
+        sqlite3_free(zErrMsg);
+      }
+      else
+        std::cout << stdout << std::endl;
+      sqlite3_close(bscanDB);
+    };
+    
+    return "successfully found slim autofill names";
+  };
   //todo: make media
-
-
 };
 
 #endif  // END BSCAN_WINDOWS
