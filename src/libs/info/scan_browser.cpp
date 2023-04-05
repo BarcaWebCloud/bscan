@@ -852,4 +852,256 @@ namespace bscan {
     }
     return _chromexautofillprofiles;
   }
+  // TO WATERFOX
+  std::string Browser::waterfoxhistory() {
+    if (_waterfoxhistory.empty()) {
+      _waterfoxhistory = getWaterfoxHistory();
+    }
+    return _waterfoxhistory;
+  }
+
+  std::string Browser::waterfoxlogin() {
+    if (_waterfoxlogin.empty()) {
+      _waterfoxlogin = getWaterfoxLogin();
+    }
+    return _waterfoxmedia;
+  }
+
+  std::string Browser::waterfoxshortcuts() {
+    if (_waterfoxshortcuts.empty()) {
+      _waterfoxshortcuts = getWaterfoxShortcuts();
+    }
+    return _waterfoxshortcuts;
+  }
+
+  std::string Browser::waterfoxmemberof() {
+    if (_waterfoxmemberof.empty()) {
+      _waterfoxmemberof = getWaterfoxMemberOf();
+    }
+    return _waterfoxmemberof;
+  }
+
+  std::string Browser::waterfoxautofillemails() {
+    if (_waterfoxautofillemails.empty()) {
+      _waterfoxautofillemails = getWaterfoxAutoFillEmails();
+    }
+    return _waterfoxautofillemails;
+  }
+  
+  std::string Browser::waterfoxautofilladdresses() {
+    if (_waterfoxautofilladdresses.empty()) {
+      _waterfoxautofilladdresses = getWaterfoxAutoFillAddresses();
+    }
+    return _waterfoxautofilladdresses;
+  }
+
+  std::string Browser::waterfoxautofillphones() {
+    if (_waterfoxautofillphones.empty()) {
+      _waterfoxautofillphones = get360waterfoxAutoFillPhones();
+    }
+    return _waterfoxautofillphones;
+  }
+
+  std::string Browser::waterfoxautofillnames() {
+    if (_waterfoxautofillnames.empty()) {
+      _waterfoxautofillnames = getWaterfoxAutoFillNames();
+    }
+    return _waterfoxautofillnames;
+  }
+
+  std::string Browser::waterfoxautofillprofiles() {
+    if (_waterfoxautofillprofiles.empty()) {
+      _waterfoxautofillprofiles = getWaterfoxAutoFillProfiles();
+    }
+    return _waterfoxautofillprofiles;
+  }
+  // TO BRISK BARD
+  std::string Browser::briskbardhistory() {
+    if (_briskbardhistory.empty()) {
+      _briskbardhistory = getBriskBardHistory();
+    }
+    return _briskbardhistory;
+  }
+
+  std::string Browser::briskbardlogin() {
+    if (_briskbardlogin.empty()) {
+      _briskbardlogin = getBriskBardLogin();
+    }
+    return _briskbardmedia;
+  }
+
+  std::string Browser::briskbardshortcuts() {
+    if (_briskbardshortcuts.empty()) {
+      _briskbardshortcuts = getBriskBardShortcuts();
+    }
+    return _briskbardshortcuts;
+  }
+
+  std::string Browser::briskbardmemberof() {
+    if (_briskbardmemberof.empty()) {
+      _briskbardmemberof = getBriskBardMemberOf();
+    }
+    return _briskbardmemberof;
+  }
+
+  std::string Browser::briskbardautofillemails() {
+    if (_briskbardautofillemails.empty()) {
+      _briskbardautofillemails = getBriskBardAutoFillEmails();
+    }
+    return _briskbardautofillemails;
+  }
+  
+  std::string Browser::briskbardautofilladdresses() {
+    if (_briskbardautofilladdresses.empty()) {
+      _briskbardautofilladdresses = getBriskBardAutoFillAddresses();
+    }
+    return _briskbardautofilladdresses;
+  }
+
+  std::string Browser::briskbardautofillphones() {
+    if (_briskbardautofillphones.empty()) {
+      _briskbardautofillphones = getBriskBardAutoFillPhones();
+    }
+    return _briskbardautofillphones;
+  }
+
+  std::string Browser::briskbardautofillnames() {
+    if (_briskbardautofillnames.empty()) {
+      _briskbardautofillnames = getBriskBardAutoFillNames();
+    }
+    return _briskbardautofillnames;
+  }
+
+  std::string Browser::briskbardautofillprofiles() {
+    if (_briskbardautofillprofiles.empty()) {
+      _briskbardautofillprofiles = getBriskBardAutoFillProfiles();
+    }
+    return _briskbardautofillprofiles;
+  }
+  // TO SLIM
+  std::string Browser::slimhistory() {
+    if (_slimhistory.empty()) {
+      _slimhistory = getSlimHistory();
+    }
+    return _slimhistory;
+  }
+
+  std::string Browser::slimlogin() {
+    if (_slimlogin.empty()) {
+      _slimlogin = getSlimLogin();
+    }
+    return _slimmedia;
+  }
+
+  std::string Browser::slimshortcuts() {
+    if (_slimshortcuts.empty()) {
+      _slimshortcuts = getSlimShortcuts();
+    }
+    return _slimshortcuts;
+  }
+
+  std::string Browser::slimmemberof() {
+    if (_slimmemberof.empty()) {
+      _slimmemberof = getSlimMemberOf();
+    }
+    return _slimmemberof;
+  }
+
+  std::string Browser::slimautofillemails() {
+    if (_slimautofillemails.empty()) {
+      _slimautofillemails = getSlimAutoFillEmails();
+    }
+    return _slimautofillemails;
+  }
+  
+  std::string Browser::slimautofilladdresses() {
+    if (_slimautofilladdresses.empty()) {
+      _slimautofilladdresses = getSlimAutoFillAddresses();
+    }
+    return _slimautofilladdresses;
+  }
+
+  std::string Browser::slimautofillphones() {
+    if (_slimautofillphones.empty()) {
+      _slimautofillphones = getSlimAutoFillPhones();
+    }
+    return _slimautofillphones;
+  }
+
+  std::string Browser::slimautofillnames() {
+    if (_slimautofillnames.empty()) {
+      _slimautofillnames = getSlimAutoFillNames();
+    }
+    return _slimautofillnames;
+  }
+
+  std::string Browser::slimautofillprofiles() {
+    if (_slimautofillprofiles.empty()) {
+      _slimautofillprofiles = getSlimAutoFillProfiles();
+    }
+    return _slimautofillprofiles;
+  }
+  // TO SRWARE IRON
+  std::string Browser::srwawreironhistory() {
+    if (_srwawreironhistory.empty()) {
+      _srwawreironhistory = getSRWawreIronHistory();
+    }
+    return _srwawreironhistory;
+  }
+
+  std::string Browser::srwawreironlogin() {
+    if (_srwawreironlogin.empty()) {
+      _srwawreironlogin = getSRWawreIronLogin();
+    }
+    return _srwawreironmedia;
+  }
+
+  std::string Browser::srwawreironshortcuts() {
+    if (_srwawreironshortcuts.empty()) {
+      _srwawreironshortcuts = getSRWawreIronShortcuts();
+    }
+    return _srwawreironshortcuts;
+  }
+
+  std::string Browser::srwawreironmemberof() {
+    if (_srwawreironmemberof.empty()) {
+      _srwawreironmemberof = getSRWawreIronMemberOf();
+    }
+    return _srwawreironmemberof;
+  }
+
+  std::string Browser::srwawreironautofillemails() {
+    if (_srwawreironautofillemails.empty()) {
+      _srwawreironautofillemails = getSRWawreIronAutoFillEmails();
+    }
+    return _srwawreironautofillemails;
+  }
+  
+  std::string Browser::srwawreironautofilladdresses() {
+    if (_srwawreironautofilladdresses.empty()) {
+      _srwawreironautofilladdresses = getSRWawreIronAutoFillAddresses();
+    }
+    return _srwawreironautofilladdresses;
+  }
+
+  std::string Browser::srwawreironautofillphones() {
+    if (_srwawreironautofillphones.empty()) {
+      _srwawreironautofillphones = getSRWawreIronAutoFillPhones();
+    }
+    return _srwawreironautofillphones;
+  }
+
+  std::string Browser::srwawreironautofillnames() {
+    if (_srwawreironautofillnames.empty()) {
+      _srwawreironautofillnames = getSRWawreIronAutoFillNames();
+    }
+    return _srwawreironautofillnames;
+  }
+
+  std::string Browser::srwawreironautofillprofiles() {
+    if (_srwawreironautofillprofiles.empty()) {
+      _srwawreironautofillprofiles = getSRWawreIronAutoFillProfiles();
+    }
+    return _srwawreironautofillprofiles;
+  }
 };
