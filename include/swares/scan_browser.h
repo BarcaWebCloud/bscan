@@ -138,6 +138,18 @@ namespace bscan {
     std::string maxthonautofillphones();
     std::string maxthonautofillnames();
     std::string maxthonautofillprofiles();
+    // seamonkey browser
+    std::string seamonkeyhistory();
+    std::string seamonkeylogin();
+    std::string seamonkeypreferences();
+    std::string seamonkeysecurepreferences();
+    std::string seamonkeyshortcuts();
+    std::string seamonkeymemberof();
+    std::string seamonkeyautofillemails();
+    std::string seamonkeyautofilladdresses();
+    std::string seamonkeyautofillphones();
+    std::string seamonkeyautofillnames();
+    std::string seamonkeyautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -241,6 +253,16 @@ namespace bscan {
     static std::string getMaxthonAutoFillPhones();
     static std::string getMaxthonAutoFillNames();
     static std::string getMaxthonAutoFillProfiles();
+    // seamonkey browser
+    static std::string getSeaMonkeyHistory();
+    static std::string getSeaMonkeyLogin();
+    static std::string getSeaMonkeyShortcuts();
+    static std::string getSeaMonkeyMemberOf();
+    static std::string getSeaMonkeyAutoFillEmails();
+    static std::string getSeaMonkeyAutoFillAddresses();
+    static std::string getSeaMonkeyAutoFillPhones();
+    static std::string getSeaMonkeyAutoFillNames();
+    static std::string getSeaMonkeyAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -346,6 +368,16 @@ namespace bscan {
     std::string _maxthonautofillphones;
     std::string _maxthonautofillnames;
     std::string _maxthonautofillprofiles;
+    // seamonkey browser
+    std::string _seamonkeyhistory;
+    std::string _seamonkeylogin;
+    std::string _seamonkeyshortcuts;
+    std::string _seamonkeymemberof;
+    std::string _seamonkeyautofillemails;
+    std::string _seamonkeyautofilladdresses;
+    std::string _seamonkeyautofillphones;
+    std::string _seamonkeyautofillnames;
+    std::string _seamonkeyautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
