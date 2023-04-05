@@ -198,6 +198,18 @@ namespace bscan {
     std::string waterfoxautofillphones();
     std::string waterfoxautofillnames();
     std::string waterfoxautofillprofiles();
+    // briskbard browser
+    std::string briskbardhistory();
+    std::string briskbardlogin();
+    std::string briskbardpreferences();
+    std::string briskbardsecurepreferences();
+    std::string briskbardshortcuts();
+    std::string briskbardmemberof();
+    std::string briskbardautofillemails();
+    std::string briskbardautofilladdresses();
+    std::string briskbardautofillphones();
+    std::string briskbardautofillnames();
+    std::string briskbardautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -351,6 +363,16 @@ namespace bscan {
     static std::string getWaterfoxAutoFillPhones();
     static std::string getWaterfoxAutoFillNames();
     static std::string getWaterfoxAutoFillProfiles();
+    // briskbird browser
+    static std::string getBriskBardHistory();
+    static std::string getBriskBardLogin();
+    static std::string getBriskBardShortcuts();
+    static std::string getBriskBardMemberOf();
+    static std::string getBriskBardAutoFillEmails();
+    static std::string getBriskBardAutoFillAddresses();
+    static std::string getBriskBardAutoFillPhones();
+    static std::string getBriskBardAutoFillNames();
+    static std::string getBriskBardAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -506,6 +528,16 @@ namespace bscan {
     std::string waterfoxautofillphones;
     std::string waterfoxautofillnames;
     std::string waterfoxautofillprofiles;
+    // briskbard browser
+    std::string briskbardhistory;
+    std::string briskbardlogin;
+    std::string briskbardshortcuts;
+    std::string briskbardmemberof;
+    std::string briskbardautofillemails;
+    std::string briskbardautofilladdresses;
+    std::string briskbardautofillphones;
+    std::string briskbardautofillnames;
+    std::string briskbardautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
