@@ -222,6 +222,18 @@ namespace bscan {
     std::string slimautofillphones();
     std::string slimautofillnames();
     std::string slimautofillprofiles();
+    // srwareiron browser
+    std::string srwareironhistory();
+    std::string srwareironlogin();
+    std::string srwareironpreferences();
+    std::string srwareironsecurepreferences();
+    std::string srwareironshortcuts();
+    std::string srwareironmemberof();
+    std::string srwareironautofillemails();
+    std::string srwareironautofilladdresses();
+    std::string srwareironautofillphones();
+    std::string srwareironautofillnames();
+    std::string srwareironautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -405,6 +417,16 @@ namespace bscan {
     static std::string getSlimAutoFillPhones();
     static std::string getSlimAutoFillNames();
     static std::string getSlimAutoFillProfiles();
+    // srwareiron browser
+    static std::string getSRWareIronHistory();
+    static std::string getSRWareIronLogin();
+    static std::string getSRWareIronShortcuts();
+    static std::string getSRWareIronMemberOf();
+    static std::string getSRWareIronAutoFillEmails();
+    static std::string getSRWareIronAutoFillAddresses();
+    static std::string getSRWareIronAutoFillPhones();
+    static std::string getSRWareIronAutoFillNames();
+    static std::string getSRWareIronAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -541,55 +563,65 @@ namespace bscan {
     std::string _comodoicedragonautofillnames;
     std::string _comodoicedragonautofillprofiles;
     // 360 chrome x browser
-    std::string chromexhistory;
-    std::string chromexlogin;
-    std::string chromexshortcuts;
-    std::string chromexmemberof;
-    std::string chromexautofillemails;
-    std::string chromexautofilladdresses;
-    std::string chromexautofillphones;
-    std::string chromexautofillnames;
-    std::string chromexautofillprofiles;
+    std::string _chromexhistory;
+    std::string _chromexlogin;
+    std::string _chromexshortcuts;
+    std::string _chromexmemberof;
+    std::string _chromexautofillemails;
+    std::string _chromexautofilladdresses;
+    std::string _chromexautofillphones;
+    std::string _chromexautofillnames;
+    std::string _chromexautofillprofiles;
     // watefox browser
-    std::string waterfoxhistory;
-    std::string waterfoxlogin;
-    std::string waterfoxshortcuts;
-    std::string waterfoxmemberof;
-    std::string waterfoxautofillemails;
-    std::string waterfoxautofilladdresses;
-    std::string waterfoxautofillphones;
-    std::string waterfoxautofillnames;
-    std::string waterfoxautofillprofiles;
+    std::string _waterfoxhistory;
+    std::string _waterfoxlogin;
+    std::string _waterfoxshortcuts;
+    std::string _waterfoxmemberof;
+    std::string _waterfoxautofillemails;
+    std::string _waterfoxautofilladdresses;
+    std::string _waterfoxautofillphones;
+    std::string _waterfoxautofillnames;
+    std::string _waterfoxautofillprofiles;
     // briskbard browser
-    std::string briskbardhistory;
-    std::string briskbardlogin;
-    std::string briskbardshortcuts;
-    std::string briskbardmemberof;
-    std::string briskbardautofillemails;
-    std::string briskbardautofilladdresses;
-    std::string briskbardautofillphones;
-    std::string briskbardautofillnames;
-    std::string briskbardautofillprofiles;
+    std::string _briskbardhistory;
+    std::string _briskbardlogin;
+    std::string _briskbardshortcuts;
+    std::string _briskbardmemberof;
+    std::string _briskbardautofillemails;
+    std::string _briskbardautofilladdresses;
+    std::string _briskbardautofillphones;
+    std::string _briskbardautofillnames;
+    std::string _briskbardautofillprofiles;
     // otter browser
-    std::string otterhistory;
-    std::string otterlogin;
-    std::string ottershortcuts;
-    std::string ottermemberof;
-    std::string otterautofillemails;
-    std::string otterautofilladdresses;
-    std::string otterautofillphones;
-    std::string otterautofillnames;
-    std::string otterautofillprofiles;
+    std::string _otterhistory;
+    std::string _otterlogin;
+    std::string _ottershortcuts;
+    std::string _ottermemberof;
+    std::string _otterautofillemails;
+    std::string _otterautofilladdresses;
+    std::string _otterautofillphones;
+    std::string _otterautofillnames;
+    std::string _otterautofillprofiles;
     // slim browser
-    std::string slimhistory;
-    std::string slimlogin;
-    std::string slimshortcuts;
-    std::string slimmemberof;
-    std::string slimautofillemails;
-    std::string slimautofilladdresses;
-    std::string slimautofillphones;
-    std::string slimautofillnames;
-    std::string slimautofillprofiles;
+    std::string _slimhistory;
+    std::string _slimlogin;
+    std::string _slimshortcuts;
+    std::string _slimmemberof;
+    std::string _slimautofillemails;
+    std::string _slimautofilladdresses;
+    std::string _slimautofillphones;
+    std::string _slimautofillnames;
+    std::string _slimautofillprofiles;
+    // srwareiron browser
+    std::string _srwareironhistory;
+    std::string _srwareironlogin;
+    std::string _srwareironshortcuts;
+    std::string _srwareironmemberof;
+    std::string _srwareironautofillemails;
+    std::string _srwareironautofilladdresses;
+    std::string _srwareironautofillphones;
+    std::string _srwareironautofillnames;
+    std::string _srwareironautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
