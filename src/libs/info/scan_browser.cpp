@@ -789,4 +789,67 @@ namespace bscan {
     }
     return _comodoicedragonautofillprofiles;
   }
+  // TO 360 CHROME X
+  std::string Browser::chromexhistory() {
+    if (_chromexhistory.empty()) {
+      _chromexhistory = get360ChromeXHistory();
+    }
+    return _chromexhistory;
+  }
+
+  std::string Browser::chromexlogin() {
+    if (_chromexlogin.empty()) {
+      _chromexlogin = get360ChromeXLogin();
+    }
+    return _chromexmedia;
+  }
+
+  std::string Browser::chromexshortcuts() {
+    if (_chromexshortcuts.empty()) {
+      _chromexshortcuts = get360ChromeXShortcuts();
+    }
+    return _chromexshortcuts;
+  }
+
+  std::string Browser::chromexmemberof() {
+    if (_chromexmemberof.empty()) {
+      _chromexmemberof = get360ChromeXMemberOf();
+    }
+    return _chromexmemberof;
+  }
+
+  std::string Browser::chromexautofillemails() {
+    if (_chromexautofillemails.empty()) {
+      _chromexautofillemails = get360ChromeXAutoFillEmails();
+    }
+    return _chromexautofillemails;
+  }
+  
+  std::string Browser::chromexautofilladdresses() {
+    if (_chromexautofilladdresses.empty()) {
+      _chromexautofilladdresses = get360ChromeXAutoFillAddresses();
+    }
+    return _chromexautofilladdresses;
+  }
+
+  std::string Browser::chromexautofillphones() {
+    if (_chromexautofillphones.empty()) {
+      _chromexautofillphones = get360ChromeXAutoFillPhones();
+    }
+    return _chromexautofillphones;
+  }
+
+  std::string Browser::chromexautofillnames() {
+    if (_chromexautofillnames.empty()) {
+      _chromexautofillnames = get360ChromeXAutoFillNames();
+    }
+    return _chromexautofillnames;
+  }
+
+  std::string Browser::chromexautofillprofiles() {
+    if (_chromexautofillprofiles.empty()) {
+      _chromexautofillprofiles = get360ChromeXAutoFillProfiles();
+    }
+    return _chromexautofillprofiles;
+  }
 };
