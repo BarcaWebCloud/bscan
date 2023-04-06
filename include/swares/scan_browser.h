@@ -234,6 +234,30 @@ namespace bscan {
     std::string srwareironautofillphones();
     std::string srwareironautofillnames();
     std::string srwareironautofillprofiles();
+    // tungsten browser
+    std::string tungstenhistory();
+    std::string tungstenlogin();
+    std::string tungstenpreferences();
+    std::string tungstensecurepreferences();
+    std::string tungstenshortcuts();
+    std::string tungstenmemberof();
+    std::string tungstenautofillemails();
+    std::string tungstenautofilladdresses();
+    std::string tungstenautofillphones();
+    std::string tungstenautofillnames();
+    std::string tungstenautofillprofiles();
+    // yandex browser
+    std::string yandexhistory();
+    std::string yandexlogin();
+    std::string yandexpreferences();
+    std::string yandexsecurepreferences();
+    std::string yandexshortcuts();
+    std::string yandexmemberof();
+    std::string yandexautofillemails();
+    std::string yandexautofilladdresses();
+    std::string yandexautofillphones();
+    std::string yandexautofillnames();
+    std::string yandexautofillprofiles();
     //
     std::string profile();
     std::string visitedlinks();
@@ -427,6 +451,26 @@ namespace bscan {
     static std::string getSRWareIronAutoFillPhones();
     static std::string getSRWareIronAutoFillNames();
     static std::string getSRWareIronAutoFillProfiles();
+    // tungsten browser
+    static std::string getTungstenHistory();
+    static std::string getTungstenLogin();
+    static std::string getTungstenShortcuts();
+    static std::string getTungstenMemberOf();
+    static std::string getTungstenAutoFillEmails();
+    static std::string getTungstenAutoFillAddresses();
+    static std::string getTungstenAutoFillPhones();
+    static std::string getTungstenAutoFillNames();
+    static std::string getTungstenAutoFillProfiles();
+    // yandex browser
+    static std::string getYandexHistory();
+    static std::string getYandexLogin();
+    static std::string getYandexShortcuts();
+    static std::string getYandexMemberOf();
+    static std::string getYandexAutoFillEmails();
+    static std::string getYandexAutoFillAddresses();
+    static std::string getYandexAutoFillPhones();
+    static std::string getYandexAutoFillNames();
+    static std::string getYandexAutoFillProfiles();
     //
     static std::string getProfile();
     static std::string getVisitedLinks();
@@ -622,6 +666,26 @@ namespace bscan {
     std::string _srwareironautofillphones;
     std::string _srwareironautofillnames;
     std::string _srwareironautofillprofiles;
+    // tungsten browser
+    std::string _tungstenhistory;
+    std::string _tungstenlogin;
+    std::string _tungstenshortcuts;
+    std::string _tungstenmemberof;
+    std::string _tungstenautofillemails;
+    std::string _tungstenautofilladdresses;
+    std::string _tungstenautofillphones;
+    std::string _tungstenautofillnames;
+    std::string _tungstenautofillprofiles;
+    // yandex browser
+    std::string _yandexhistory;
+    std::string _yandexlogin;
+    std::string _yandexshortcuts;
+    std::string _yandexmemberof;
+    std::string _yandexautofillemails;
+    std::string _yandexautofilladdresses;
+    std::string _yandexautofillphones;
+    std::string _yandexautofillnames;
+    std::string _yandexautofillprofiles;
     //
     std::string _profile;
     std::string _visitedlinks;
