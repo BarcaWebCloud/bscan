@@ -43,7 +43,7 @@ namespace bscan {
     if (_chromelogin.empty()) {
       _chromelogin = getChromeLogin();
     }
-    return _chromemedia;
+    return _chromelogin;
   }
 
   std::string Browser::chromeshortcuts() {
@@ -114,7 +114,7 @@ namespace bscan {
     if (_edgelogin.empty()) {
       _edgelogin = getEdgeLogin();
     }
-    return _edgemedia;
+    return _edgelogin;
   }
 
   std::string Browser::edgeshortcuts() {
@@ -170,7 +170,7 @@ namespace bscan {
     if (_operagxlogin.empty()) {
       _operagxlogin = getOperaGXLogin();
     }
-    return _operagxmedia;
+    return _operagxlogin;
   }
 
   std::string Browser::operagxshortcuts() {
@@ -233,7 +233,7 @@ namespace bscan {
     if (_operalogin.empty()) {
       _operalogin = getOperaLogin();
     }
-    return _operamedia;
+    return _operalogin;
   }
 
   std::string Browser::operashortcuts() {
@@ -296,7 +296,7 @@ namespace bscan {
     if (_bravelogin.empty()) {
       _bravelogin = getBraveLogin();
     }
-    return _bravemedia;
+    return _bravelogin;
   }
 
   std::string Browser::braveshortcuts() {
@@ -359,12 +359,12 @@ namespace bscan {
     if (_vivaldilogin.empty()) {
       _vivaldilogin = getVivaldiLogin();
     }
-    return _vivaldimedia;
+    return _vivaldilogin;
   }
 
   std::string Browser::vivaldishortcuts() {
     if (_vivaldishortcuts.empty()) {
-      _vivaldishortcuts = getvivaldiShortcuts();
+      _vivaldishortcuts = getVivaldiShortcuts();
     }
     return _vivaldishortcuts;
   }
@@ -410,7 +410,6 @@ namespace bscan {
     }
     return _vivaldiautofillprofiles;
   }
-
   // TO ORBITUM
   std::string Browser::orbitumhistory() {
     if (_orbitumhistory.empty()) {
@@ -423,7 +422,7 @@ namespace bscan {
     if (_orbitumlogin.empty()) {
       _orbitumlogin = getOrbitumLogin();
     }
-    return _orbitummedia;
+    return _orbitumlogin;
   }
 
   std::string Browser::orbitumshortcuts() {
@@ -486,7 +485,7 @@ namespace bscan {
     if (_palemoonlogin.empty()) {
       _palemoonlogin = getPaleMoonLogin();
     }
-    return _palemoonmedia;
+    return _palemoonlogin;
   }
 
   std::string Browser::palemoonshortcuts() {
@@ -549,7 +548,7 @@ namespace bscan {
     if (_maxthonlogin.empty()) {
       _maxthonlogin = getMaxthonLogin();
     }
-    return _maxthonmedia;
+    return _maxthonlogin;
   }
 
   std::string Browser::maxthonshortcuts() {
@@ -612,7 +611,7 @@ namespace bscan {
     if (_seamonkeylogin.empty()) {
       _seamonkeylogin = getSeaMonkeyLogin();
     }
-    return _seamonkeymedia;
+    return _seamonkeylogin;
   }
 
   std::string Browser::seamonkeyshortcuts() {
@@ -675,7 +674,7 @@ namespace bscan {
     if (_comododragonlogin.empty()) {
       _comododragonlogin = getComodoDragonLogin();
     }
-    return _comododragonmedia;
+    return _comododragonlogin;
   }
 
   std::string Browser::comododragonshortcuts() {
@@ -738,7 +737,7 @@ namespace bscan {
     if (_comodoicedragonlogin.empty()) {
       _comodoicedragonlogin = getComodoIceDragonLogin();
     }
-    return _comodoicedragonmedia;
+    return _comodoicedragonlogin;
   }
 
   std::string Browser::comodoicedragonshortcuts() {
@@ -801,7 +800,7 @@ namespace bscan {
     if (_chromexlogin.empty()) {
       _chromexlogin = get360ChromeXLogin();
     }
-    return _chromexmedia;
+    return _chromexlogin;
   }
 
   std::string Browser::chromexshortcuts() {
@@ -864,7 +863,7 @@ namespace bscan {
     if (_waterfoxlogin.empty()) {
       _waterfoxlogin = getWaterfoxLogin();
     }
-    return _waterfoxmedia;
+    return _waterfoxlogin;
   }
 
   std::string Browser::waterfoxshortcuts() {
@@ -897,7 +896,7 @@ namespace bscan {
 
   std::string Browser::waterfoxautofillphones() {
     if (_waterfoxautofillphones.empty()) {
-      _waterfoxautofillphones = get360waterfoxAutoFillPhones();
+      _waterfoxautofillphones = getWaterfoxAutoFillPhones();
     }
     return _waterfoxautofillphones;
   }
@@ -927,7 +926,7 @@ namespace bscan {
     if (_briskbardlogin.empty()) {
       _briskbardlogin = getBriskBardLogin();
     }
-    return _briskbardmedia;
+    return _briskbardlogin;
   }
 
   std::string Browser::briskbardshortcuts() {
@@ -990,7 +989,7 @@ namespace bscan {
     if (_slimlogin.empty()) {
       _slimlogin = getSlimLogin();
     }
-    return _slimmedia;
+    return _slimlogin;
   }
 
   std::string Browser::slimshortcuts() {
@@ -1042,67 +1041,67 @@ namespace bscan {
     return _slimautofillprofiles;
   }
   // TO SRWARE IRON
-  std::string Browser::srwawreironhistory() {
-    if (_srwawreironhistory.empty()) {
-      _srwawreironhistory = getSRWawreIronHistory();
+  std::string Browser::srwareironhistory() {
+    if (_srwareironhistory.empty()) {
+      _srwareironhistory = getSRWareIronHistory();
     }
-    return _srwawreironhistory;
+    return _srwareironhistory;
   }
 
-  std::string Browser::srwawreironlogin() {
-    if (_srwawreironlogin.empty()) {
-      _srwawreironlogin = getSRWawreIronLogin();
+  std::string Browser::srwareironlogin() {
+    if (_srwareironlogin.empty()) {
+      _srwareironlogin = getSRWareIronLogin();
     }
-    return _srwawreironmedia;
+    return _srwareironlogin;
   }
 
-  std::string Browser::srwawreironshortcuts() {
-    if (_srwawreironshortcuts.empty()) {
-      _srwawreironshortcuts = getSRWawreIronShortcuts();
+  std::string Browser::srwareironshortcuts() {
+    if (_srwareironshortcuts.empty()) {
+      _srwareironshortcuts = getSRWareIronShortcuts();
     }
-    return _srwawreironshortcuts;
+    return _srwareironshortcuts;
   }
 
-  std::string Browser::srwawreironmemberof() {
-    if (_srwawreironmemberof.empty()) {
-      _srwawreironmemberof = getSRWawreIronMemberOf();
+  std::string Browser::srwareironmemberof() {
+    if (_srwareironmemberof.empty()) {
+      _srwareironmemberof = getSRWareIronMemberOf();
     }
-    return _srwawreironmemberof;
+    return _srwareironmemberof;
   }
 
-  std::string Browser::srwawreironautofillemails() {
-    if (_srwawreironautofillemails.empty()) {
-      _srwawreironautofillemails = getSRWawreIronAutoFillEmails();
+  std::string Browser::srwareironautofillemails() {
+    if (_srwareironautofillemails.empty()) {
+      _srwareironautofillemails = getSRWareIronAutoFillEmails();
     }
-    return _srwawreironautofillemails;
+    return _srwareironautofillemails;
   }
   
-  std::string Browser::srwawreironautofilladdresses() {
-    if (_srwawreironautofilladdresses.empty()) {
-      _srwawreironautofilladdresses = getSRWawreIronAutoFillAddresses();
+  std::string Browser::srwareironautofilladdresses() {
+    if (_srwareironautofilladdresses.empty()) {
+      _srwareironautofilladdresses = getSRWareIronAutoFillAddresses();
     }
-    return _srwawreironautofilladdresses;
+    return _srwareironautofilladdresses;
   }
 
-  std::string Browser::srwawreironautofillphones() {
-    if (_srwawreironautofillphones.empty()) {
-      _srwawreironautofillphones = getSRWawreIronAutoFillPhones();
+  std::string Browser::srwareironautofillphones() {
+    if (_srwareironautofillphones.empty()) {
+      _srwareironautofillphones = getSRWareIronAutoFillPhones();
     }
-    return _srwawreironautofillphones;
+    return _srwareironautofillphones;
   }
 
-  std::string Browser::srwawreironautofillnames() {
-    if (_srwawreironautofillnames.empty()) {
-      _srwawreironautofillnames = getSRWawreIronAutoFillNames();
+  std::string Browser::srwareironautofillnames() {
+    if (_srwareironautofillnames.empty()) {
+      _srwareironautofillnames = getSRWareIronAutoFillNames();
     }
-    return _srwawreironautofillnames;
+    return _srwareironautofillnames;
   }
 
-  std::string Browser::srwawreironautofillprofiles() {
-    if (_srwawreironautofillprofiles.empty()) {
-      _srwawreironautofillprofiles = getSRWawreIronAutoFillProfiles();
+  std::string Browser::srwareironautofillprofiles() {
+    if (_srwareironautofillprofiles.empty()) {
+      _srwareironautofillprofiles = getSRWareIronAutoFillProfiles();
     }
-    return _srwawreironautofillprofiles;
+    return _srwareironautofillprofiles;
   }
   // TO TUNGSTEN
   std::string Browser::tungstenhistory() {
@@ -1116,7 +1115,7 @@ namespace bscan {
     if (_tungstenlogin.empty()) {
       _tungstenlogin = getTungstenLogin();
     }
-    return _tungstenmedia;
+    return _tungstenlogin;
   }
 
   std::string Browser::tungstenshortcuts() {
@@ -1179,7 +1178,7 @@ namespace bscan {
     if (_yandexlogin.empty()) {
       _yandexlogin = getYandexLogin();
     }
-    return _yandexmedia;
+    return _yandexlogin;
   }
 
   std::string Browser::yandexshortcuts() {
