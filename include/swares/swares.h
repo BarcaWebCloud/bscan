@@ -22,3 +22,4 @@
 #include "swares/scan_system.h"
 #include "swares/scan_os.h"
 #include "swares/scan_browser.h"
+#include "swares/scan_datasource.h"
