@@ -19,7 +19,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # 
-# Barca, Inc., Serra/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaWebCloud
+# Barca, Inc., Vitória/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaWebCloud
 
 cmake_minimum_required(VERSION 3.16)
 project(bscan VERSION 0.2.0 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
@@ -64,7 +64,7 @@ elseif(WIN32)
   elseif(CMAKE_GENERATOR STREQUAL "Borland Makefiles")
     message("to do")
   endif()
-  
+  # set (VERSION_MAJOR 0)
   #set(CMAKE_GENERATOR_CC gcc)
   set(CMAKE_CXX_FLAGS "-utf-8")
   foreach(def IN ITEMS
@@ -77,23 +77,19 @@ elseif(WIN32)
   
   foreach(dir IN ITEMS
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\readme.md"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\cache"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs\\${PROJECT_VERSION}.log"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\cache"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\${PROJECT_VERSION}.txt"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\db\\${PROJECT_VERSION}.db"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\mamutedb"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}.default.conf"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings\\${PROJECT_VERSION}-preferences.conf"
-    "$ENV{USERPROFILE}\\.${PROJECT_NAME}"
-    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32"
-    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\bin"
-    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\lib"
-    "$ENV{USERPROFILE}\\.${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\www")
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\bin"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\lib"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\www")
       if (EXISTS ${dir})
         message(STATUS "directory exist")
       else()
@@ -159,7 +155,6 @@ elseif(XCODE)
     message("BSCAN To ${CMAKE_SYSTEM_NAME}")
 endif()
 
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -169,6 +164,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 
+configure_file ("include/bscan.config.h.in" ${CMAKE_CURRENT_SOURCE_DIR}/include/config.h @ONLY)
 # check if header files exist in include directory
 find_path(_check_include
           NAMES 
@@ -195,6 +191,7 @@ find_path(_check_include
             "hwares/scan_ram.h",
             # softwares header
             "swares/swares.h",
+            "swares/scan_datasource.h",
             "swares/scan_browser.h",
             "swares/scan_os.h",
             "swares/scan_system.h"
