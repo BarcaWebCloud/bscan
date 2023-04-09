@@ -34,6 +34,51 @@ if(UNIX)
 elseif(WIN32)
   # minimum version cmake on windows
   cmake_minimum_required (VERSION 3.16)
+    FILE(WRITE ${PROJECT_SOURCE_DIR}/include/bscan.config.h.in
+    "#ifndef CONFIG_H_IN\n"
+    "#define CONFIG_H_IN\n"
+    "#define PROJECT_NAME \"@PROJECT_NAME@\"\n"
+    "#define PROJECT_DESCRIPTION \"@PROJECT_DESCRIPTION@\"\n"
+    "#define PROJECT_VERSION \"@PROJECT_VERSION@\"\n"
+    "#define SYSTEM_PROCESSOR \"@CMAKE_SYSTEM_PROCESSOR@\"\n"
+    "#define GENERATOR \"@CMAKE_GENERATOR@\"\n"
+    "#define CXX_VERSION \"@CMAKE_CXX_STANDARD@\"\n"
+    "#define C_VERSION \"@CMAKE_C_STANDARD@\"\n"
+    "#define MINIMUM_VERSION \"@CMAKE_MINIMUM_REQUIRED_VERSION@\"\n"
+    "#define MINIMUM_VERSION \"@CMAKE_MINIMUM_REQUIRED_VERSION@\"\n"
+    "#define PROJECT_VERSION_MAJOR \"@PROJECT_VERSION_MAJOR@\"\n"
+    "#define URL_HOMEPAGE \"@HOMEPAGE_URL@\"\n"
+    "#define SOURCE_PROJECT \"@PROJECT_SOURCE_DIR@\"\n"
+    "#define SOURCE_BIN \"@CMAKE_CURRENT_BINARY_DIR@\"\n"
+    "#define PLATFORM_NAME \"@CMAKE_SYSTEM_NAME@\"\n"
+    "#define NINJA_OUTPUT_PATH_PREFIX \"@CMAKE_NINJA_OUTPUT_PATH_PREFIX@\"\n"
+    "#define TYPE_BUILD \"@CMAKE_BUILD_TYPE@\"\n"
+    "#endif // CONFIG_H_IN\n"
+    )
+
+    FILE(WRITE $ENV{USERPROFILE}/AppData/Local/Temp/${PROJECT_NAME}jhkyo/default-installed.json
+    "{\n"
+      "  \"architecture\": \"\",\n"
+      "  \"fullname\": \"\",\n"
+      "  \"fullVersion\": \"\",\n"
+      "  \"dateInstall\": \"\",\n"
+      "  \"versionMajor\": \"\",\n"
+      "  \"versionMinor\": \"\",\n"
+      "  \"installDate\": "",\n"
+      "  \"urlHelp\": \"\",\n"
+      "  \"urlAbout\": \"\",\n"
+      "  \"urlUpdate\": \"\",\n"
+      "  \"urlUninstall\": \"\",\n"
+      "  \"company\": \"\",\n"
+      "  \"phone\": \"\",\n"
+      "  \"contact\": \"\",\n"
+      "  \"location\": \"\",\n"
+      "  \"origin\": \"\",\n"
+      "  \"size\": \"\",\n"
+      "  \"readme\": \"\",\n"
+    "}\n"
+    )
+
 
   EXECUTE_PROCESS(COMMAND wmic os get version
     OUTPUT_VARIABLE OS_VERSION
@@ -76,26 +121,34 @@ elseif(WIN32)
   endforeach()
   
   foreach(dir IN ITEMS
+    "$ENV{USERPROFILE}\\AppData\\Local\\Temp\\${PROJECT_NAME}jhkyo"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\bin"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\cmd"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\cache"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\lib"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\logs"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\etc"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\etc\\scripts"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\etc\\profile"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\etc\\ssh"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\cache"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage"
     "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\storage\\mamutedb"
-    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\settings"
+    "$ENV{USERPROFILE}\\AppData\\Local\\Barca\\packages\\${PROJECT_NAME}\\${PROJECT_VERSION}\\data"
     "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}"
-    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32"
-    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}"
-    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\bin"
-    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\lib"
-    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}\\win32\\v${PROJECT_VERSION}\\www")
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}-v${PROJECT_VERSION}\\win32"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}-v${PROJECT_VERSION}\\win32\\bin"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}-v${PROJECT_VERSION}\\win32\\lib"
+    "$ENV{USERPROFILE}\\.bwc\\pkgs\\${PROJECT_NAME}-v${PROJECT_VERSION}\\win32\\www")
       if (EXISTS ${dir})
         message(STATUS "directory exist")
       else()
         make_directory(${dir})
       endif()
   endforeach()
+
 
 elseif(WINDOWS_PHONE)
     # minimum version cmake on apple
