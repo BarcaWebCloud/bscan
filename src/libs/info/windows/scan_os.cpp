@@ -41,6 +41,7 @@
 #include <cstdlib>
 #include <sqlite3.h>
 #include "WMIwrapper.h"
+#pragma comment(lib, "wbemuuid.lib")
 #include "swares/scan_datasource.h"
 #include "config.h"
 #include "utils/directory.h"
@@ -311,16 +312,14 @@ namespace bscan {
   }
 
   std::string OS::getHostname() {
-    char *content = 0;
-    std::string hostname;
-
-    content = getenv("COMPUTERNAME");
-    if (content != 0) {
-      hostname = content;
-      content = 0;
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_Account", "Domain", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
     }
-
-    return std::string(lower(hostname));
+    std::wstring tmp(ret);
+    return lower({tmp.begin(), tmp.end()});
   }
 
   std::string OS::getUser() {
@@ -670,10 +669,167 @@ namespace bscan {
    }
    return std::string(env_res);
   }
+
+  std::string OS::getAccountName() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystem", "UserName", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);  
+    std::string delimiter = "\\";
+    std::vector<std::string> val = split({tmp.begin(), tmp.end()}, delimiter);
+    
+    return val[1];
+  }
+
+  std::string OS::getAccountLoginID() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_LogonSession", "LogonId", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getType() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystem", "PrimaryOwnerName", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getFullType() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystem", "BootupState", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getStatus() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystem", "Status", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getServicePath() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_BaseService", "PathName", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
   
+  std::string OS::getBootDir() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_BootConfiguration", "BootDirectory", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getBootTempDir() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_BootConfiguration", "TempDirectory", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getBootLastDrive() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_BootConfiguration", "LastDrive", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getProductIdentificationCode() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "IdentifyingNumber", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getProductIdentificationName() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "Name", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getProductIdentificationVersion() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "Version", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+
+  std::string OS::getProductIdentificationUUID() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "UUID", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
   std::string OS::getKernel() { return "<unknown>"; }
   
-
   bool OS::getIs64bit() {
     BOOL bWow64Process = FALSE;
     return IsWow64Process(GetCurrentProcess(), &bWow64Process) && bWow64Process;
