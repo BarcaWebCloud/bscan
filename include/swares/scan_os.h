@@ -20,6 +20,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 namespace bscan {
 
@@ -50,6 +51,7 @@ namespace bscan {
     std::string imagessaved();
     std::string images();
     std::string historypowershell();
+    std::vector<std::string> programsandresources();
     std::string pkgs();
     std::string user();
     std::string log();
@@ -82,6 +84,7 @@ namespace bscan {
     static std::string getImagesSaved();
     static std::string getImages();
     static std::string getHistoryPowerShell();
+    static std::vector<std::string> getProgramsAndResources();
     static std::string getPkgs();
     static std::string getUser();
     static std::string getLog();
@@ -115,6 +118,7 @@ namespace bscan {
     std::string _imagessaved;
     std::string _images;
     std::string _historypowershell;
+    std::vector<std::string> _programsandresources;
     std::string _pkgs;
     std::string _user;
     std::string _log;
