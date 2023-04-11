@@ -10,10 +10,11 @@ This is the latest version introduces the use of the module and its features.
 
 <br>
 
-## v0.2.1 [2023-04-10]
+## v0.2.1 [2023-04-11]
 
 ### Features
 
+- [#24](https://github.com/BarcaWebCloud/bscan/pull/24): New features for windows. Gratitude @ahsouza!
 - [#23](https://github.com/BarcaWebCloud/bscan/pull/23): New features for windows. Gratitude @ahsouza!
 
 ### Bugs
@@ -26,7 +27,13 @@ This is the latest version introduces the use of the module and its features.
 
 Add features for **Windows** platform:
 
-- **Get All Programs And Resources Installed** 
+- **Get All Programs And Resources Installed** [only Windows on moment]
+- **Get Account Login ID And Name** [only Windows on moment]
+- **Get Path Services on Windows** [only Windows on moment]
+- **Get Path Boot Directory** [only Windows on moment]
+- **Get Last Drive** [only Windows on moment]
+- **Get Product Identification With Code, Name, Version And ID** [only Windows on moment]
+- **Get System Status** [only Windows on moment]
 - **Fixed bugs to methods OS on Windows platform** 
 
 
