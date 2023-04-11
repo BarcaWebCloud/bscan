@@ -67,6 +67,7 @@ namespace bscan {
     std::string productidentificationcode();
     std::string productidentificationname();
     std::string productidentificationversion();
+    std::string pathsystemdriver();
     std::string productidentificationuuid();
     std::string status();
     std::string kernel();
@@ -113,6 +114,7 @@ namespace bscan {
     static std::string getProductIdentificationCode();
     static std::string getProductIdentificationName();
     static std::string getProductIdentificationVersion();
+    static std::string getPathSystemDriver();
     static std::string getProductIdentificationUUID();
     static std::string getStatus();
     static std::string getKernel();
@@ -160,6 +162,7 @@ namespace bscan {
     std::string _productidentificationcode;
     std::string _productidentificationname;
     std::string _productidentificationversion;
+    std::string _pathsystemdriver;
     std::string _productidentificationuuid;
     std::string _status;
     std::string _kernel;
