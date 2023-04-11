@@ -1,6 +1,6 @@
 {
   "name": "bscan",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": " Library Cross-Platform that provides information about the Hardwares and Software of a Computing Device & Atmospheric Environment for NodeJS",
   "keywords": [
     "nodejs",
