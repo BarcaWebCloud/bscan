@@ -50,6 +50,14 @@ namespace bscan {
     return _version;
   }
 
+
+  std::vector<std::string> OS::programsandresources() {
+    if (_programsandresources.empty()) {
+      _programsandresources = getProgramsAndResources();
+    }
+    return _programsandresources;
+  }
+
   std::string OS::kernel() {
     if (_kernel.empty()) {
       _kernel = getKernel();

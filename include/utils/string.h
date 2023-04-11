@@ -19,10 +19,11 @@
  **************************************************************************************/
 #pragma once
 #include "platform.h"
+#include <random>
 
 #ifdef BSCAN_WINDOWS
   #include<iostream>
-
+	
 	using namespace std;
 
 	static std::string upper(std::string str) {
@@ -37,19 +38,19 @@
 	    str[j]=tolower(str[j]);
 	  return std::string(str);
 	};
-	// for string delimiter
-	static std::vector<std::string> split(std::string s, std::string delimiter) {
-	    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
-	    std::string token;
-	    std::vector<std::string> res;
 
-	    while ((pos_end = s.find(delimiter, pos_start)) != std::string::npos) {
-	        token = s.substr (pos_start, pos_end - pos_start);
-	        pos_start = pos_end + delim_len;
-	        res.push_back (token);
-	    }
+  static std::string randstr(std::size_t length) {
+    const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	    res.push_back (s.substr (pos_start));
-	    return res;
-	}
+    std::random_device random_device;
+    std::mt19937 generator(random_device());
+    std::uniform_int_distribution<> distribution(0, CHARACTERS.size() - 1);
+
+    std::string random_string;
+
+    for (std::size_t i = 0; i < length; ++i){
+      random_string += CHARACTERS[distribution(generator)];
+    }
+    return random_string;
+	};
 #endif
