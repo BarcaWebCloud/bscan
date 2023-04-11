@@ -742,7 +742,7 @@ namespace bscan {
     std::wstring tmp(ret);
     return {tmp.begin(), tmp.end()};
   }
-  
+
   std::string OS::getBootDir() {
     std::vector<const wchar_t*> vendor{};
     wmi::queryWMI("WIN32_BootConfiguration", "BootDirectory", vendor);
@@ -815,10 +815,21 @@ namespace bscan {
     return {tmp.begin(), tmp.end()};
   }
 
-
   std::string OS::getProductIdentificationUUID() {
     std::vector<const wchar_t*> vendor{};
     wmi::queryWMI("WIN32_ComputerSystemProduct", "UUID", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getPathSystemDriver() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_SystemDriver", "PathName", vendor);
     auto ret = vendor[0];
     if (!ret) {
       return "<unknown>";
