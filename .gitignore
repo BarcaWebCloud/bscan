@@ -1,4 +1,8 @@
 /**/.vscode/**
 /**/build/**
+.vs/*
+out/*
 node_modules/
 package-lock.json
+include/bscan.config.h.in
+include/config.h
