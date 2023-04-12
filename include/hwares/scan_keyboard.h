@@ -24,32 +24,30 @@
 
 namespace bscan {
 
-class Disk {
-  friend std::vector<Disk> getAllDisks();
+  class Keyboard {
+   public:
+    Keyboard() = default;
+    Keyboard(const std::string& deviceid, const std::string& pnpdeviceid, const std::string& name, const std::string& layout, uint16_t numberfunction);
+    ~Keyboard() = default;
 
- public:
-  Disk(std::string& vendor, std::string& model, std::string& firmware, std::string& pnpdeviceid, std::string& status, std::string& serialNumber, int64_t size_Bytes);
-  ~Disk() = default;
+    std::string& deviceid();
+    std::string& pnpdeviceid();
+    std::string& name();
+    std::string& layout();
+    uint16_t numberfunction();
 
-  [[nodiscard]] const std::string& vendor() const;
-  [[nodiscard]] const std::string& model() const;
-  [[nodiscard]] const std::string& firmware() const;
-  [[nodiscard]] const std::string& status() const;
-  [[nodiscard]] const std::string& pnpdeviceid() const;
-  [[nodiscard]] const std::string& serialNumber() const;
-  [[nodiscard]] int64_t size_Bytes() const;
+    static std::string getDeviceID();
+    static std::string getPNPDeviceID();
+    static std::string getName();
+    static std::string getLayout();
+    static uint16_t getNumberFunction();
 
- private:
-  Disk() = default;
-  std::string _vendor;
-  std::string _model;
-  std::string _firmware;
-  std::string _pnpdeviceid;
-  std::string _status;
-  std::string _serialNumber;
-  int64_t _size_Bytes = -1;
-};
-
-std::vector<Disk> getAllDisks();
+   private:
+    std::string _deviceid;
+    std::string _pnpdeviceid;
+    std::string _name;
+    std::string _layout;
+    uint16_t _numberfunction = -1;
+  };
 
 };

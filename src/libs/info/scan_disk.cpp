@@ -22,14 +22,20 @@
 
 namespace bscan {
 
-	Disk::Disk(std::string& vendor, std::string& model, std::string& serialNumber, int64_t size_Bytes)
-	    : _vendor(vendor), _model(model), _serialNumber(serialNumber) {
+	Disk::Disk(std::string& vendor, std::string& model, std::string& firmware, std::string& status, std::string& pnpdeviceid, std::string& serialNumber, int64_t size_Bytes)
+	    : _vendor(vendor), _model(model), _firmware(firmware), _pnpdeviceid(pnpdeviceid), _serialNumber(serialNumber) {
 	  _size_Bytes = size_Bytes;
 	}
 
 	const std::string& Disk::vendor() const { return _vendor; }
 
 	const std::string& Disk::model() const { return _model; }
+
+	const std::string& Disk::firmware() const { return _firmware; }
+	
+	const std::string& Disk::status() const { return _status; }
+
+	const std::string& Disk::pnpdeviceid() const { return _pnpdeviceid; }
 
 	const std::string& Disk::serialNumber() const { return _serialNumber; }
 

@@ -47,6 +47,30 @@ std::vector<Disk> getAllDisks() {
     disks[i]._model = wstring_to_std_string(res[i]);
   }
   res.clear();
+  wmi::queryWMI("Win32_DiskDrive", "FirmwareRevision", res);
+  for (int i = 0; i < res.size(); ++i) {
+    if (i >= disks.size()) {
+      break;
+    }
+    disks[i]._firmware = wstring_to_std_string(res[i]);
+  }
+  res.clear();
+  wmi::queryWMI("Win32_DiskDrive", "PNPDeviceID", res);
+  for (int i = 0; i < res.size(); ++i) {
+    if (i >= disks.size()) {
+      break;
+    }
+    disks[i]._pnpdeviceid = wstring_to_std_string(res[i]);
+  }
+  res.clear();
+  wmi::queryWMI("Win32_DiskDrive", "Status", res);
+  for (int i = 0; i < res.size(); ++i) {
+    if (i >= disks.size()) {
+      break;
+    }
+    disks[i]._status = wstring_to_std_string(res[i]);
+  }
+  res.clear();
   wmi::queryWMI("Win32_DiskDrive", "SerialNumber", res);
   for (int i = 0; i < res.size(); ++i) {
     if (i >= disks.size()) {

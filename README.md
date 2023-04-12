@@ -1,4 +1,4 @@
-# BSCAN v0.2.0-beta
+# BSCAN v0.2.1-beta
 
 **BSCAN** is a library cross-platform that provides information about the **hardwares** and **softwares** where to have a computing device & **atmospheric environment**. Enabling developers to utilize digitization capabilities in their Web and mobile applications with their preferred languages ​​such as: *Python, JavaScript/TypeScript, JAVA, Ruby, PHP, GO, Rust* and more.
 
@@ -7,7 +7,9 @@ We can install **BSCAN** desktop version on *Windows, Linux & MacOS* systems.
 <br>
 
 1. [Hardwares](/docs/hwares/intro.md) - get information about RAM, CPU, GPU, Disk, Motheboard, Monitors, USB Devices, Bluetooth, Wifi and more.
+
 2. [Softwares](/docs/swares/intro.md) - get information about Operating System, Apps, User, Services, Databases, Office and more.
+
 3. [Atmosphere](/docs/atmosphere/intro.md) - get information about Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere, Climate and more.
 
 <br>
@@ -131,6 +133,9 @@ Here shows an example to use the **MinGW** *Makefile* generator:
       cd bscan
       cmake -G "MinGW Makefiles" CMakeLists.txt
       ```
+  
+  <br>
+
   2. Now run `make all` or `make bscan` to compile the main program
 
 <br>
