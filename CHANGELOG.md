@@ -14,6 +14,7 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
+- [#25](https://github.com/BarcaWebCloud/bscan/pull/25): New features for windows. Gratitude @ahsouza!
 - [#24](https://github.com/BarcaWebCloud/bscan/pull/24): New features for windows. Gratitude @ahsouza!
 - [#23](https://github.com/BarcaWebCloud/bscan/pull/23): New features for windows. Gratitude @ahsouza!
 
@@ -34,6 +35,7 @@ Add features for **Windows** platform:
 - **Get Last Drive** [only Windows on moment]
 - **Get Product Identification With Code, Name, Version And ID** [only Windows on moment]
 - **Get System Status** [only Windows on moment]
+- **Get Information About Keyboard** [only Windows on moment]
 - **Fixed bugs to methods OS on Windows platform** 
 
 
