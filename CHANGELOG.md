@@ -10,7 +10,7 @@ This is the latest version introduces the use of the module and its features.
 
 <br>
 
-## v0.2.1 [2023-04-11]
+## v0.2.1 [2023-04-12]
 
 ### Features
 
@@ -22,9 +22,7 @@ This is the latest version introduces the use of the module and its features.
 
 - [#22](https://github.com/BarcaWebCloud/bscan/pull/22): New features for windows. Gratitude @ahsouza!
 
-
 ### Release Notes
-
 
 Add features for **Windows** platform:
 
@@ -36,6 +34,7 @@ Add features for **Windows** platform:
 - **Get Product Identification With Code, Name, Version And ID** [only Windows on moment]
 - **Get System Status** [only Windows on moment]
 - **Get Information About Keyboard** [only Windows on moment]
+- **Get Driver Path, Device ID, Status, Architecture, Type, Mode, Availability And Max Memory Supported of GPU** [only Windows on moment]
 - **Fixed bugs to methods OS on Windows platform** 
 
 
