@@ -104,6 +104,17 @@ namespace bscan {
     return {tmp.begin(), tmp.end()};
   }
 
+  std::string GPU::getModeDescription() {
+    std::vector<const wchar_t*> modedescription{};
+    wmi::queryWMI("WIN32_VideoController", "VideoModeDescription", modedescription);
+    auto ret = modedescription[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
   int64_t GPU::getArchitecture() {
     std::vector<unsigned long long> architecture{};
     wmi::queryWMI("WIN32_VideoController", "VideoArchitecture", architecture);
