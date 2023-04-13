@@ -57,19 +57,19 @@ namespace bscan {
     return _hostname;
   }
 
-  std::string OS::domainname() {
-    if (_domainname.empty()) {
-      _domainname = getDomainName();
-    }
-    return _domainname;
-  }
+  // std::string OS::domainname() {
+  //   if (_domainname.empty()) {
+  //     _domainname = getDomainName();
+  //   }
+  //   return _domainname;
+  // }
 
-  std::string OS::uptime() {
-    if (_uptime.empty()) {
-      _uptime = getUptime();
-    }
-    return _uptime;
-  }
+  // std::string OS::uptime() {
+  //   if (_uptime.empty()) {
+  //     _uptime = getUptime();
+  //   }
+  //   return _uptime;
+  // }
 
   std::string OS::homedir() {
     if (_homedir.empty()) {
@@ -286,6 +286,13 @@ namespace bscan {
       _productidentificationuuid = getProductIdentificationUUID();
     }
     return _productidentificationuuid;
+  }
+
+  std::string OS::timezone() {
+    if (_timezone.empty()) {
+      _timezone = getTimeZone();
+    }
+    return _timezone;
   }
 
   std::string OS::status() {

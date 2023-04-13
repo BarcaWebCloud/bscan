@@ -322,6 +322,17 @@ namespace bscan {
     return lower({tmp.begin(), tmp.end()});
   }
 
+  std::string OS::getDomainName() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("WIN32_Account", "Domain", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return lower({tmp.begin(), tmp.end()});
+  }
+
   std::string OS::getUser() {
     char* content = 0;
     std::string username;
@@ -722,9 +733,9 @@ namespace bscan {
   }
 
   std::string OS::getStatus() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystem", "Status", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> status{};
+    wmi::queryWMI("WIN32_ComputerSystem", "Status", status);
+    auto ret = status[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -816,9 +827,9 @@ namespace bscan {
   }
 
   std::string OS::getProductIdentificationUUID() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystemProduct", "UUID", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> productidentificationuuid{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "UUID", productidentificationuuid);
+    auto ret = productidentificationuuid[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -828,9 +839,21 @@ namespace bscan {
   }
 
   std::string OS::getPathSystemDriver() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_SystemDriver", "PathName", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> pathsystemdriver{};
+    wmi::queryWMI("WIN32_SystemDriver", "PathName", pathsystemdriver);
+    auto ret = pathsystemdriver[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string OS::getTimeZone() {
+    std::vector<const wchar_t*> timezone{};
+    wmi::queryWMI("WIN32_TimeZone", "StandardName", timezone);
+    auto ret = timezone[0];
     if (!ret) {
       return "<unknown>";
     }
