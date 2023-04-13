@@ -69,6 +69,7 @@ namespace bscan {
     std::string productidentificationversion();
     std::string pathsystemdriver();
     std::string productidentificationuuid();
+    std::string timezone();
     std::string status();
     std::string kernel();
     [[nodiscard]] bool is32bit() const;
@@ -116,6 +117,7 @@ namespace bscan {
     static std::string getProductIdentificationVersion();
     static std::string getPathSystemDriver();
     static std::string getProductIdentificationUUID();
+    static std::string getTimeZone();
     static std::string getStatus();
     static std::string getKernel();
     static bool getIs32bit();
@@ -164,6 +166,7 @@ namespace bscan {
     std::string _productidentificationversion;
     std::string _pathsystemdriver;
     std::string _productidentificationuuid;
+    std::string _timezone;
     std::string _status;
     std::string _kernel;
     bool _32bit = false;
