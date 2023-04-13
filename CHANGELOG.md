@@ -10,7 +10,7 @@ This is the latest version introduces the use of the module and its features.
 
 <br>
 
-## v0.2.1 [2023-04-12]
+## v0.2.1 [2023-04-13]
 
 ### Features
 
@@ -20,7 +20,8 @@ This is the latest version introduces the use of the module and its features.
 
 ### Bugs
 
-- [#22](https://github.com/BarcaWebCloud/bscan/pull/22): New features for windows. Gratitude @ahsouza!
+- [#26](https://github.com/BarcaWebCloud/bscan/pull/26): Fix bugs for windows. Gratitude @ahsouza!
+- [#22](https://github.com/BarcaWebCloud/bscan/pull/22): Fix bugs for windows. Gratitude @ahsouza!
 
 ### Release Notes
 
