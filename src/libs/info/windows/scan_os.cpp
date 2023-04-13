@@ -685,9 +685,9 @@ namespace bscan {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
 
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystem", "UserName", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> accountname{};
+    wmi::queryWMI("WIN32_ComputerSystem", "UserName", accountname);
+    auto ret = accountname[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -699,9 +699,9 @@ namespace bscan {
   }
 
   std::string OS::getAccountLoginID() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_LogonSession", "LogonId", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> accountloginid{};
+    wmi::queryWMI("WIN32_LogonSession", "LogonId", accountloginid);
+    auto ret = accountloginid[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -711,9 +711,9 @@ namespace bscan {
   }
 
   std::string OS::getType() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystem", "PrimaryOwnerName", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> type{};
+    wmi::queryWMI("WIN32_ComputerSystem", "PrimaryOwnerName", type);
+    auto ret = type[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -722,9 +722,9 @@ namespace bscan {
   }
 
   std::string OS::getFullType() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystem", "BootupState", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> fulltype{};
+    wmi::queryWMI("WIN32_ComputerSystem", "BootupState", fulltype);
+    auto ret = fulltype[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -744,9 +744,9 @@ namespace bscan {
   }
 
   std::string OS::getServicePath() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_BaseService", "PathName", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> servicepath{};
+    wmi::queryWMI("WIN32_BaseService", "PathName", servicepath);
+    auto ret = servicepath[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -755,9 +755,9 @@ namespace bscan {
   }
 
   std::string OS::getBootDir() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_BootConfiguration", "BootDirectory", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> bootdir{};
+    wmi::queryWMI("WIN32_BootConfiguration", "BootDirectory", bootdir);
+    auto ret = bootdir[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -767,9 +767,9 @@ namespace bscan {
   }
 
   std::string OS::getBootTempDir() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_BootConfiguration", "TempDirectory", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> boottempdir{};
+    wmi::queryWMI("WIN32_BootConfiguration", "TempDirectory", boottempdir);
+    auto ret = boottempdir[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -779,9 +779,9 @@ namespace bscan {
   }
 
   std::string OS::getBootLastDrive() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_BootConfiguration", "LastDrive", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> bootlastdrive{};
+    wmi::queryWMI("WIN32_BootConfiguration", "LastDrive", bootlastdrive);
+    auto ret = bootlastdrive[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -791,9 +791,9 @@ namespace bscan {
   }
 
   std::string OS::getProductIdentificationCode() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystemProduct", "IdentifyingNumber", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> productidentificationcode{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "IdentifyingNumber", productidentificationcode);
+    auto ret = productidentificationcode[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -803,9 +803,9 @@ namespace bscan {
   }
 
   std::string OS::getProductIdentificationName() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystemProduct", "Name", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> productidentificationname{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "Name", productidentificationname);
+    auto ret = productidentificationname[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -815,9 +815,9 @@ namespace bscan {
   }
 
   std::string OS::getProductIdentificationVersion() {
-    std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("WIN32_ComputerSystemProduct", "Version", vendor);
-    auto ret = vendor[0];
+    std::vector<const wchar_t*> productidentificationversion{};
+    wmi::queryWMI("WIN32_ComputerSystemProduct", "Version", productidentificationversion);
+    auto ret = productidentificationversion[0];
     if (!ret) {
       return "<unknown>";
     }
@@ -851,9 +851,9 @@ namespace bscan {
   }
 
   std::string OS::getTimeZone() {
-    std::vector<const wchar_t*> timezone{};
-    wmi::queryWMI("WIN32_TimeZone", "StandardName", timezone);
-    auto ret = timezone[0];
+    std::vector<const wchar_t*> timez{};
+    wmi::queryWMI("WIN32_TimeZone", "StandardName", timez);
+    auto ret = timez[0];
     if (!ret) {
       return "<unknown>";
     }

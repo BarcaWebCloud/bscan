@@ -288,11 +288,11 @@ namespace bscan {
     return _productidentificationuuid;
   }
 
-  std::string OS::timezone() {
-    if (_timezone.empty()) {
-      _timezone = getTimeZone();
+  std::string OS::timez() {
+    if (_timez.empty()) {
+      _timez = getTimeZone();
     }
-    return _timezone;
+    return _timez;
   }
 
   std::string OS::status() {
