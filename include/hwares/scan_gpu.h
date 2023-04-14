@@ -33,6 +33,7 @@ namespace bscan {
         const std::string& driverVersion,
         const std::string& deviceID,
         const std::string& status,
+        const std::string& modedescription,
         const std::string& installedDriversPath,
         int64_t architecture,
         int64_t type,
@@ -48,6 +49,7 @@ namespace bscan {
     std::string& driverVersion();
     std::string& deviceID();
     std::string& status();
+    std::string& modedescription();
     std::string& installedDriversPath();
     int64_t architecture();
     int64_t type();
@@ -62,6 +64,7 @@ namespace bscan {
     static std::string getDriverVersion();
     static std::string getDeviceID();
     static std::string getStatus();
+    static std::string getModeDescription();
     static std::string getInstalledDriversPath();
     static int64_t getType();
     static int64_t getMode();
@@ -77,6 +80,7 @@ namespace bscan {
     std::string _driverVersion;
     std::string _deviceID;
     std::string _status;
+    std::string _modedescription;
     std::string _installedDriversPath;
     int64_t _architecture = -1;
     int64_t _type = -1;

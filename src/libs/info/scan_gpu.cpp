@@ -33,12 +33,13 @@
 
 namespace bscan {
 
-  GPU::GPU(const std::string& vendor, const std::string& name, const std::string& processor, const std::string& driverVersion, const std::string& deviceID, const std::string& status, const std::string& installedDriversPath,  int64_t architecture, int64_t type, int64_t mode, int64_t availability, int64_t maxMemory, int64_t memoryBytes)
+  GPU::GPU(const std::string& vendor, const std::string& name, const std::string& processor, const std::string& driverVersion, const std::string& deviceID, const std::string& status,  const std::string& modedescription, const std::string& installedDriversPath,  int64_t architecture, int64_t type, int64_t mode, int64_t availability, int64_t maxMemory, int64_t memoryBytes)
       : _vendor(vendor), 
         _name(name),
         _processor(processor),
         _deviceID(deviceID),
         _status(status),
+        _modedescription(modedescription),
         _installedDriversPath(installedDriversPath),
         _driverVersion(driverVersion) {
     _architecture = architecture,
@@ -89,6 +90,13 @@ namespace bscan {
       _status = getStatus();
     }
     return _status;
+  }
+
+  std::string& GPU::modedescription() {
+    if (_modedescription.empty()) {
+      _modedescription = getModeDescription();
+    }
+    return _modedescription;
   }
 
   std::string& GPU::installedDriversPath() {
