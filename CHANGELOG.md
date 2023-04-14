@@ -14,7 +14,8 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
-- [#25](https://github.com/BarcaWebCloud/bscan/pull/26): New features for windows. Gratitude @ahsouza!
+- [#28](https://github.com/BarcaWebCloud/bscan/pull/27): New features for windows. Gratitude @ahsouza!
+- [#27](https://github.com/BarcaWebCloud/bscan/pull/27): New features for windows. Gratitude @ahsouza!
 - [#25](https://github.com/BarcaWebCloud/bscan/pull/25): New features for windows. Gratitude @ahsouza!
 - [#24](https://github.com/BarcaWebCloud/bscan/pull/24): New features for windows. Gratitude @ahsouza!
 - [#23](https://github.com/BarcaWebCloud/bscan/pull/23): New features for windows. Gratitude @ahsouza!
@@ -36,6 +37,7 @@ Add features for **Windows** platform:
 - **Get Product Identification With Code, Name, Version And ID** [only Windows on moment]
 - **Get System Status** [only Windows on moment]
 - **Get Information About Keyboard And Fan** [only Windows on moment]
+- **Get Information About Temperature Sensor** [only Windows on moment]
 - **Get Driver Path, Device ID, Status, Architecture, Type, Mode, Availability And Max Memory Supported of GPU** [only Windows on moment]
 - **Fixed bugs to methods OS on Windows platform** 
 
