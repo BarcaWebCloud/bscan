@@ -14,14 +14,13 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
-- [#28](https://github.com/BarcaWebCloud/bscan/pull/27): New features for windows. Gratitude @ahsouza!
 - [#27](https://github.com/BarcaWebCloud/bscan/pull/27): New features for windows. Gratitude @ahsouza!
 - [#25](https://github.com/BarcaWebCloud/bscan/pull/25): New features for windows. Gratitude @ahsouza!
 - [#24](https://github.com/BarcaWebCloud/bscan/pull/24): New features for windows. Gratitude @ahsouza!
 - [#23](https://github.com/BarcaWebCloud/bscan/pull/23): New features for windows. Gratitude @ahsouza!
 
 ### Bugs
-
+- [#28](https://github.com/BarcaWebCloud/bscan/pull/28): New features for windows. Gratitude @ahsouza!
 - [#26](https://github.com/BarcaWebCloud/bscan/pull/26): Fix bugs for windows. Gratitude @ahsouza!
 - [#22](https://github.com/BarcaWebCloud/bscan/pull/22): Fix bugs for windows. Gratitude @ahsouza!
 
