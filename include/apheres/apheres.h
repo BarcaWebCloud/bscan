@@ -17,6 +17,7 @@
  * KIND, either express or implied.                                                      
  *
  **************************************************************************************/
+
 #pragma once
 
 #include "apheres/scan_temperature.h"
