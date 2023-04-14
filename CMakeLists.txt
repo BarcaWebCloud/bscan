@@ -254,6 +254,9 @@ find_path(_check_include
             "utils/string.h",
             "utils/stringutils.h",
             "utils/subprocess.h",
+            # atmosphere header
+            "apheres/apheres.h",
+            "apheres/scan_temperature.h",
             # hardwares header
             "hwares/hwares.h",
             "hwares/scan_battery.h",
