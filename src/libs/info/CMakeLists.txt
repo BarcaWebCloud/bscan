@@ -6,6 +6,7 @@ add_library(BScan
         scan_os.cpp
         scan_mainboard.cpp
         scan_temperature.cpp
+        scan_bios.cpp
         scan_disk.cpp
         scan_browser.cpp
         scan_datasource.cpp
@@ -32,6 +33,7 @@ add_library(BScan
         windows/scan_gpu.cpp
         windows/scan_temperature.cpp
         windows/scan_ram.cpp
+        windows/scan_bios.cpp
         windows/scan_os.cpp
         windows/scan_mainboard.cpp
         windows/scan_network.cpp

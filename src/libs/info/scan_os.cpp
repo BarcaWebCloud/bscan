@@ -309,6 +309,27 @@ namespace bscan {
     return _kernel;
   }
 
+  int64_t OS::maxProcessMemory() {
+    if (_maxProcessMemory == -1) {
+      _maxProcessMemory = getMaxProcessMemory();
+    }
+    return _maxProcessMemory;
+  }
+
+  int64_t OS::users() {
+    if (_users == -1) {
+      _users = getUsers();
+    }
+    return _users;
+  }
+
+  int64_t OS::processes() {
+    if (_processes == -1) {
+      _processes = getProcesses();
+    }
+    return _processes;
+  }
+
   bool OS::is32bit() const { return _32bit; }
   bool OS::is64bit() const { return _64bit; }
   bool OS::isBigEndian() const { return _bigEndian; }
