@@ -732,16 +732,16 @@ namespace bscan {
     return {tmp.begin(), tmp.end()};
   }
 
-  std::string OS::getStatus() {
-    std::vector<const wchar_t*> status{};
-    wmi::queryWMI("WIN32_ComputerSystem", "Status", status);
-    auto ret = status[0];
-    if (!ret) {
-      return "<unknown>";
-    }
-    std::wstring tmp(ret);
-    return {tmp.begin(), tmp.end()};
-  }
+  // std::string OS::getStatus() {
+  //   std::vector<const wchar_t*> status{};
+  //   wmi::queryWMI("WIN32_ComputerSystem", "Status", status);
+  //   auto ret = status[0];
+  //   if (!ret) {
+  //     return "<unknown>";
+  //   }
+  //   std::wstring tmp(ret);
+  //   return {tmp.begin(), tmp.end()};
+  // }
 
   std::string OS::getServicePath() {
     std::vector<const wchar_t*> servicepath{};
@@ -862,8 +862,38 @@ namespace bscan {
     return {tmp.begin(), tmp.end()};
   }
 
+  std::string OS::getStatus() {
+    std::vector<const wchar_t*> vendor{};
+    wmi::queryWMI("CIM_OperatingSystem", "Name", vendor);
+    auto ret = vendor[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+
+    return {tmp.begin(), tmp.end()};
+  }
+
   std::string OS::getKernel() { return "<unknown>"; }
   
+  int64_t OS::getUsers() {
+    std::vector<unsigned long long> users{};
+    wmi::queryWMI("CIM_OperatingSystem", "NumberOfUsers", users);
+    return static_cast<int64_t>(users[0] * 2);
+  }
+
+  int64_t OS::getProcesses() {
+    std::vector<unsigned long long> processes{};
+    wmi::queryWMI("CIM_OperatingSystem", "NumberOfProcesses", processes);
+    return static_cast<int64_t>(processes[0] * 2);
+  }
+  
+  int64_t OS::getMaxProcessMemory() {
+    std::vector<unsigned long long> maxProcessMemory{};
+    wmi::queryWMI("CIM_OperatingSystem", "MaxProcessMemorySize", maxProcessMemory);
+    return static_cast<int64_t>(maxProcessMemory[0] * 2);
+  }
+
   bool OS::getIs64bit() {
     BOOL bWow64Process = FALSE;
     return IsWow64Process(GetCurrentProcess(), &bWow64Process) && bWow64Process;
