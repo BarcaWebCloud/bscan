@@ -22,7 +22,9 @@ This is the latest version introduces the use of the module and its features.
 Add features for **Windows** platform:
 
 
-- **Get Information About** [only Windows on moment]
+- **Get Information About BIOS** [only Windows on moment]
+- **Get Number Of Users And Processes** [only Windows on moment]
+- **Get Max Process Memory** [only Windows on moment]
 
 
 
