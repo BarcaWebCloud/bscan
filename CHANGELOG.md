@@ -2,11 +2,29 @@
 
 # Changelog
 
-## v0.2.1-BETA
+## v0.2.2-BETA
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+<br>
+
+## v0.2.2 [2023-04-15]
+
+### Features
+
+- [#29](https://github.com/BarcaWebCloud/bscan/pull/29): New features for windows. Gratitude @ahsouza!
+
+
+### Release Notes
+
+Add features for **Windows** platform:
+
+
+- **Get Information About** [only Windows on moment]
+
+
 
 <br>
 
