@@ -32,7 +32,26 @@ namespace bscan {
   std::string Battery::getSerialNumber() const { return "<unknwon>"; }
   std::string Battery::getTechnology() const { return "<unknwon>"; }
   uint32_t Battery::getEnergyFull() const { return 0; }
-  uint32_t Battery::energyNow() const { return 0; }
+  uint32_t Battery::getEnergyNow() const { 
+    std::vector<unsigned long long> energyNow{};
+    wmi::queryWMI("Win32_Battery", "EstimatedChargeRemaining", energyNow);
+
+    return static_cast<int64_t>(energyNow[0]);
+  }
+  //volts
+  uint32_t Battery::getVoltage() const { 
+    std::vector<unsigned long long> voltage{};
+    wmi::queryWMI("Win32_Battery", "DesignVoltage", voltage);
+
+    return static_cast<int64_t>(voltage[0]);
+  }
+  //time
+  uint32_t Battery::getEstimatedTime() const { 
+    std::vector<unsigned long long> estimatedTime{};
+    wmi::queryWMI("Win32_Battery", "EstimatedRunTime", estimatedTime);
+
+    return static_cast<int64_t>(estimatedTime[0]);
+  }
   bool Battery::charging() const { return false; }
   bool Battery::discharging() const { return false; }
   std::vector<Battery> getAllBatteries() {
