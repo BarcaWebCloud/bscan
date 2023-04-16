@@ -38,6 +38,9 @@ namespace bscan {
     std::string& serialNumber();
     std::string& technology();
     uint32_t energyFull();
+    uint32_t energyNow();
+    uint32_t voltage();
+    uint32_t estimatedTime();
 
     double capacity();
 
@@ -46,6 +49,9 @@ namespace bscan {
     [[nodiscard]] std::string getSerialNumber() const;
     [[nodiscard]] std::string getTechnology() const;
     [[nodiscard]] uint32_t getEnergyFull() const;
+    [[nodiscard]] uint32_t getEnergyNow() const;
+    [[nodiscard]] uint32_t getVoltage() const;
+    [[nodiscard]] uint32_t getEstimatedTime() const;
 
     [[nodiscard]] uint32_t energyNow() const;
     [[nodiscard]] bool charging() const;
@@ -58,6 +64,9 @@ namespace bscan {
     std::string _serialNumber;
     std::string _technology;
     uint32_t _energyFull = 0;
+    uint32_t _energyNow = 0;
+    uint32_t _voltage = 0;
+    uint32_t _estimatedTime = 0;
   };
 
 std::vector<Battery> getAllBatteries();
