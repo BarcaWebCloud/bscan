@@ -34,7 +34,7 @@ using namespace std;
 
 namespace bscan {
 
-  BIOS::BIOS(const string& description, const std::string& name, const std::string& status, const std::string& manufacturer, const std::string& otherIdentifyingInfo, const std::string& partNumber, const std::string& serialNumber, const std::string& sku, const std::string& breachDescription, const std::string& version, bool poweredOn, bool hotSwappable, bool removable, bool replaceable, bool audibleAlarm, bool lockPresent,  bool visibleAlarm, int64_t securityBreach, int64_t heatGeneration, int64_t numberOfPowerCords)
+  BIOS::BIOS(const string& description, const std::string& name, const std::string& status, const std::string& manufacturer, const std::string& otherIdentifyingInfo, const std::string& partNumber, const std::string& serialNumber, const std::string& sku, const std::string& breachDescription, const std::string& version, const std::string& smbiosVersion, const std::string& buildNumber, const std::string& currentLanguage, bool poweredOn, bool hotSwappable, bool removable, bool replaceable, bool audibleAlarm, bool lockPresent,  bool visibleAlarm, int64_t securityBreach, int64_t heatGeneration, int64_t biosMajorVersion, int64_t biosMinorVersion, int64_t numberOfPowerCords)
       : _description(_description), 
         _name(_name),
         _status(_status),
@@ -44,7 +44,10 @@ namespace bscan {
         _serialNumber(_serialNumber),
         _sku(_sku),
         _breachDescription(_breachDescription),
-        _version(_version) {
+        _version(_version),
+        _smbiosVersion(_smbiosVersion),
+        _buildNumber(_buildNumber),
+        _currentLanguage(_currentLanguage) {
     _poweredOn = poweredOn,
     _hotSwappable = hotSwappable,
     _removable = removable,
@@ -53,6 +56,8 @@ namespace bscan {
     _lockPresent = lockPresent,
     _visibleAlarm = visibleAlarm,
     _securityBreach = securityBreach,
+    _biosMajorVersion = biosMajorVersion,
+    _biosMinorVersion = biosMinorVersion,
     _heatGeneration = heatGeneration,
     _numberOfPowerCords = numberOfPowerCords;
   }
@@ -127,6 +132,27 @@ namespace bscan {
     return _version;
   }
 
+  std::string& BIOS::smbiosVersion() {
+    if (_smbiosVersion.empty()) {
+      _smbiosVersion = getSMBIOSVersion();
+    }
+    return _smbiosVersion;
+  }
+
+  std::string& BIOS::buildNumber() {
+    if (_buildNumber.empty()) {
+      _buildNumber = getBuildNumber();
+    }
+    return _buildNumber;
+  }
+  
+  std::string& BIOS::currentLanguage() {
+    if (_currentLanguage.empty()) {
+      _currentLanguage = getCurrentLanguage();
+    }
+    return _currentLanguage;
+  }
+
   bool BIOS::poweredOn() {
     _poweredOn = getPoweredOn();  
     return _poweredOn;
@@ -160,6 +186,20 @@ namespace bscan {
   bool BIOS::visibleAlarm() {
    _visibleAlarm = getVisibleAlarm();   
     return _visibleAlarm;
+  }
+
+  int64_t BIOS::biosMajorVersion() {
+    if (_biosMajorVersion == -1) {
+      _biosMajorVersion = getBiosMajorVersion();
+    }
+    return _biosMajorVersion;
+  }
+
+  int64_t BIOS::biosMinorVersion() {
+    if (_biosMinorVersion == -1) {
+      _biosMinorVersion = getBiosMinorVersion();
+    }
+    return _biosMinorVersion;
   }
 
   int64_t BIOS::securityBreach() {

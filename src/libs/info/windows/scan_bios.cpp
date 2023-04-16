@@ -137,6 +137,39 @@ namespace bscan {
     return {tmp.begin(), tmp.end()};
   }
 
+  std::string BIOS::getSMBIOSVersion() {
+    std::vector<const wchar_t*> smbiosVersion{};
+    wmi::queryWMI("Win32_BIOS", "SMBIOSBIOSVersion", smbiosVersion);
+    auto ret = smbiosVersion[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string BIOS::getBuildNumber() {
+    std::vector<const wchar_t*> buildNumber{};
+    wmi::queryWMI("Win32_BIOS", "BuildNumber", buildNumber);
+    auto ret = buildNumber[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
+  std::string BIOS::getCurrentLanguage() {
+    std::vector<const wchar_t*> currentLanguage{};
+    wmi::queryWMI("Win32_BIOS", "CurrentLanguage", currentLanguage);
+    auto ret = currentLanguage[0];
+    if (!ret) {
+      return "<unknown>";
+    }
+    std::wstring tmp(ret);
+    return {tmp.begin(), tmp.end()};
+  }
+
   bool BIOS::getPoweredOn() {
     std::vector<bool> poweredOn{};
     wmi::queryWMI("CIM_Chassis", "PoweredOn", poweredOn);
@@ -178,6 +211,18 @@ namespace bscan {
     wmi::queryWMI("CIM_Chassis", "VisibleAlarm", visibleAlarm);
     return static_cast<bool>(visibleAlarm[0] * 2);
   };
+
+  int64_t BIOS::getBiosMajorVersion() {
+    std::vector<unsigned long long> biosMajorVersion{};
+    wmi::queryWMI("Win32_BIOS", "SMBIOSMajorVersion", biosMajorVersion);
+    return static_cast<int64_t>(biosMajorVersion[0] * 2);
+  }
+
+  int64_t BIOS::getBiosMinorVersion() {
+    std::vector<unsigned long long> biosMinorVersion{};
+    wmi::queryWMI("Win32_BIOS", "SMBIOSMinorVersion", biosMinorVersion);
+    return static_cast<int64_t>(biosMinorVersion[0] * 2);
+  }
 
   int64_t BIOS::getSecurityBreach() {
     std::vector<unsigned long long> securityBreach{};
