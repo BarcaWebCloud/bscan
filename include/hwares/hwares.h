@@ -26,3 +26,4 @@
 #include "hwares/scan_mainboard.h"
 #include "hwares/scan_ram.h"
 #include "hwares/scan_network.h"
+#include "hwares/scan_net.h"

@@ -58,6 +58,27 @@ namespace bscan {
     return _energyFull;
   }
 
+  uint32_t Battery::energyNow() {
+    if (_energyNow == 0) {
+      _energyNow = getEnergyNow();
+    }
+    return _energyNow;
+  }
+
+  uint32_t Battery::voltage() {
+    if (_voltage == 0) {
+      _voltage = getVoltage();
+    }
+    return _voltage;
+  }
+
+  uint32_t Battery::estimatedTime() {
+    if (_estimatedTime == 0) {
+      _estimatedTime = getEstimatedTime();
+    }
+    return _estimatedTime;
+  }
+
   double Battery::capacity() { return static_cast<double>(energyNow()) / energyFull(); }
 
 };

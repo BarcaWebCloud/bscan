@@ -22,7 +22,7 @@
 # Barca, Inc., Vitória/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaWebCloud
 
 cmake_minimum_required(VERSION 3.16)
-project(bscan VERSION 0.2.2 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
+project(bscan VERSION 0.2.3 DESCRIPTION "A library for collecting information about a computing device's Hardware & Software" HOMEPAGE_URL "https://store.barca.com/overview/modules/bscan" LANGUAGES CXX C)
 
 message(STATUS "cmake version ${CMAKE_VERSION}\n\nproject: ${PROJECT_NAME}\nversion: ${PROJECT_VERSION}\ndescription: ${PROJECT_DESCRIPTION}\n${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
 
@@ -266,7 +266,7 @@ find_path(_check_include
             "hwares/scan_gpu.h",
             "hwares/scan_mainboard.h",
             "hwares/scan_monitor.h",
-            "hwares/scan_network.h",
+            "hwares/scan_net.h",
             "hwares/scan_ram.h",
             # softwares header
             "swares/swares.h",

@@ -37,6 +37,9 @@ namespace bscan {
         const std::string& sku,
         const std::string& breachDescription,
         const std::string& version,
+        const std::string& smbiosVersion,
+        const std::string& buildNumber,
+        const std::string& currentLanguage,
         bool poweredOn,
         bool hotSwappable,
         bool removable,
@@ -44,6 +47,8 @@ namespace bscan {
         bool audibleAlarm,
         bool lockPresent,
         bool visibleAlarm,
+        int64_t biosMajorVersion,
+        int64_t biosMinorVersion,
         int64_t securityBreach,
         int64_t heatGeneration,
         int64_t numberOfPowerCords);
@@ -59,6 +64,9 @@ namespace bscan {
     std::string& sku();
     std::string& breachDescription();
     std::string& version();
+    std::string& smbiosVersion();
+    std::string& buildNumber();
+    std::string& currentLanguage();
     bool poweredOn();
     bool hotSwappable();
     bool removable();
@@ -66,6 +74,8 @@ namespace bscan {
     bool audibleAlarm();
     bool lockPresent();
     bool visibleAlarm();
+    int64_t biosMajorVersion();
+    int64_t biosMinorVersion();
     int64_t securityBreach();
     int64_t heatGeneration();
     int64_t numberOfPowerCords();
@@ -80,6 +90,9 @@ namespace bscan {
     static std::string getSku();
     static std::string getBreachDescription();
     static std::string getVersion();
+    static std::string getSMBIOSVersion();
+    static std::string getBuildNumber();
+    static std::string getCurrentLanguage();
     static bool getPoweredOn();
     static bool getHotSwappable();
     static bool getRemovable();
@@ -87,6 +100,8 @@ namespace bscan {
     static bool getAudibleAlarm();
     static bool getLockPresent();
     static bool getVisibleAlarm();
+    static int64_t getBiosMajorVersion();
+    static int64_t getBiosMinorVersion();
     static int64_t getSecurityBreach();
     static int64_t getHeatGeneration();
     static int64_t getNumberOfPowerCords();
@@ -102,6 +117,9 @@ namespace bscan {
     std::string& _sku;
     std::string& _breachDescription;
     std::string& _version;
+    std::string& _smbiosVersion;
+    std::string& _buildNumber;
+    std::string& _currentLanguage;
     bool _poweredOn;
     bool _hotSwappable;
     bool _removable;
@@ -109,6 +127,8 @@ namespace bscan {
     bool _audibleAlarm;
     bool _lockPresent;
     bool _visibleAlarm;
+    int64_t _biosMajorVersion = -1;
+    int64_t _biosMinorVersion = -1;
     int64_t _securityBreach = -1;
     int64_t _heatGeneration = -1;
     int64_t _numberOfPowerCords = -1;
