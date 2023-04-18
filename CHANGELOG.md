@@ -2,11 +2,28 @@
 
 # Changelog
 
-## v0.2.2-BETA
+## v0.2.3-BETA
 
 ### BScan
 
 This is the latest version introduces the use of the module and its features.
+
+<br>
+
+## v0.2.3 [2023-04-18]
+
+### Features
+
+- [#30](https://github.com/BarcaWebCloud/bscan/pull/30): New features for windows. Gratitude @ahsouza!
+
+
+### Release Notes
+
+Add features for **Windows** platform:
+
+
+- **Get Information All About Network Adapter** [only Windows on moment]
+- **Get IP Address, MAC Address, Subnet, Gateway, DNS Hostname and more** [only Windows on moment]
 
 <br>
 
