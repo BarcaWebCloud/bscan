@@ -24,6 +24,8 @@ Add features for **Windows** platform:
 
 - **Get Information All About Network Adapter** [only Windows on moment]
 - **Get IP Address, MAC Address, Subnet, Gateway, DNS Hostname and more** [only Windows on moment]
+- **Get Voltage, Full Battery, Energy Now and more to Battery** [only Windows on moment]
+- **Get Versions BIOS** [only Windows on moment]
 
 <br>
 
