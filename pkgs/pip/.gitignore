@@ -1,0 +1,3 @@
+build/*
+dist/*
+bwc_bscan.egg-info
