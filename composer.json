@@ -1,0 +1,21 @@
+{
+  "name": "bwc/bscan",
+  "description": "Bscan is perhaps the best PHP library for performing data analysis on computing devices and providing PHP web applications. It is used for computer forensics, AI, data center, mobile and web applications. Developers can troubleshoot issues when looking up certain information about the target device.",
+  "homepage": "https://docs.barca.com/guide/getting-started/bscan#bscan-php",
+  "license": "MIT",
+  "autoload": {
+      "psr-4": {
+          "Bwc\\Bscan\\": "pkgs/composer"
+      }
+  },
+  "authors": [
+    {
+      "name": "Aníbal <ahsouza> Barca",
+      "email": "anibalbs@barca.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.2"    
+  }
+}
