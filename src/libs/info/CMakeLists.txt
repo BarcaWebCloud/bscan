@@ -26,7 +26,7 @@ add_library(BScan
         linux/scan_ram.cpp
         linux/scan_os.cpp
         linux/scan_mainboard.cpp
-        linux/scan_net.cpp
+        #linux/scan_net.cpp
         linux/scan_disk.cpp
         # windows OS
         windows/scan_battery.cpp
