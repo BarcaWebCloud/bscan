@@ -25,6 +25,7 @@
 #include <string>
 #include <numeric>
 #include <vector>
+#include <sstream>
 
 /**
  * remove all white spaces (' ', '\t', '\n') from start and end of input
@@ -174,6 +175,18 @@ inline std::string wstring_to_std_string(const std::wstring& ws) {
   delete[] ch_dest;
   setlocale(LC_ALL, str_locale.c_str());
   return result_text;
+}
+
+/**
+ * Convert string to int
+ * @return
+ */
+inline int string_to_int(const std::string& string) {
+  std::string str_locale = setlocale(LC_ALL, "");
+    std::stringstream sstream(string);
+    int i;
+    sstream >> i;
+    return i;
 }
 
 /**
