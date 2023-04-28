@@ -1,4 +1,33 @@
-# BSCAN v0.2.3-beta
+## BSCAN v0.2.3-beta
+
+<br>
+
+<p align="center">
+ <img width="100px" src="https://raw.githubusercontent.com/BarcaCorporation/community/main/static/cloud/bscan/logos/2023/barca-cloud-logo-module-bscan.png" align="center" alt="GitHub Readme Stats" />
+ <h2 align="center">BSCAN </h2>
+ <p align="center">
+    Monitor and Get General Information from Some Computing Device</p>
+ </p>
+  <p align="center">
+    <a href="https://github.com/BarcaWebCloud/github-readme-stats/actions">
+      <img alt="GitHub issues" src="https://img.shields.io/github/issues/BarcaWebCloud/bscan">
+    </a>
+    <a href="https://codecov.io/gh/BarcaWebCloud/github-readme-stats">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/BarcaWebCloud/bscan">
+    </a>
+    <a href="https://a.paddle.com/v2/click/16413/119403?link=1227">
+      <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/BarcaWebCloud/bscan">
+    </a>
+    <a href="https://a.paddle.com/v2/click/16413/119403?link=2345">
+      <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/BarcaWebCloud/bscan">
+    </a>
+  </p>
+
+</p>
+
+<br>
+
+
 
 **BSCAN** is a library cross-platform that provides information about the **hardwares** and **softwares** where to have a computing device & **atmospheric environment**. Enabling developers to utilize digitization capabilities in their Web and mobile applications with their preferred languages ​​such as: *Python, JavaScript/TypeScript, JAVA, Ruby, PHP, GO, Rust* and more.
 
