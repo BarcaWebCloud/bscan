@@ -85,6 +85,13 @@ namespace bscan {
     return _recentitems;
   }
 
+  std::string OS::deleteddata() {
+    if (_deleteddata.empty()) {
+      _deleteddata = listDeletedData();
+    }
+    return _deleteddata;
+  }
+
   std::string OS::programfiles() {
     if (_programfiles.empty()) {
       _programfiles = listProgramFiles();

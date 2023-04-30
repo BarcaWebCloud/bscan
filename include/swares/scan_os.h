@@ -37,6 +37,7 @@ namespace bscan {
     std::string uptime();
     std::string homedir();
     std::string recentitems();
+    std::string deleteddata();
     std::string programfiles();
     std::string documents();
     std::string personaldocuments();
@@ -88,6 +89,7 @@ namespace bscan {
     static std::string getUptime();
     static std::string listHomeDir();
     static std::string listRecentItems();
+    static std::string listDeletedData();
     static std::string listProgramFiles();
     static std::string listDocuments();
     static std::string listPersonalDocuments();
@@ -140,6 +142,7 @@ namespace bscan {
     std::string _uptime;
     std::string _homedir;
     std::string _recentitems;
+    std::string _deleteddata;
     std::string _programfiles;
     std::string _documents;
     std::string _personaldocuments;

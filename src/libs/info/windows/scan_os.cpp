@@ -370,6 +370,14 @@ namespace bscan {
     return std::string(listDir(strcat(content, "\\AppData\\Roaming\\Microsoft\\Windows\\Recent")));
   }
 
+  std::string OS::listDeletedData() {
+    SetConsoleCP(1252);
+    SetConsoleOutputCP(1252);
+    char* content;
+    content = getenv("SystemDrive");
+    return std::string(listDir(strcat(content, "\\$Recycle.Bin\\Lixeira")));
+  }
+
   std::string OS::listProgramFiles() {
     SetConsoleCP(1252);
     SetConsoleOutputCP(1252);
@@ -864,7 +872,7 @@ namespace bscan {
 
   std::string OS::getStatus() {
     std::vector<const wchar_t*> vendor{};
-    wmi::queryWMI("CIM_OperatingSystem", "Name", vendor);
+    wmi::queryWMI("CIM_TemperatureSensor", "DeviceID", vendor);
     auto ret = vendor[0];
     if (!ret) {
       return "<unknown>";
